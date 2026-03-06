@@ -1,0 +1,62 @@
+[
+  {
+    "name": "Agent Zero",
+    "repo": "agent0ai/agent-zero"
+  },
+  {
+    "name": "moltis",
+    "repo": "moltis-org/moltis"
+  },
+  {
+    "name": "SpaceBot",
+    "repo": "spacedriveapp/spacebot"
+  },
+  {
+    "name": "IronClaw",
+    "repo": "nearai/ironclaw"
+  },
+  {
+    "name": "ZeptoClaw",
+    "repo": "qhkm/zept-claw"
+  },
+  {
+    "name": "NanoClaw",
+    "repo": "qwibitai/nanoclaw"
+  },
+  {
+    "name": "ZeroClaw",
+    "repo": "zeroclaw-labs/zeroclaw"
+  },
+  {
+    "name": "TinyClaw",
+    "repo": "TinyAGI/tinyclaw"
+  },
+  {
+    "name": "NanoBot",
+    "repo": "HKUDS/nanobot"
+  },
+  {
+    "name": "PicoClaw",
+    "repo": "sipeed/picoclaw"
+  },
+  {
+    "name": "Claw-Empire",
+    "repo": "GreenSheep01201/claw-empire"
+  },
+  {
+    "name": "NullClaw",
+    "repo": "nullclaw/nullclaw"
+  },
+  {
+    "name": "OpenFang",
+    "repo": "RightNow-AI/openfang"
+  },
+  {
+    "name": "CoPaw",
+    "repo": "agentscope-ai/CoPaw"
+  },
+  {
+    "name": "ClawX",
+    "repo": "ValueCell-ai/ClawX"
+  }
+]

@@ -8,6 +8,7 @@ from datetime import datetime, timezone
 from github import Auth, Github, GithubException
 
 from config import (
+    CUSTOM_PROJECTS_FILE,
     DATA_DIR,
     GITHUB_TOKEN,
     MAX_SAMPLE_FILES,
@@ -211,6 +212,31 @@ def discover_projects() -> list[dict]:
         except GithubException as e:
             print(f"  ❌ 搜索失败: {e}")
         time.sleep(2)  # 搜索 API 有更严格的速率限制
+
+    # 4) 自定义项目列表
+    if os.path.exists(CUSTOM_PROJECTS_FILE):
+        print("📋 读取自定义项目列表 ...")
+        with open(CUSTOM_PROJECTS_FILE, "r", encoding="utf-8") as f:
+            custom_list = json.load(f)
+        for item in custom_list:
+            repo_slug = item["repo"]
+            key = repo_slug.lower()
+            if key in seen:
+                print(f"  ⏭️  已存在，跳过: {repo_slug}")
+                continue
+            print(f"  📦 自定义项目: {item.get('name', repo_slug)} ({repo_slug}) ...")
+            try:
+                repo = g.get_repo(repo_slug)
+                seen.add(key)
+                meta = _repo_meta(repo)
+                meta["is_upstream"] = False
+                meta["is_custom"] = True
+                _check_ci(repo, meta)
+                meta["source_samples"] = _sample_source_files(repo)
+                projects.append(meta)
+                time.sleep(0.5)
+            except GithubException as e:
+                print(f"  ❌ 获取失败: {repo_slug} — {e}")
 
     print(f"\n📊 共发现 {len(projects)} 个项目")
     return projects
