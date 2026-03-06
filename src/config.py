@@ -23,6 +23,9 @@ MAX_SAMPLE_FILES = 10
 # 自定义项目列表（JSON 文件路径）
 CUSTOM_PROJECTS_FILE = os.path.join(os.path.dirname(__file__), "..", "projects.json")
 
+# Awesome 列表仓库（自动从 README 解析 Main Projects）
+AWESOME_LIST_REPO = "machinae/awesome-claws"
+
 # ── LLM API（兼容 OpenAI 格式，可接入 newapi 等项目）─────────
 LLM_API_KEY = os.getenv("LLM_API_KEY", "")
 LLM_BASE_URL = os.getenv("LLM_BASE_URL", "https://api.openai.com/v1")

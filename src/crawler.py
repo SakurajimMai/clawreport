@@ -2,12 +2,14 @@
 
 import json
 import os
+import re
 import time
 from datetime import datetime, timezone
 
 from github import Auth, Github, GithubException
 
 from config import (
+    AWESOME_LIST_REPO,
     CUSTOM_PROJECTS_FILE,
     DATA_DIR,
     GITHUB_TOKEN,
@@ -150,6 +152,27 @@ def _check_ci(repo, meta: dict):
         meta["has_ci"] = False
 
 
+def _parse_awesome_list(g: Github, repo_slug: str) -> list[str]:
+    """从 Awesome 列表仓库的 README 中解析 Main Projects 的 GitHub 链接"""
+    try:
+        repo = g.get_repo(repo_slug)
+        readme = repo.get_readme().decoded_content.decode("utf-8", errors="replace")
+    except GithubException as e:
+        print(f"  ❌ 无法读取 Awesome 列表: {e}")
+        return []
+
+    # 提取 ## Main Projects 段落
+    match = re.search(r"## Main Projects\s*\n(.*?)(?=\n## |\Z)", readme, re.DOTALL)
+    if not match:
+        print("  ⚠️  未找到 '## Main Projects' 段落")
+        return []
+
+    section = match.group(1)
+    # 匹配所有 GitHub 仓库链接: https://github.com/owner/repo
+    links = re.findall(r"https://github\.com/([\w.-]+/[\w.-]+)", section)
+    return links
+
+
 def discover_projects() -> list[dict]:
     """发现所有 OpenClaw 类项目"""
     g = _gh_client()
@@ -231,6 +254,28 @@ def discover_projects() -> list[dict]:
                 meta = _repo_meta(repo)
                 meta["is_upstream"] = False
                 meta["is_custom"] = True
+                _check_ci(repo, meta)
+                meta["source_samples"] = _sample_source_files(repo)
+                projects.append(meta)
+                time.sleep(0.5)
+            except GithubException as e:
+                print(f"  ❌ 获取失败: {repo_slug} — {e}")
+
+    # 5) Awesome 列表
+    if AWESOME_LIST_REPO:
+        print(f"📋 从 Awesome 列表 {AWESOME_LIST_REPO} 解析 Main Projects ...")
+        awesome_repos = _parse_awesome_list(g, AWESOME_LIST_REPO)
+        for repo_slug in awesome_repos:
+            key = repo_slug.lower()
+            if key in seen:
+                continue
+            print(f"  📦 Awesome 项目: {repo_slug} ...")
+            try:
+                repo = g.get_repo(repo_slug)
+                seen.add(key)
+                meta = _repo_meta(repo)
+                meta["is_upstream"] = False
+                meta["is_awesome"] = True
                 _check_ci(repo, meta)
                 meta["source_samples"] = _sample_source_files(repo)
                 projects.append(meta)
