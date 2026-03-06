@@ -80,9 +80,22 @@ def evaluate_project(client: OpenAI, project: dict) -> dict | None:
                 {"role": "user", "content": _build_user_prompt(project)},
             ],
             temperature=0.3,
-            response_format={"type": "json_object"},
         )
-        content = response.choices[0].message.content
+        # 兼容不同 API 的返回格式
+        if isinstance(response, str):
+            content = response
+        elif hasattr(response, "choices"):
+            content = response.choices[0].message.content
+        else:
+            content = str(response)
+
+        # 清理可能的 markdown 代码块包裹
+        content = content.strip()
+        if content.startswith("```"):
+            content = content.split("\n", 1)[1] if "\n" in content else content[3:]
+            content = content.rsplit("```", 1)[0]
+            content = content.strip()
+
         return json.loads(content)
     except Exception as e:
         print(f"  ❌ LLM 评估失败 ({project['full_name']}): {e}")
