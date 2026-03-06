@@ -70,6 +70,32 @@ def _build_user_prompt(project: dict) -> str:
     )
 
 
+def _test_api_connection(client: OpenAI) -> bool:
+    """预检测 API 连通性"""
+    print(f"\n🔑 API 配置:")
+    print(f"   Base URL: {LLM_BASE_URL}")
+    print(f"   Model:    {LLM_MODEL}")
+    print(f"   API Key:  {LLM_API_KEY[:8]}..." if len(LLM_API_KEY) > 8 else f"   API Key:  (长度={len(LLM_API_KEY)})")
+    print(f"\n🧪 测试 API 连通性...")
+    try:
+        response = client.chat.completions.create(
+            model=LLM_MODEL,
+            messages=[{"role": "user", "content": "回复 OK"}],
+            max_tokens=10,
+        )
+        content = response.choices[0].message.content
+        if content:
+            print(f"   ✅ API 正常，返回: {content.strip()[:50]}")
+            return True
+        else:
+            print(f"   ❌ API 返回空内容! finish_reason={response.choices[0].finish_reason}")
+            print(f"   原始响应: {response}")
+            return False
+    except Exception as e:
+        print(f"   ❌ API 连接失败: {type(e).__name__}: {e}")
+        return False
+
+
 def evaluate_project(client: OpenAI, project: dict) -> dict | None:
     """调用 LLM 评估单个项目"""
     try:
@@ -89,6 +115,13 @@ def evaluate_project(client: OpenAI, project: dict) -> dict | None:
         else:
             content = str(response)
 
+        # 处理空返回
+        if not content:
+            print(f"  ❌ LLM 返回空内容 ({project['full_name']})")
+            print(f"     finish_reason: {response.choices[0].finish_reason if hasattr(response, 'choices') else 'N/A'}")
+            print(f"     原始响应: {response}")
+            return None
+
         # 清理可能的 markdown 代码块包裹
         content = content.strip()
         if content.startswith("```"):
@@ -97,8 +130,12 @@ def evaluate_project(client: OpenAI, project: dict) -> dict | None:
             content = content.strip()
 
         return json.loads(content)
+    except json.JSONDecodeError as e:
+        print(f"  ❌ JSON 解析失败 ({project['full_name']}): {e}")
+        print(f"     LLM 原始返回内容: {content[:500] if content else '(空)'}")
+        return None
     except Exception as e:
-        print(f"  ❌ LLM 评估失败 ({project['full_name']}): {e}")
+        print(f"  ❌ LLM 评估失败 ({project['full_name']}): {type(e).__name__}: {e}")
         return None
 
 
@@ -117,6 +154,14 @@ def main():
 
     # 初始化 LLM 客户端（兼容 newapi 等 OpenAI 格式中转）
     client = OpenAI(api_key=LLM_API_KEY, base_url=LLM_BASE_URL)
+
+    # 预检测 API 连通性
+    if not _test_api_connection(client):
+        print("\n❌ API 连通性测试未通过，请检查环境变量配置：")
+        print("   LLM_BASE_URL — 例如 https://newapi.ixacg.com/v1")
+        print("   LLM_API_KEY  — 你的 API 密钥")
+        print("   LLM_MODEL    — 例如 gpt-4o")
+        return
 
     results = []
     for i, project in enumerate(projects, 1):
