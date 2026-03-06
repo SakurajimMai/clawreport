@@ -1,0 +1,647 @@
+<!doctype html>
+<html lang="zh-CN" data-theme="light" data-lang="zh">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>OpenClaw 分身评估报告 | OpenClaw Forks Evaluation Report 2026</title>
+    <meta
+      name="description"
+      content="以 OpenClaw 为基准，AI 自动评估 {{ total_projects }} 个分身项目的代码质量。6 大维度量化评分，定时更新。Automated AI evaluation of OpenClaw forks with 6-dimension scoring."
+    />
+    <meta name="keywords" content="OpenClaw, AI coding assistant, code evaluation, fork comparison, 代码质量评估, 开源项目评测, AI编程助手" />
+    <meta name="author" content="OpenClaw Evaluation Bot" />
+    <meta name="robots" content="index, follow" />
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="OpenClaw 分身评估报告 2026" />
+    <meta property="og:description" content="AI 自动评估 {{ total_projects }} 个 OpenClaw 分身项目，6 大维度量化评分，每周更新。" />
+    <meta property="og:locale" content="zh_CN" />
+    <meta property="og:locale:alternate" content="en_US" />
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="OpenClaw Forks Evaluation Report 2026" />
+    <meta name="twitter:description" content="AI-powered 6-dimension code quality evaluation of {{ total_projects }} OpenClaw forks. Updated weekly." />
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "TechArticle",
+      "headline": "OpenClaw 分身评估报告",
+      "description": "AI 自动评估 OpenClaw 分身项目的代码质量",
+      "datePublished": "{{ evaluated_at }}",
+      "dateModified": "{{ evaluated_at }}",
+      "author": {"@type": "Organization", "name": "OpenClaw Evaluation Bot"},
+      "inLanguage": ["zh-CN", "en"]
+    }
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!-- 顶部控制栏 -->
+    <div class="top-bar">
+      <div class="lang-switch">
+        <button class="lang-btn active" data-lang="zh">中文</button>
+        <button class="lang-btn" data-lang="en">EN</button>
+      </div>
+      <button
+        class="theme-toggle"
+        id="themeToggle"
+        aria-label="Toggle dark mode"
+      >
+        <svg
+          class="icon-sun"
+          width="20"
+          height="20"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+        >
+          <circle cx="12" cy="12" r="5" />
+          <path
+            d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"
+          />
+        </svg>
+        <svg
+          class="icon-moon"
+          width="20"
+          height="20"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+        >
+          <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
+        </svg>
+      </button>
+    </div>
+
+    <!-- Hero 区域 -->
+    <header class="hero">
+      <div class="hero-tags">
+        <span
+          class="tag tag-purple"
+          data-zh="工程评估"
+          data-en="Engineering Eval"
+          >工程评估</span
+        >
+        <span class="tag tag-pink" data-zh="开源生态" data-en="Open Source"
+          >开源生态</span
+        >
+        <span class="tag tag-blue">{{ evaluated_at }}</span>
+      </div>
+      <h1>
+        <span class="gradient-text">OpenClaw</span>
+        <span data-zh=" 分身评估报告" data-en=" Forks Evaluation Report">
+          分身评估报告</span
+        >
+      </h1>
+      <p
+        class="hero-sub"
+        data-zh="以 OpenClaw 为基准，AI 自动评估不同分身的代码质量。定时更新"
+        data-en="AI-powered automated evaluation of OpenClaw forks' code quality. Updated regularly"
+      >
+        以 OpenClaw 为基准，AI 自动评估不同分身的代码质量。定时更新
+      </p>
+      <div class="hero-meta">
+        <span class="meta-item">
+          <svg
+            width="16"
+            height="16"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+          >
+            <path d="M3 3v18h18" />
+            <path d="M18 17V9" />
+            <path d="M13 17V5" />
+            <path d="M8 17v-3" />
+          </svg>
+          <span data-zh="AI 智能评估" data-en="AI Evaluation">AI 智能评估</span>
+        </span>
+        <span class="meta-item">
+          <svg
+            width="16"
+            height="16"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+          >
+            <circle cx="12" cy="12" r="10" />
+            <polyline points="12 6 12 12 16 14" />
+          </svg>
+          <span data-zh="6 大维度量化评分" data-en="6-Dimension Scoring"
+            >6 大维度量化评分</span
+          >
+        </span>
+        <span class="meta-item">
+          <svg
+            width="16"
+            height="16"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+          >
+            <rect x="3" y="3" width="18" height="18" rx="2" />
+            <path d="M3 9h18" />
+            <path d="M9 21V9" />
+          </svg>
+          <span
+            >{{ total_projects }}
+            <span data-zh="个项目" data-en="Projects">个项目</span></span
+          >
+        </span>
+      </div>
+    </header>
+
+    <div class="layout">
+      <!-- 侧边栏 -->
+      <aside class="sidebar">
+        <nav class="toc">
+          <h3 class="toc-title" data-zh="目录导航" data-en="Navigation">
+            目录导航
+          </h3>
+          <ul class="toc-list">
+            <li>
+              <a
+                href="#part-1"
+                class="toc-link active"
+                data-zh="1. 评估口径"
+                data-en="1. Evaluation Criteria"
+                >1. 评估口径</a
+              >
+            </li>
+            <li>
+              <a
+                href="#part-2"
+                class="toc-link"
+                data-zh="2. 项目快照"
+                data-en="2. Project Snapshot"
+                >2. 项目快照</a
+              >
+            </li>
+            <li>
+              <a
+                href="#part-3"
+                class="toc-link"
+                data-zh="3. 综合评分与排名"
+                data-en="3. Overall Ranking"
+                >3. 综合评分与排名</a
+              >
+            </li>
+            <li>
+              <a
+                href="#part-4"
+                class="toc-link"
+                data-zh="4. 维度评分明细"
+                data-en="4. Dimension Scores"
+                >4. 维度评分明细</a
+              >
+            </li>
+            <li>
+              <a
+                href="#part-5"
+                class="toc-link"
+                data-zh="5. 分身专项对比"
+                data-en="5. Fork Comparison"
+                >5. 分身专项对比</a
+              >
+            </li>
+            <li>
+              <a
+                href="#part-6"
+                class="toc-link"
+                data-zh="6. 选型建议"
+                data-en="6. Recommendations"
+                >6. 选型建议</a
+              >
+            </li>
+            <li>
+              <a
+                href="#part-7"
+                class="toc-link"
+                data-zh="7. 复核方法"
+                data-en="7. Methodology"
+                >7. 复核方法</a
+              >
+            </li>
+          </ul>
+        </nav>
+        {% if top3 %}
+        <div class="sidebar-insights">
+          <h4 class="insights-title" data-zh="关键洞察" data-en="Key Insights">
+            关键洞察
+          </h4>
+          <div class="insight-row">
+            <span class="insight-label" data-zh="推荐首选" data-en="Top Pick"
+              >推荐首选</span
+            >
+            <span class="insight-badge badge-purple">{{ top3[0].name }}</span>
+          </div>
+          {% if top3|length > 1 %}
+          <div class="insight-row">
+            <span class="insight-label" data-zh="架构最优" data-en="Best Arch"
+              >架构最优</span
+            >
+            <span class="insight-badge badge-pink">{{ top3[1].name }}</span>
+          </div>
+          {% endif %}
+        </div>
+        {% endif %}
+      </aside>
+
+      <!-- 主内容 -->
+      <main class="content">
+        <!-- §1 评估口径 -->
+        <section id="part-1" class="section">
+          <div class="section-header">
+            <span class="section-num num-1">1</span>
+            <h2 data-zh="评估口径" data-en="Evaluation Criteria">评估口径</h2>
+          </div>
+          <p
+            class="section-intro"
+            data-zh="评分维度（每项10分）"
+            data-en="Scoring Dimensions (10 points each)"
+          >
+            评分维度（每项10分）
+          </p>
+          <div class="dim-grid">
+            {% for dim in dimensions %}
+            <div class="dim-card">
+              <h4 class="dim-name">
+                <span data-zh="{{ dim.name_zh }}" data-en="{{ dim.name_en }}"
+                  >{{ dim.name_zh }}</span
+                >
+              </h4>
+              <p
+                class="dim-desc"
+                data-zh="{{ dim.desc_zh }}"
+                data-en="{{ dim.desc_en }}"
+              >
+                {{ dim.desc_zh }}
+              </p>
+            </div>
+            {% endfor %}
+          </div>
+        </section>
+
+        <!-- §2 项目快照 -->
+        <section id="part-2" class="section">
+          <div class="section-header">
+            <span class="section-num num-2">2</span>
+            <h2 data-zh="项目快照" data-en="Project Snapshot">项目快照</h2>
+          </div>
+          <div class="table-wrap">
+            <table class="data-table">
+              <thead>
+                <tr>
+                  <th data-zh="项目" data-en="Project">项目</th>
+                  <th>GitHub</th>
+                  <th data-zh="语言" data-en="Language">语言</th>
+                  <th>Stars</th>
+                  <th data-zh="贡献者" data-en="Contributors">贡献者</th>
+                  <th data-zh="发布频率" data-en="Release Freq">发布频率</th>
+                </tr>
+              </thead>
+              <tbody>
+                {% for p in projects %}
+                <tr>
+                  <td class="cell-name">{{ p.name }}</td>
+                  <td>
+                    <a href="{{ p.html_url }}" target="_blank" class="gh-link"
+                      >{{ p.full_name }}</a
+                    >
+                  </td>
+                  <td>
+                    <span class="lang-tag lang-{{ p.language|lower }}"
+                      >{{ p.language }}</span
+                    >
+                  </td>
+                  <td class="cell-stars">
+                    <strong>{{ "{:,}".format(p.stars) }}</strong>
+                  </td>
+                  <td>{{ p.contributors }}</td>
+                  <td>
+                    <span
+                      class="freq-tag"
+                      data-zh="{{ p.release_freq_zh }}"
+                      data-en="{{ p.release_freq_en }}"
+                      >{{ p.release_freq_zh }}</span
+                    >
+                  </td>
+                </tr>
+                {% endfor %}
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+        <!-- §3 综合评分与排名 -->
+        <section id="part-3" class="section">
+          <div class="section-header">
+            <span class="section-num num-3">3</span>
+            <h2 data-zh="综合评分与排名" data-en="Overall Ranking">
+              综合评分与排名
+            </h2>
+          </div>
+          <div class="ranking-cards">
+            {% for p in top3 %}
+            <div class="rank-card rank-{{ loop.index }}">
+              <span class="rank-badge rank-badge-{{ loop.index }}"
+                >{{ loop.index }}</span
+              >
+              <div class="rank-info">
+                <h3 class="rank-name">{{ p.name }}</h3>
+                <p
+                  class="rank-summary"
+                  data-zh="{{ p.summary_zh }}"
+                  data-en="{{ p.summary_en }}"
+                >
+                  {{ p.summary_zh }}
+                </p>
+              </div>
+              <span class="rank-score"
+                >{{ p.total }} <span data-zh="分" data-en="pts">分</span></span
+              >
+            </div>
+            {% endfor %}
+          </div>
+          <!-- 其余项目列表 -->
+          {% if projects|length > 3 %}
+          <div class="rest-rankings">
+            {% for p in projects[3:] %}
+            <div class="rest-rank-row">
+              <span class="rest-rank-num">{{ loop.index + 3 }}</span>
+              <span class="rest-rank-name">{{ p.name }}</span>
+              <span
+                class="rest-rank-summary"
+                data-zh="{{ p.summary_zh }}"
+                data-en="{{ p.summary_en }}"
+                >{{ p.summary_zh }}</span
+              >
+              <span class="rest-rank-score"
+                >{{ p.total }} <span data-zh="分" data-en="pts">分</span></span
+              >
+            </div>
+            {% endfor %}
+          </div>
+          {% endif %}
+        </section>
+
+        <!-- §4 维度评分明细 -->
+        <section id="part-4" class="section">
+          <div class="section-header">
+            <span class="section-num num-4">4</span>
+            <h2 data-zh="维度评分明细" data-en="Dimension Score Details">
+              维度评分明细
+            </h2>
+          </div>
+          <div class="dim-ranking-grid">
+            {% for dim in dimensions %}
+            <div class="dim-ranking-card">
+              <h4 class="dim-ranking-title">
+                <span class="dim-dot dim-dot-{{ loop.index }}"></span>
+                <span data-zh="{{ dim.name_zh }}" data-en="{{ dim.name_en }}"
+                  >{{ dim.name_zh }}</span
+                >
+              </h4>
+              <ul class="dim-ranking-list">
+                {% for item in dimension_rankings[dim.id] %}
+                <li class="dim-ranking-item">
+                  <span class="dim-item-name">{{ item.name }}</span>
+                  <span
+                    class="score-badge score-{{ 'green' if item.score >= 7 else ('yellow' if item.score >= 5 else 'red') }}"
+                    >{{ item.score }}/10</span
+                  >
+                </li>
+                {% endfor %}
+              </ul>
+            </div>
+            {% endfor %}
+          </div>
+        </section>
+
+        <!-- §5 分身专项对比 -->
+        <section id="part-5" class="section">
+          <div class="section-header">
+            <span class="section-num num-5">5</span>
+            <h2 data-zh="分身专项对比" data-en="Fork Comparison">
+              分身专项对比
+            </h2>
+          </div>
+          <p
+            class="section-intro"
+            data-zh="将 OpenClaw 作为「接管基线」（灰色列），对比各项目是否具备替代 OpenClaw 的工程条件："
+            data-en="Using OpenClaw as the baseline (gray column), comparing each project's engineering readiness:"
+          >
+            将 OpenClaw 作为「接管基线」（灰色列），对比各项目是否具备替代
+            OpenClaw 的工程条件：
+          </p>
+          {% if comparison.baseline %}
+          <div class="table-wrap">
+            <table class="data-table comparison-table">
+              <thead>
+                <tr>
+                  <th data-zh="维度" data-en="Dimension">维度</th>
+                  <th class="baseline-col">
+                    {{ comparison.baseline.name }}<br /><small
+                      data-zh="基线"
+                      data-en="Baseline"
+                      >基线</small
+                    >
+                  </th>
+                  {% for fork in comparison.forks %}
+                  <th>{{ fork.name }}</th>
+                  {% endfor %}
+                </tr>
+              </thead>
+              <tbody>
+                {% for dim in comparison.dimensions %}
+                <tr>
+                  <td
+                    class="cell-dim"
+                    data-zh="{{ dim.name_zh }}"
+                    data-en="{{ dim.name_en }}"
+                  >
+                    {{ dim.name_zh }}
+                  </td>
+                  <td class="baseline-col">
+                    <strong>{{ comparison.baseline.scores[dim.id] }}</strong>
+                  </td>
+                  {% for fork in comparison.forks %}
+                  <td>
+                    <span class="cmp-score"
+                      >{{ fork.diffs[dim.id].score }}</span
+                    >
+                    {% if fork.diffs[dim.id].diff > 0 %}
+                    <span class="cmp-diff cmp-up"
+                      >+{{ fork.diffs[dim.id].diff }}</span
+                    >
+                    {% elif fork.diffs[dim.id].diff < 0 %}
+                    <span class="cmp-diff cmp-down"
+                      >{{ fork.diffs[dim.id].diff }}</span
+                    >
+                    {% else %}
+                    <span class="cmp-diff cmp-eq">=</span>
+                    {% endif %}
+                  </td>
+                  {% endfor %}
+                </tr>
+                {% endfor %}
+              </tbody>
+            </table>
+          </div>
+          {% endif %}
+        </section>
+
+        <!-- §6 选型建议 -->
+        <section id="part-6" class="section">
+          <div class="section-header">
+            <span class="section-num num-6">6</span>
+            <h2 data-zh="选型建议" data-en="Recommendations">选型建议</h2>
+          </div>
+          <div class="rec-grid">
+            {% for rec in recommendations %}
+            <div class="rec-card rec-card-{{ loop.index }}">
+              <div class="rec-header">
+                <h4
+                  class="rec-scenario"
+                  data-zh="{{ rec.scenario_zh }}"
+                  data-en="{{ rec.scenario_en }}"
+                >
+                  {{ rec.scenario_zh }}
+                </h4>
+                <span
+                  class="rec-badge"
+                  data-zh="{{ rec.badge_zh }}"
+                  data-en="{{ rec.badge_en }}"
+                  >{{ rec.badge_zh }}</span
+                >
+              </div>
+              <p class="rec-text">
+                <span data-zh="推荐" data-en="Recommended">推荐</span>
+                <strong>{{ rec.project }}</strong> —
+                <span
+                  data-zh="{{ rec.reason_zh }}"
+                  data-en="{{ rec.reason_en }}"
+                  >{{ rec.reason_zh }}</span
+                >
+              </p>
+            </div>
+            {% endfor %}
+          </div>
+        </section>
+
+        <!-- §7 复核方法 -->
+        <section id="part-7" class="section">
+          <div class="section-header">
+            <span class="section-num num-7">7</span>
+            <h2 data-zh="复核方法" data-en="Methodology">复核方法</h2>
+          </div>
+          <div class="method-grid">
+            <div class="method-card">
+              <div class="method-icon">
+                <svg
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <path d="M3 3v18h18" />
+                  <path d="M18 17V9" />
+                  <path d="M13 17V5" />
+                  <path d="M8 17v-3" />
+                </svg>
+              </div>
+              <h4 data-zh="GitHub 元数据" data-en="GitHub Metadata">
+                GitHub 元数据
+              </h4>
+              <p
+                data-zh="提交、贡献者、Issue、标签、release、活跃度分析"
+                data-en="Commits, contributors, issues, tags, releases, activity analysis"
+              >
+                提交、贡献者、Issue、标签、release、活跃度分析
+              </p>
+            </div>
+            <div class="method-card">
+              <div class="method-icon">
+                <svg
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <polyline points="16 18 22 12 16 6" />
+                  <polyline points="8 6 2 12 8 18" />
+                </svg>
+              </div>
+              <h4 data-zh="核心源码审查" data-en="Core Source Review">
+                核心源码审查
+              </h4>
+              <p
+                data-zh="复核 8~10 个核心源文件：provider / channel / tool / security"
+                data-en="Review 8-10 core source files: provider / channel / tool / security"
+              >
+                复核 8~10 个核心源文件：provider / channel / tool / security
+              </p>
+            </div>
+            <div class="method-card">
+              <div class="method-icon">
+                <svg
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
+                  <polyline points="22 4 12 14.01 9 11.01" />
+                </svg>
+              </div>
+              <h4 data-zh="CI/CD 审查" data-en="CI/CD Review">CI/CD 审查</h4>
+              <p
+                data-zh="lint、测试、发布、安全扫描、依赖策略检查"
+                data-en="Lint, testing, publishing, security scanning, dependency policy checks"
+              >
+                lint、测试、发布、安全扫描、依赖策略检查
+              </p>
+            </div>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <!-- 页脚 -->
+    <footer class="footer">
+      <p
+        data-zh="由 AI 自动评估 · 数据每周更新"
+        data-en="AI-powered evaluation · Updated weekly"
+      >
+        由 AI 自动评估 · 数据每周更新
+      </p>
+      <p
+        class="footer-sub"
+        data-zh="评分由 LLM 分析，页面自动生成"
+        data-en="Scores analyzed by LLM, page auto-generated"
+      >
+        评分由 LLM 分析，页面自动生成
+      </p>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
