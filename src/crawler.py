@@ -5,7 +5,7 @@ import os
 import time
 from datetime import datetime, timezone
 
-from github import Github, GithubException
+from github import Auth, Github, GithubException
 
 from config import (
     DATA_DIR,
@@ -20,7 +20,7 @@ from config import (
 def _gh_client() -> Github:
     """创建 GitHub 客户端"""
     if GITHUB_TOKEN:
-        return Github(GITHUB_TOKEN, per_page=100)
+        return Github(auth=Auth.Token(GITHUB_TOKEN), per_page=100)
     print("⚠️  未设置 GITHUB_TOKEN，API 速率限制为 60 次/小时")
     return Github(per_page=100)
 
@@ -33,10 +33,11 @@ def _repo_meta(repo) -> dict:
         contributors_count = 0
 
     try:
-        releases = list(repo.get_releases()[:5])
-        release_count = repo.get_releases().totalCount
+        all_releases = repo.get_releases()
+        release_count = all_releases.totalCount
+        releases = list(all_releases.get_page(0)[:5]) if release_count > 0 else []
         latest_release = releases[0].published_at.isoformat() if releases else None
-    except GithubException:
+    except (GithubException, IndexError):
         release_count = 0
         latest_release = None
 
