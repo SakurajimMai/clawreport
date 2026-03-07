@@ -405,28 +405,49 @@
               维度评分明细
             </h2>
           </div>
-          <div class="dim-ranking-grid">
-            {% for dim in dimensions %}
-            <div class="dim-ranking-card">
-              <h4 class="dim-ranking-title">
-                <span class="dim-dot dim-dot-{{ loop.index }}"></span>
-                <span data-zh="{{ dim.name_zh }}" data-en="{{ dim.name_en }}"
-                  >{{ dim.name_zh }}</span
-                >
-              </h4>
-              <ul class="dim-ranking-list">
-                {% for item in dimension_rankings[dim.id] %}
-                <li class="dim-ranking-item">
-                  <span class="dim-item-name">{{ item.name }}</span>
-                  <span
-                    class="score-badge score-{{ 'green' if item.score >= 7 else ('yellow' if item.score >= 5 else 'red') }}"
-                    >{{ item.score }}/10</span
-                  >
-                </li>
+          <div class="dim-carousel">
+            <!-- 轮播控制区 -->
+            <div class="dim-carousel-controls">
+              <button class="dim-nav-btn" id="dim-prev" aria-label="Previous">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <polyline points="15 18 9 12 15 6"></polyline>
+                </svg>
+              </button>
+              <div class="dim-tabs">
+                {% for dim in dimensions %}
+                <button class="dim-tab {{ 'active' if loop.index == 1 else '' }}" data-index="{{ loop.index0 }}">
+                  <span data-zh="{{ dim.name_zh }}" data-en="{{ dim.name_en }}">{{ dim.name_zh }}</span>
+                </button>
                 {% endfor %}
-              </ul>
+              </div>
+              <button class="dim-nav-btn" id="dim-next" aria-label="Next">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <polyline points="9 18 15 12 9 6"></polyline>
+                </svg>
+              </button>
             </div>
-            {% endfor %}
+
+            <!-- 轮播内容区 -->
+            <div class="dim-carousel-content">
+              {% for dim in dimensions %}
+              <div class="dim-ranking-card dim-slide {{ 'active' if loop.index == 1 else '' }}" data-index="{{ loop.index0 }}">
+                <h4 class="dim-ranking-title">
+                  <span class="dim-dot dim-dot-{{ loop.index }}"></span>
+                  <span data-zh="{{ dim.name_zh }}" data-en="{{ dim.name_en }}">{{ dim.name_zh }}</span>
+                </h4>
+                <ul class="dim-ranking-list">
+                  {% for item in dimension_rankings[dim.id] %}
+                  <li class="dim-ranking-item">
+                    <span class="dim-item-name">{{ item.name }}</span>
+                    <span class="score-badge score-{{ 'green' if item.score >= 7 else ('yellow' if item.score >= 5 else 'red') }}">
+                      {{ item.score }}/10
+                    </span>
+                  </li>
+                  {% endfor %}
+                </ul>
+              </div>
+              {% endfor %}
+            </div>
           </div>
         </section>
 
