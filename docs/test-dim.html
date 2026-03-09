@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="style.css">
+<style>
+  body { padding: 20px; background: #f0f2f8; }
+  .test-container { max-width: 1200px; margin: 0 auto; }
+  .debug { border: 2px solid red !important; }
+</style>
+</head>
+<body>
+<div class="test-container">
+  <h1>维度评分明细测试</h1>
+
+  <div class="dim-ranking-grid debug">
+    <div class="dim-ranking-card debug">
+      <h4 class="dim-ranking-title">
+        <span class="dim-dot dim-dot-1"></span>
+        <span>代码质量</span>
+      </h4>
+      <ul class="dim-ranking-list">
+        <li class="dim-ranking-item">
+          <span class="dim-item-name">测试项目1</span>
+          <span class="score-badge score-green">9/10</span>
+        </li>
+        <li class="dim-ranking-item">
+          <span class="dim-item-name">测试项目2</span>
+          <span class="score-badge score-yellow">6/10</span>
+        </li>
+      </ul>
+    </div>
+
+    <div class="dim-ranking-card debug">
+      <h4 class="dim-ranking-title">
+        <span class="dim-dot dim-dot-2"></span>
+        <span>文档完整性</span>
+      </h4>
+      <ul class="dim-ranking-list">
+        <li class="dim-ranking-item">
+          <span class="dim-item-name">测试项目3</span>
+          <span class="score-badge score-green">8/10</span>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+</body>
+</html>

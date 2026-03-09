@@ -116,4 +116,56 @@
         animateOnScroll.observe(section);
     });
 
+    // ── 维度评分明细（轮播切换）────────────────
+    const dimTabs = document.querySelectorAll('.dim-tab');
+    const dimSlides = document.querySelectorAll('.dim-slide');
+    const btnPrev = document.getElementById('dim-prev');
+    const btnNext = document.getElementById('dim-next');
+    let currentDimIndex = 0;
+
+    function updateDimCarousel(index) {
+        if (!dimTabs.length || !dimSlides.length) return;
+        
+        // 循环边界处理
+        if (index < 0) index = dimTabs.length - 1;
+        if (index >= dimTabs.length) index = 0;
+        
+        currentDimIndex = index;
+
+        // 更新激活态
+        dimTabs.forEach((tab, i) => {
+            tab.classList.toggle('active', i === currentDimIndex);
+        });
+
+        dimSlides.forEach((slide, i) => {
+            slide.classList.toggle('active', i === currentDimIndex);
+            
+            // 如果展示卡片有动画，重新触发动画
+            if (i === currentDimIndex) {
+                slide.style.animation = 'none';
+                void slide.offsetWidth; // 触发重绘
+                slide.style.animation = null;
+            }
+        });
+
+        // 将当前激活的 tab 居中平滑滚动
+        const activeTab = dimTabs[currentDimIndex];
+        if (activeTab) {
+            if (activeTab.scrollIntoViewIfNeeded) {
+                activeTab.scrollIntoViewIfNeeded({ behavior: 'smooth', inline: 'center' });
+            } else if (activeTab.scrollIntoView) {
+                activeTab.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
+            }
+        }
+    }
+
+    if (dimTabs.length > 0) {
+        dimTabs.forEach((tab, i) => {
+            tab.addEventListener('click', () => updateDimCarousel(i));
+        });
+        
+        if (btnPrev) btnPrev.addEventListener('click', () => updateDimCarousel(currentDimIndex - 1));
+        if (btnNext) btnNext.addEventListener('click', () => updateDimCarousel(currentDimIndex + 1));
+    }
+
 })();
