@@ -79,6 +79,28 @@ def _repo_meta(repo) -> dict:
     }
 
 
+_SECRET_PATTERNS = [
+    # AWS Access Key ID
+    (re.compile(r"AKIA[0-9A-Z]{16}"), "[REDACTED_AWS_KEY]"),
+    # AWS Secret Access Key (40 char base64)
+    (re.compile(r"(?<=[^A-Za-z0-9/+=])[A-Za-z0-9/+=]{40}(?=[^A-Za-z0-9/+=])"), None),
+    # Private keys
+    (re.compile(r"-----BEGIN (?:RSA |EC |DSA )?PRIVATE KEY-----[\s\S]*?-----END (?:RSA |EC |DSA )?PRIVATE KEY-----"), "[REDACTED_PRIVATE_KEY]"),
+    # Generic long hex/base64 tokens (32+ chars, likely API keys)
+    (re.compile(r"(?:api[_-]?key|secret|token|password)\s*[:=]\s*['\"]([A-Za-z0-9_\-/+=]{32,})['\"]", re.IGNORECASE), None),
+]
+
+
+def _redact_secrets(text: str) -> str:
+    """过滤文本中的常见秘钥模式，替换为 [REDACTED]"""
+    for pattern, replacement in _SECRET_PATTERNS:
+        if replacement:
+            text = pattern.sub(replacement, text)
+        else:
+            text = pattern.sub("[REDACTED]", text)
+    return text
+
+
 def _sample_source_files(repo, max_files: int = MAX_SAMPLE_FILES) -> list[dict]:
     """采样核心源码文件内容（用于 AI 评估）"""
     samples = []
@@ -136,6 +158,8 @@ def _sample_source_files(repo, max_files: int = MAX_SAMPLE_FILES) -> list[dict]:
             # 截断过长内容
             if len(content) > 5000:
                 content = content[:5000] + "\n... (truncated)"
+            # 过滤秘钥
+            content = _redact_secrets(content)
             samples.append({"path": f.path, "content": content})
         except (GithubException, Exception):
             continue
