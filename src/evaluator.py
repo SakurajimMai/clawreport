@@ -129,6 +129,16 @@ def evaluate_project(client: OpenAI, project: dict) -> dict | None:
             content = content.rsplit("```", 1)[0]
             content = content.strip()
 
+        # 清理推理模型的 <think>...</think> 标签
+        import re as _re
+        content = _re.sub(r"<think>[\s\S]*?</think>", "", content).strip()
+
+        # 兜底：从混合文本中提取第一个 JSON 对象
+        if not content.startswith("{"):
+            match = _re.search(r"\{[\s\S]*\}", content)
+            if match:
+                content = match.group(0)
+
         return json.loads(content)
     except json.JSONDecodeError as e:
         print(f"  ❌ JSON 解析失败 ({project['full_name']}): {e}")
