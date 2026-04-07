@@ -83,12 +83,24 @@ def _test_api_connection(client: OpenAI) -> bool:
             messages=[{"role": "user", "content": "回复 OK"}],
             max_tokens=10,
         )
-        content = response.choices[0].message.content
+        # 兼容不同代理 API 的返回格式（部分代理可能返回字符串而非标准对象）
+        if isinstance(response, str):
+            content = response
+        elif hasattr(response, "choices"):
+            content = response.choices[0].message.content
+        else:
+            content = str(response)
+
         if content:
             print(f"   ✅ API 正常，返回: {content.strip()[:50]}")
             return True
         else:
-            print(f"   ❌ API 返回空内容! finish_reason={response.choices[0].finish_reason}")
+            finish_reason = (
+                response.choices[0].finish_reason
+                if hasattr(response, "choices")
+                else "N/A"
+            )
+            print(f"   ❌ API 返回空内容! finish_reason={finish_reason}")
             print(f"   原始响应: {response}")
             return False
     except Exception as e:
