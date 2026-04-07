@@ -1,6 +1,6 @@
 {
-  "evaluated_at": "2026-04-07T10:06:14.197144+00:00",
-  "total": 3,
+  "evaluated_at": "2026-04-07T12:12:54.368753+00:00",
+  "total": 96,
   "dimensions": [
     {
       "id": "code_quality",
@@ -35,6 +35,1200 @@
   ],
   "projects": [
     {
+      "name": "ironclaw",
+      "full_name": "nearai/ironclaw",
+      "html_url": "https://github.com/nearai/ironclaw",
+      "description": "IronClaw is OpenClaw inspired implementation in Rust focused on privacy and security",
+      "language": "Rust",
+      "stars": 11507,
+      "contributors": 86,
+      "created_at": "2026-02-03T06:57:10+00:00",
+      "release_count": 27,
+      "release_freq_zh": "日更",
+      "release_freq_en": "Daily",
+      "has_ci": true,
+      "is_upstream": false,
+      "scores": {
+        "code_quality": 9,
+        "maintainability": 9,
+        "robustness": 9,
+        "sustainability": 8,
+        "portability": 9,
+        "extensibility": 9
+      },
+      "total": 8.8,
+      "summary_zh": "生产级安全隐私AI助手 | WASM沙箱+多层纵深防御",
+      "summary_en": "Production-grade secure privacy AI assistant | WASM sandbox + multi-layer defense",
+      "recommendation_zh": "重视隐私安全、需要本地化部署的企业级个人AI助手首选",
+      "recommendation_en": "Best choice for privacy-focused enterprise personal AI assistant requiring local deployment",
+      "highlights_zh": [
+        "WASM沙箱+端点白名单+凭据注入的多层安全架构",
+        "Rust语言保证的内存安全与现代化Cargo工作区结构"
+      ],
+      "highlights_en": [
+        "Multi-layer security architecture with WASM sandbox, endpoint allowlist, and credential injection",
+        "Memory safety guaranteed by Rust with modern Cargo workspace structure"
+      ],
+      "concerns_zh": [
+        "PostgreSQL强制依赖增加了部署复杂度"
+      ],
+      "concerns_en": [
+        "Mandatory PostgreSQL dependency increases deployment complexity"
+      ]
+    },
+    {
+      "name": "zeptoclaw",
+      "full_name": "qhkm/zeptoclaw",
+      "html_url": "https://github.com/qhkm/zeptoclaw",
+      "description": "Final form of claw family (Wannabe)",
+      "language": "Rust",
+      "stars": 583,
+      "contributors": 15,
+      "created_at": "2026-02-12T10:11:01+00:00",
+      "release_count": 25,
+      "release_freq_zh": "日更",
+      "release_freq_en": "Daily",
+      "has_ci": true,
+      "is_upstream": false,
+      "scores": {
+        "code_quality": 9,
+        "maintainability": 9,
+        "robustness": 9,
+        "sustainability": 9,
+        "portability": 9,
+        "extensibility": 8
+      },
+      "total": 8.8,
+      "summary_zh": "生产级超轻量AI助手 | 6MB二进制+6层沙箱+3900+测试",
+      "summary_en": "Production-grade ultra-lightweight AI assistant | 6MB binary with 6 sandbox runtimes and 3900+ tests",
+      "recommendation_zh": "追求极致轻量与安全平衡的首选，优于同类JS/TS项目",
+      "recommendation_en": "Best choice for极致轻量与安全平衡，优于同类JS/TS项目",
+      "highlights_zh": [
+        "Rust实现6MB二进制+~50ms启动，性能指标领先",
+        "6层沙箱+17种注入检测模式+22种密钥泄露检测，安全防护全面"
+      ],
+      "highlights_en": [
+        "Rust implementation achieves 6MB binary with ~50ms startup, performance metrics领先",
+        "6 sandbox runtimes + 17 injection patterns + 22 secret leak patterns, comprehensive security"
+      ],
+      "concerns_zh": [
+        "功能密度高可能导致代码路径复杂，维护门槛相对较高"
+      ],
+      "concerns_en": [
+        "High feature density may lead to complex code paths, higher maintenance门槛"
+      ]
+    },
+    {
+      "name": "microclaw",
+      "full_name": "microclaw/microclaw",
+      "html_url": "https://github.com/microclaw/microclaw",
+      "description": "🦀An agentic AI assistant that lives in your chats, inspired by nanoclaw and incorporating some of its design ideas. Built with Rust 🦀",
+      "language": "Rust",
+      "stars": 635,
+      "contributors": 16,
+      "created_at": "2026-02-07T08:28:51+00:00",
+      "release_count": 140,
+      "release_freq_zh": "日更",
+      "release_freq_en": "Daily",
+      "has_ci": true,
+      "is_upstream": false,
+      "scores": {
+        "code_quality": 9,
+        "maintainability": 9,
+        "robustness": 9,
+        "sustainability": 9,
+        "portability": 9,
+        "extensibility": 8
+      },
+      "total": 8.8,
+      "summary_zh": "生产级模块化AI助手 | 工程实践典范",
+      "summary_en": "Production-grade modular AI assistant | Engineering excellence",
+      "recommendation_zh": "追求工程质量的团队首选，跨平台部署无忧",
+      "recommendation_en": "Best choice for engineering-focused teams, cross-platform deployment ready",
+      "highlights_zh": [
+        "多阶段Docker构建+非root运行，安全加固完善",
+        "ci.yml 强制 clippy + cargo-deny 全平台覆盖",
+        "workspace 7个crate模块化架构，职责清晰",
+        "nightly-stability.yml 主动监控回归风险",
+        "release-assets.yml 支持 linux-x86_64/arm64 + mac + windows 多平台构建"
+      ],
+      "highlights_en": [
+        "Multi-stage Docker build with non-root user, security hardening complete",
+        "ci.yml enforces clippy + cargo-deny across all platforms",
+        "Workspace with 7 crates for modular architecture and clear responsibilities",
+        "nightly-stability.yml proactively monitors regression risks",
+        "release-assets.yml builds for linux-x86_64/arm64 + mac + windows"
+      ],
+      "concerns_zh": [
+        "50+直接依赖带来供应链安全治理负担",
+        "feature flag 组合复杂度可能影响长期维护"
+      ],
+      "concerns_en": [
+        "50+ direct dependencies create supply chain security governance burden",
+        "Feature flag combinations may complicate long-term maintenance"
+      ]
+    },
+    {
+      "name": "cline",
+      "full_name": "cline/cline",
+      "html_url": "https://github.com/cline/cline",
+      "description": "Autonomous coding agent right in your IDE, capable of creating/editing files, executing commands, using the browser, and more with your permission every step of the way.",
+      "language": "TypeScript",
+      "stars": 59995,
+      "contributors": 285,
+      "created_at": "2024-07-06T07:28:10+00:00",
+      "release_count": 246,
+      "release_freq_zh": "日更",
+      "release_freq_en": "Daily",
+      "has_ci": true,
+      "is_upstream": false,
+      "scores": {
+        "code_quality": 9,
+        "maintainability": 9,
+        "robustness": 8,
+        "sustainability": 8,
+        "portability": 9,
+        "extensibility": 9
+      },
+      "total": 8.7,
+      "summary_zh": "生产级多平台AI编码代理 | MCP生态完善的IDE扩展",
+      "summary_en": "Production-grade multi-platform AI coding agent with MCP ecosystem and comprehensive IDE integration",
+      "recommendation_zh": "适合需要AI辅助编码的开发团队，支持高度自定义与MCP扩展",
+      "recommendation_en": "Ideal for development teams needing AI-assisted coding with high customizability and MCP extensions",
+      "highlights_zh": [
+        "支持60+AI模型和API提供商(Anthropic/OpenAI/Gemini等)",
+        "完善的MCP协议集成，可扩展自定义工具",
+        "跨平台E2E测试(Windows/macOS/Linux)确保稳定性"
+      ],
+      "highlights_en": [
+        "Supports 60+ AI models and API providers (Anthropic/OpenAI/Gemini)",
+        "Comprehensive MCP protocol integration with extensible custom tools",
+        "Cross-platform E2E testing (Windows/macOS/Linux) ensures stability"
+      ],
+      "concerns_zh": [
+        "AI代理执行命令的安全边界需用户自行评估"
+      ],
+      "concerns_en": [
+        "Security boundaries of AI agent command execution require user evaluation"
+      ]
+    },
+    {
+      "name": "antigravity-awesome-skills",
+      "full_name": "sickn33/antigravity-awesome-skills",
+      "html_url": "https://github.com/sickn33/antigravity-awesome-skills",
+      "description": "Installable GitHub library of 1,370+ agentic skills for Claude Code, Cursor, Codex CLI, Gemini CLI, Antigravity, and more. Includes installer CLI, bundles, workflows, and official/community skill collections.",
+      "language": "Python",
+      "stars": 31233,
+      "contributors": 159,
+      "created_at": "2026-01-14T17:48:09+00:00",
+      "release_count": 103,
+      "release_freq_zh": "日更",
+      "release_freq_en": "Daily",
+      "has_ci": true,
+      "is_upstream": false,
+      "scores": {
+        "code_quality": 8,
+        "maintainability": 9,
+        "robustness": 9,
+        "sustainability": 9,
+        "portability": 8,
+        "extensibility": 9
+      },
+      "total": 8.7,
+      "summary_zh": "生产级多AI助手技能库 | 活跃维护的1,377+技能合集",
+      "summary_en": "Production-grade multi-agent skill library with 1,377+ installable skills",
+      "recommendation_zh": "AI编码助手的必装技能库，CI/CD完善，维护活跃",
+      "recommendation_en": "Essential skill library for AI coding assistants with excellent CI/CD",
+      "highlights_zh": [
+        "103次发布+159贡献者，活跃社区驱动",
+        "完善的CI/CD流水线，含验证/审计/安全检查"
+      ],
+      "highlights_en": [
+        "103 releases + 159 contributors, community-driven development",
+        "Comprehensive CI/CD with validation, auditing, and security checks"
+      ],
+      "concerns_zh": [
+        "大量生成的派生文件需额外维护脚本管理"
+      ],
+      "concerns_en": [
+        "Large number of generated derivative files require extra maintenance scripts"
+      ]
+    },
+    {
+      "name": "CoPaw",
+      "full_name": "agentscope-ai/CoPaw",
+      "html_url": "https://github.com/agentscope-ai/CoPaw",
+      "description": "Your Personal AI Assistant; easy to install, deploy on your own machine or on the cloud; supports multiple chat apps with easily extensible capabilities.",
+      "language": "Python",
+      "stars": 14635,
+      "contributors": 118,
+      "created_at": "2026-02-24T03:42:56+00:00",
+      "release_count": 33,
+      "release_freq_zh": "日更",
+      "release_freq_en": "Daily",
+      "has_ci": true,
+      "is_upstream": false,
+      "scores": {
+        "code_quality": 9,
+        "maintainability": 8,
+        "robustness": 8,
+        "sustainability": 9,
+        "portability": 9,
+        "extensibility": 9
+      },
+      "total": 8.7,
+      "summary_zh": "生产级个人AI助手 | 多渠道覆盖·技能系统灵活·安全多层防护",
+      "summary_en": "Production-grade personal AI assistant | Multi-channel coverage · Flexible skill system · Multi-layer security",
+      "recommendation_zh": "适合需要本地部署AI助手、追求数据隐私和多渠道集成的用户",
+      "recommendation_en": "Ideal for users needing local AI assistant deployment with data privacy and multi-channel integration",
+      "highlights_zh": [
+        "14.6k Stars 验证的高人气与社区认可度",
+        "Skills插件系统+多Agent协作架构，可扩展性极强"
+      ],
+      "highlights_en": [
+        "14.6k Stars validates high popularity and community recognition",
+        "Skills plugin system + multi-agent architecture provides exceptional extensibility"
+      ],
+      "concerns_zh": [
+        "Python 3.10~3.14版本限制可能影响部分依赖兼容性"
+      ],
+      "concerns_en": [
+        "Python 3.10~3.14 version constraint may affect some dependency compatibility"
+      ]
+    },
+    {
+      "name": "openclaw",
+      "full_name": "openclaw/openclaw",
+      "html_url": "https://github.com/openclaw/openclaw",
+      "description": "Your own personal AI assistant. Any OS. Any Platform. The lobster way. 🦞 ",
+      "language": "TypeScript",
+      "stars": 350712,
+      "contributors": 355,
+      "created_at": "2025-11-24T10:16:47+00:00",
+      "release_count": 82,
+      "release_freq_zh": "日更",
+      "release_freq_en": "Daily",
+      "has_ci": true,
+      "is_upstream": true,
+      "scores": {
+        "code_quality": 9,
+        "maintainability": 8,
+        "robustness": 9,
+        "sustainability": 8,
+        "portability": 9,
+        "extensibility": 8
+      },
+      "total": 8.5,
+      "summary_zh": "生产级跨平台AI助手 | 多架构Docker优化与安全扫描完备",
+      "summary_en": "Production-grade cross-platform AI assistant | Multi-arch Docker optimization with comprehensive security scanning",
+      "recommendation_zh": "适合需要跨平台本地部署AI助手的团队，CLI工具链成熟",
+      "recommendation_en": "Ideal for teams requiring cross-platform local AI assistant deployment with mature CLI tooling",
+      "highlights_zh": [
+        "多阶段Docker构建与pnpm缓存优化，镜像体积控制出色",
+        "CodeQL多语言安全扫描 + zizmor工作流安全校验"
+      ],
+      "highlights_en": [
+        "Multi-stage Docker build with pnpm caching, excellent image size control",
+        "CodeQL multi-language security scanning + zizmor workflow security validation"
+      ],
+      "concerns_zh": [
+        "手动更新SHA256摘要确保可重现构建存在维护负担"
+      ],
+      "concerns_en": [
+        "Manual SHA256 digest updates for reproducible builds create maintenance overhead"
+      ]
+    },
+    {
+      "name": "AstrBot",
+      "full_name": "AstrBotDevs/AstrBot",
+      "html_url": "https://github.com/AstrBotDevs/AstrBot",
+      "description": "Agentic IM Chatbot infrastructure that integrates lots of IM platforms, LLMs, plugins and AI feature, and can be your openclaw alternative. ✨",
+      "language": "Python",
+      "stars": 29221,
+      "contributors": 230,
+      "created_at": "2022-12-08T13:27:46+00:00",
+      "release_count": 208,
+      "release_freq_zh": "日更",
+      "release_freq_en": "Daily",
+      "has_ci": true,
+      "is_upstream": false,
+      "scores": {
+        "code_quality": 8,
+        "maintainability": 8,
+        "robustness": 8,
+        "sustainability": 9,
+        "portability": 9,
+        "extensibility": 9
+      },
+      "total": 8.5,
+      "summary_zh": "生产级多平台Agent聊天机器人基础设施 | 高可扩展插件生态",
+      "summary_en": "Production-grade multi-platform Agent chatbot with 1000+ plugins ecosystem",
+      "recommendation_zh": "IM机器人开发首选方案，插件生态丰富，多平台适配完善",
+      "recommendation_en": "Best choice for IM chatbot development with rich plugin ecosystem",
+      "highlights_zh": [
+        "1000+插件生态，支持MCP扩展，多智能体平台集成",
+        "Agent Sandbox隔离环境确保代码执行安全，支持WebUI/ChatUI",
+        "多语言国际化支持完善，多IM平台适配（Dify/Coze/百炼）",
+        "活跃社区（29k+ stars，230+贡献者），持续高频率迭代"
+      ],
+      "highlights_en": [
+        "1000+ plugins ecosystem with MCP support, multi-agent platform integration",
+        "Agent Sandbox isolation ensures secure code execution with WebUI/ChatUI",
+        "Comprehensive i18n support, adapters for Dify/Coze/Bailian platforms",
+        "Active community (29k+ stars, 230+ contributors) with frequent releases"
+      ],
+      "concerns_zh": [
+        "依赖较多（60+），部分依赖版本兼容性需关注",
+        "需要Python 3.12+环境，限制了部分旧系统部署"
+      ],
+      "concerns_en": [
+        "Heavy dependency list (60+) requires attention to version compatibility",
+        "Requires Python 3.12+ which limits deployment on older systems"
+      ]
+    },
+    {
+      "name": "claude-skills",
+      "full_name": "alirezarezvani/claude-skills",
+      "html_url": "https://github.com/alirezarezvani/claude-skills",
+      "description": "220+ Claude Code skills & agent plugins for Claude Code, Codex, Gemini CLI, Cursor, and 8 more coding agents — engineering, marketing, product, compliance, C-level advisory.",
+      "language": "Python",
+      "stars": 9864,
+      "contributors": 18,
+      "created_at": "2025-10-19T04:04:05+00:00",
+      "release_count": 1,
+      "release_freq_zh": "不定期",
+      "release_freq_en": "Irregular",
+      "has_ci": true,
+      "is_upstream": false,
+      "scores": {
+        "code_quality": 8,
+        "maintainability": 9,
+        "robustness": 8,
+        "sustainability": 8,
+        "portability": 9,
+        "extensibility": 9
+      },
+      "total": 8.5,
+      "summary_zh": "生产级跨平台AI助手技能库 | 305个纯标准库Python工具支持11种编码Agent",
+      "summary_en": "Production-grade cross-platform AI coding agent skills library | 305 stdlib-only Python tools for 11 coding agents",
+      "recommendation_zh": "推荐用于企业级AI编码辅助和多Agent工作流编排",
+      "recommendation_en": "Recommended for enterprise AI coding assistance and multi-agent workflow orchestration",
+      "highlights_zh": [
+        "305个Python工具全部使用标准库，零依赖安装",
+        "支持11种AI编码工具的跨平台技能转换系统"
+      ],
+      "highlights_en": [
+        "305 Python tools using stdlib only with zero pip dependencies",
+        "Cross-platform skill conversion system supporting 11 AI coding tools"
+      ],
+      "concerns_zh": [
+        "测试目录仅包含基础pytest配置，缺乏实际单元测试覆盖"
+      ],
+      "concerns_en": [
+        "Test directory only has basic pytest config, lacks comprehensive unit test coverage"
+      ]
+    },
+    {
+      "name": "zcf",
+      "full_name": "UfoMiao/zcf",
+      "html_url": "https://github.com/UfoMiao/zcf",
+      "description": "Zero-Config Code Flow for Claude code & Codex",
+      "language": "TypeScript",
+      "stars": 5875,
+      "contributors": 8,
+      "created_at": "2025-07-30T06:09:00+00:00",
+      "release_count": 86,
+      "release_freq_zh": "日更",
+      "release_freq_en": "Daily",
+      "has_ci": true,
+      "is_upstream": false,
+      "scores": {
+        "code_quality": 9,
+        "maintainability": 9,
+        "robustness": 8,
+        "sustainability": 9,
+        "portability": 8,
+        "extensibility": 8
+      },
+      "total": 8.5,
+      "summary_zh": "生产级零配置AI编程辅助工具 | 活跃维护多语言CLI",
+      "summary_en": "Production-ready zero-config CLI for AI coding assistance with multilingual support",
+      "recommendation_zh": "Claude Code/Codex用户首选配置工具，社区活跃文档完善",
+      "recommendation_en": "Recommended zero-config setup tool for Claude Code/Codex users with active community",
+      "highlights_zh": [
+        "TypeScript + unbuild + vitest + codecov 完整质量保障体系",
+        "多语言文档（中英日）+ 86次发布 + 5875 stars 活跃社区"
+      ],
+      "highlights_en": [
+        "Complete quality assurance with TypeScript, unbuild, vitest, and codecov",
+        "Multilingual docs (EN/ZH/JA), 86 releases, and 5875 stars active community"
+      ],
+      "concerns_zh": [
+        "依赖第三方API中转服务商，存在服务可用性风险"
+      ],
+      "concerns_en": [
+        "Relies on third-party API relay services, potential availability risks"
+      ]
+    },
+    {
+      "name": "cli",
+      "full_name": "entireio/cli",
+      "html_url": "https://github.com/entireio/cli",
+      "description": "Entire is a new developer platform that hooks into your git workflow to capture AI agent sessions on every push, unifying your code with its context and reasoning.",
+      "language": "Go",
+      "stars": 3886,
+      "contributors": 36,
+      "created_at": "2026-01-02T17:13:58+00:00",
+      "release_count": 26,
+      "release_freq_zh": "日更",
+      "release_freq_en": "Daily",
+      "has_ci": true,
+      "is_upstream": false,
+      "scores": {
+        "code_quality": 8,
+        "maintainability": 9,
+        "robustness": 8,
+        "sustainability": 9,
+        "portability": 9,
+        "extensibility": 8
+      },
+      "total": 8.5,
+      "summary_zh": "生产级AI会话追踪CLI工具 | Git原生集成多Agent支持",
+      "summary_en": "Production-grade AI session tracker CLI | Git-native multi-agent integration",
+      "recommendation_zh": "推荐用于需要追踪AI编码助手会话的开发团队",
+      "recommendation_en": "Recommended for dev teams needing AI coding session traceability",
+      "highlights_zh": [
+        "完整的CI/CD多Agent E2E测试矩阵覆盖",
+        "跨平台多渠道分发(Homebrew/Scoop/Go)"
+      ],
+      "highlights_en": [
+        "Comprehensive CI/CD E2E matrix for 8+ AI agents",
+        "Cross-platform multi-channel distribution"
+      ],
+      "concerns_zh": [
+        "部分E2E测试依赖外部API密钥Secrets管理"
+      ],
+      "concerns_en": [
+        "E2E tests rely on external API key secrets management"
+      ]
+    },
+    {
+      "name": "moltis",
+      "full_name": "moltis-org/moltis",
+      "html_url": "https://github.com/moltis-org/moltis",
+      "description": "A secure persistent personal agent server in Rust. One binary, sandboxed execution, multi-provider LLMs, voice, memory, Telegram, WhatsApp, Discord, Teams, and MCP tools. Secure by design, runs on your hardware.",
+      "language": "Rust",
+      "stars": 2513,
+      "contributors": 31,
+      "created_at": "2026-01-29T19:36:31+00:00",
+      "release_count": 73,
+      "release_freq_zh": "日更",
+      "release_freq_en": "Daily",
+      "has_ci": true,
+      "is_upstream": false,
+      "scores": {
+        "code_quality": 9,
+        "maintainability": 8,
+        "robustness": 8,
+        "sustainability": 9,
+        "portability": 8,
+        "extensibility": 9
+      },
+      "total": 8.5,
+      "summary_zh": "生产级安全持久化AI代理服务器 | Rust零unsafe+模块化46 crate架构",
+      "summary_en": "Production-grade secure persistent AI agent server | Rust zero-unsafe modular architecture with 46 crates",
+      "recommendation_zh": "适合追求数据主权和高安全性的自托管AI助手部署",
+      "recommendation_en": "Ideal for self-hosted AI assistant deployments prioritizing data sovereignty and security",
+      "highlights_zh": [
+        "Rust零unsafe代码策略，workspace级lint强制规范（unwrap_used/expect_used deny）",
+        "46个模块化crates架构，Docker沙箱隔离执行，核心约5K行代码可独立审计",
+        "3100+测试覆盖，CodSpeed性能基准，CI/CD多阶段安全扫描（zizmor/clippy/biome）"
+      ],
+      "highlights_en": [
+        "Rust zero-unsafe code policy with workspace-level lint enforcement (unwrap_used/expect_used deny)",
+        "46 modular crates architecture with Docker sandbox isolation, ~5K LoC core auditable independently",
+        "3100+ tests, CodSpeed benchmarks, multi-stage CI security scanning (zizmor/clippy/biome)"
+      ],
+      "concerns_zh": [
+        "44MB单二进制较大，Docker镜像包含Chromium/Node.js增加攻击面",
+        "196K总代码量维护复杂度高，第三方sqlx fork patch长期可持续性存疑"
+      ],
+      "concerns_en": [
+        "44MB single binary is large, Docker image includes Chromium/Node.js increasing attack surface",
+        "196K total LoC creates maintenance complexity, third-party sqlx fork patches raise long-term sustainability concerns"
+      ]
+    },
+    {
+      "name": "spacebot",
+      "full_name": "spacedriveapp/spacebot",
+      "html_url": "https://github.com/spacedriveapp/spacebot",
+      "description": "An AI agent for teams, communities, and multi-user environments.",
+      "language": "Rust",
+      "stars": 2044,
+      "contributors": 55,
+      "created_at": "2026-02-11T23:53:16+00:00",
+      "release_count": 24,
+      "release_freq_zh": "日更",
+      "release_freq_en": "Daily",
+      "has_ci": true,
+      "is_upstream": false,
+      "scores": {
+        "code_quality": 8,
+        "maintainability": 8,
+        "robustness": 9,
+        "sustainability": 8,
+        "portability": 9,
+        "extensibility": 9
+      },
+      "total": 8.5,
+      "summary_zh": "生产级多渠道AI Agent，支持并发任务委托与多平台集成",
+      "summary_en": "Production-grade multi-channel AI agent with concurrent task delegation and platform integration",
+      "recommendation_zh": "适合需要多渠道接入、高并发团队协作的生产环境；需评估FSL许可证商业限制",
+      "recommendation_en": "Suitable for production environments requiring multi-channel access and high-concurrency team collaboration; evaluate FSL license commercial restrictions",
+      "highlights_zh": [
+        "完善的错误处理与可观测性（tracing + OpenTelemetry + Prometheus metrics）",
+        "多渠道并发架构（Discord/Slack/Telegram/Twitch/Email同时处理）",
+        "灵活的部署方案（spacebot.sh托管/Docker/自托管多平台）"
+      ],
+      "highlights_en": [
+        "Comprehensive error handling and observability (tracing + OpenTelemetry + Prometheus metrics)",
+        "Multi-channel concurrent architecture (Discord/Slack/Telegram/Twitch/Email simultaneous processing)",
+        "Flexible deployment options (spacebot.sh hosted/Docker/self-hosted multi-platform)"
+      ],
+      "concerns_zh": [
+        "FSL-1.1许可证可能限制商业使用场景"
+      ],
+      "concerns_en": [
+        "FSL-1.1 license may restrict commercial usage scenarios"
+      ]
+    },
+    {
+      "name": "nullclaw",
+      "full_name": "nullclaw/nullclaw",
+      "html_url": "https://github.com/nullclaw/nullclaw",
+      "description": "Fastest, smallest, and fully autonomous AI assistant infrastructure written in Zig",
+      "language": "Zig",
+      "stars": 7088,
+      "contributors": 66,
+      "created_at": "2026-02-16T21:17:27+00:00",
+      "release_count": 24,
+      "release_freq_zh": "日更",
+      "release_freq_en": "Daily",
+      "has_ci": true,
+      "is_upstream": false,
+      "scores": {
+        "code_quality": 8,
+        "maintainability": 8,
+        "robustness": 9,
+        "sustainability": 8,
+        "portability": 9,
+        "extensibility": 9
+      },
+      "total": 8.5,
+      "summary_zh": "极致轻量的 Zig 原生 AI 助手基础设施 | 678KB 二进制 / ~1MB 内存 / 多架构通吃",
+      "summary_en": "Ultra-lightweight Zig-native AI assistant infrastructure | 678KB binary / ~1MB RAM / multi-arch",
+      "recommendation_zh": "边缘计算和资源受限场景的首选，追求极致性能的团队优选",
+      "recommendation_en": "Best for edge computing and resource-constrained scenarios; ideal for teams prioritizing extreme performance",
+      "highlights_zh": [
+        "Zig 语言实现极低运行时开销，678KB 静态二进制无需任何依赖即可运行",
+        "多层次安全沙箱（landlock/firejail/bubblewrap/docker）+ 显式白名单机制",
+        "vtable 接口驱动的高度可插拔架构，支持 50+ providers、35+ tools",
+        "全面 CI/CD 覆盖（Ubuntu/macOS/Windows）+ 12 种目标平台发布",
+        "活跃社区维护（66 贡献者、Discord 生态）"
+      ],
+      "highlights_en": [
+        "Zig delivers 678KB static binary with zero runtime dependencies",
+        "Multi-layer security sandbox (landlock/firejail/bubblewrap/docker) with explicit allowlists",
+        "Highly pluggable vtable architecture supporting 50+ providers, 35+ tools",
+        "Comprehensive CI/CD (Ubuntu/macOS/Windows) + 12 target platform releases",
+        "Active community with 66 contributors and Discord ecosystem"
+      ],
+      "concerns_zh": [
+        "Zig 语言生态相对年轻，长期稳定性需持续观察",
+        "仅从源码样本难以完全评估生产级错误处理和边界条件覆盖"
+      ],
+      "concerns_en": [
+        "Zig ecosystem is relatively young; long-term stability remains to be validated",
+        "Limited source samples make it hard to fully assess production-level error handling"
+      ]
+    },
+    {
+      "name": "openfang",
+      "full_name": "RightNow-AI/openfang",
+      "html_url": "https://github.com/RightNow-AI/openfang",
+      "description": "Open-source Agent Operating System",
+      "language": "Rust",
+      "stars": 16412,
+      "contributors": 40,
+      "created_at": "2026-02-24T23:12:38+00:00",
+      "release_count": 86,
+      "release_freq_zh": "日更",
+      "release_freq_en": "Daily",
+      "has_ci": true,
+      "is_upstream": false,
+      "scores": {
+        "code_quality": 9,
+        "maintainability": 8,
+        "robustness": 9,
+        "sustainability": 8,
+        "portability": 9,
+        "extensibility": 8
+      },
+      "total": 8.5,
+      "summary_zh": "生产级 Agent OS | 137K LOC 零警告 | 多平台覆盖",
+      "summary_en": "Production-grade Agent OS | 137K LOC zero warnings | Multi-platform",
+      "recommendation_zh": "适合构建企业级 AI Agent 系统，尤其是需要本地化部署和多渠道集成的场景",
+      "recommendation_en": "Ideal for enterprise AI agent systems requiring local deployment and multi-channel integration",
+      "highlights_zh": [
+        "137K LOC + 1767+ 测试 + 零 clippy 警告，代码质量卓越",
+        "三平台 CI/CD 完整覆盖（Linux/macOS/Windows）+ 安全审计和 secrets 扫描"
+      ],
+      "highlights_en": [
+        "137K LOC + 1767+ tests + zero clippy warnings — exceptional code quality",
+        "Full tri-platform CI/CD (Linux/macOS/Windows) + security audit and secrets scanning"
+      ],
+      "concerns_zh": [
+        "v0.x 版本存在 breaking changes 风险，生产环境建议锁定特定 commit",
+        "单一大二三十进制文件虽便于部署，但更新需要重新构建"
+      ],
+      "concerns_en": [
+        "v0.x version has breaking changes risk — production should pin to specific commit",
+        "Single ~32MB binary simplifies deployment but requires full rebuild for updates"
+      ]
+    },
+    {
+      "name": "openclaw-cn",
+      "full_name": "jiulingyun/openclaw-cn",
+      "html_url": "https://github.com/jiulingyun/openclaw-cn",
+      "description": "中文社区版OpenClaw，同原版保持定期更新，已内置钉钉、企业微信、飞书、QQ、微信以及国内网络环境优化。你的专属个人AI助手。支持所有操作系统和平台。🦞",
+      "language": "TypeScript",
+      "stars": 4654,
+      "contributors": 247,
+      "created_at": "2026-01-26T17:43:46+00:00",
+      "release_count": 12,
+      "release_freq_zh": "日更",
+      "release_freq_en": "Daily",
+      "has_ci": true,
+      "is_upstream": false,
+      "scores": {
+        "code_quality": 7,
+        "maintainability": 8,
+        "robustness": 8,
+        "sustainability": 9,
+        "portability": 9,
+        "extensibility": 9
+      },
+      "total": 8.3,
+      "summary_zh": "生产级多渠道AI助手框架 | 10+平台支持 | 本地优先隐私可控",
+      "summary_en": "Production-grade multi-channel AI assistant with 10+ platform support and local-first privacy",
+      "recommendation_zh": "适合需要多渠道AI助手集成且重视本地化部署的团队",
+      "recommendation_en": "Ideal for teams needing multi-channel AI assistant integration with self-hosted deployment",
+      "highlights_zh": [
+        "完整的多渠道支持：WhatsApp、Telegram、飞书、钉钉、企业微信、QQ、微信等10+平台",
+        "上游自动同步机制：每日监控OpenClaw更新并AI分析commit影响",
+        "多架构Docker支持：linux/amd64和linux/arm64双架构镜像构建"
+      ],
+      "highlights_en": [
+        "Comprehensive multi-channel support: WhatsApp, Telegram, Feishu, DingTalk, WeCom, QQ, WeChat and 10+ platforms",
+        "Automated upstream sync: Daily monitoring with AI-powered commit analysis",
+        "Multi-arch Docker support: Both linux/amd64 and linux/arm64 image builds"
+      ],
+      "concerns_zh": [
+        "源码样本中缺乏实际TypeScript代码，难以评估代码风格和实现质量"
+      ],
+      "concerns_en": [
+        "Limited source code samples available; actual TypeScript implementation quality hard to assess"
+      ]
+    },
+    {
+      "name": "hermes-agent",
+      "full_name": "NousResearch/hermes-agent",
+      "html_url": "https://github.com/NousResearch/hermes-agent",
+      "description": "The agent that grows with you",
+      "language": "Python",
+      "stars": 29532,
+      "contributors": 200,
+      "created_at": "2025-07-22T22:22:28+00:00",
+      "release_count": 6,
+      "release_freq_zh": "周更",
+      "release_freq_en": "Weekly",
+      "has_ci": true,
+      "is_upstream": false,
+      "scores": {
+        "code_quality": 8,
+        "maintainability": 9,
+        "robustness": 7,
+        "sustainability": 9,
+        "portability": 9,
+        "extensibility": 8
+      },
+      "total": 8.3,
+      "summary_zh": "生产级自进化AI Agent | 多后端多渠道企业级部署方案",
+      "summary_en": "Production-grade self-improving AI agent with multi-backend and multi-channel enterprise deployment",
+      "recommendation_zh": "适合需要自主学习、多渠道部署的生产环境AI助手开发",
+      "recommendation_en": "Ideal for production AI assistant development requiring autonomous learning and multi-channel deployment",
+      "highlights_zh": [
+        "依赖版本范围锁定有效控制供应链攻击面",
+        "多终端后端支持（本地/Docker/SSH/Daytona/Singularity/Modal）",
+        "活跃社区（200贡献者、持续更新）"
+      ],
+      "highlights_en": [
+        "Dependencies pinned to known-good ranges to limit supply chain attack surface",
+        "Six terminal backends support (local/Docker/SSH/Daytona/Singularity/Modal)",
+        "Active community (200 contributors, continuous updates)"
+      ],
+      "concerns_zh": [
+        "未提供实际Python源码样本，仅有配置文件难以全面评估代码质量"
+      ],
+      "concerns_en": [
+        "No actual Python source code samples provided; only config files make comprehensive code quality assessment difficult"
+      ]
+    },
+    {
+      "name": "pi-mono",
+      "full_name": "badlogic/pi-mono",
+      "html_url": "https://github.com/badlogic/pi-mono",
+      "description": "AI agent toolkit: coding agent CLI, unified LLM API, TUI & web UI libraries, Slack bot, vLLM pods",
+      "language": "TypeScript",
+      "stars": 32639,
+      "contributors": 157,
+      "created_at": "2025-08-09T14:03:50+00:00",
+      "release_count": 186,
+      "release_freq_zh": "日更",
+      "release_freq_en": "Daily",
+      "has_ci": true,
+      "is_upstream": false,
+      "scores": {
+        "code_quality": 8,
+        "maintainability": 8,
+        "robustness": 8,
+        "sustainability": 8,
+        "portability": 8,
+        "extensibility": 9
+      },
+      "total": 8.2,
+      "summary_zh": "生产级AI Agent工具链 | 多包monorepo架构，32639星高人气开源项目",
+      "summary_en": "Production-grade AI agent toolkit | Multi-package monorepo with 32,639 stars",
+      "recommendation_zh": "适合构建AI编程助手和多渠道LLM应用的团队采用",
+      "recommendation_en": "Ideal for teams building AI coding assistants and multi-channel LLM applications",
+      "highlights_zh": [
+        "32K+ Stars 的高人气AI Agent项目，工程化成熟",
+        "7个功能包组成monorepo：统一LLM API、Agent运行时、Coding Agent CLI、TUI、Web UI、Slack Bot、vLLM管理",
+        "CI/CD完善：自动化测试、lint、类型检查、多平台二进制构建"
+      ],
+      "highlights_en": [
+        "32K+ stars - highly popular AI agent project with mature engineering",
+        "7 packages in monorepo: unified LLM API, agent runtime, coding CLI, TUI, web UI, Slack bot, vLLM manager",
+        "Comprehensive CI/CD: automated tests, linting, type checking, cross-platform binary builds"
+      ],
+      "concerns_zh": [
+        "部分workflow脚本较长，逻辑重复，可抽象为共享action减少维护成本",
+        "无单元测试样本可见，需进一步查看packages内测试覆盖情况"
+      ],
+      "concerns_en": [
+        "Some workflow scripts are lengthy with repeated logic - could benefit from shared actions",
+        "No unit test samples visible - need further inspection of test coverage in packages"
+      ]
+    },
+    {
+      "name": "notebooklm-py",
+      "full_name": "teng-lin/notebooklm-py",
+      "html_url": "https://github.com/teng-lin/notebooklm-py",
+      "description": "Unofficial Python API and agentic skill for Google NotebookLM. Full programmatic access to NotebookLM's features—including capabilities the web UI doesn't expose—via Python, CLI, and AI agents like Claude Code, Codex, and OpenClaw.",
+      "language": "Python",
+      "stars": 9416,
+      "contributors": 12,
+      "created_at": "2026-01-07T15:27:19+00:00",
+      "release_count": 8,
+      "release_freq_zh": "周更",
+      "release_freq_en": "Weekly",
+      "has_ci": true,
+      "is_upstream": false,
+      "scores": {
+        "code_quality": 9,
+        "maintainability": 8,
+        "robustness": 7,
+        "sustainability": 8,
+        "portability": 9,
+        "extensibility": 8
+      },
+      "total": 8.2,
+      "summary_zh": "生产级 NotebookLM Python SDK | 完善的 CI/CD 与跨平台支持",
+      "summary_en": "Production-grade NotebookLM Python SDK with comprehensive CI/CD and cross-platform support",
+      "recommendation_zh": "适合需要深度集成 NotebookLM 的自动化和研究场景",
+      "recommendation_en": "Ideal for automation and research scenarios requiring deep NotebookLM integration",
+      "highlights_zh": [
+        "完善的类型检查(mypy)、代码规范(ruff)和测试覆盖(≥90%)",
+        "支持 Python 3.10-3.14 及 Linux/macOS/Windows 全平台"
+      ],
+      "highlights_en": [
+        "Comprehensive type checking (mypy), linting (ruff), and test coverage (≥90%)",
+        "Python 3.10-3.14 support with Linux/macOS/Windows cross-platform testing"
+      ],
+      "concerns_zh": [
+        "依赖未公开的 Google 内部 API，存在版本兼容性和服务中断风险"
+      ],
+      "concerns_en": [
+        "Relies on undocumented Google internal APIs, risking breaking changes and service disruption"
+      ]
+    },
+    {
+      "name": "gptme",
+      "full_name": "gptme/gptme",
+      "html_url": "https://github.com/gptme/gptme",
+      "description": "Your agent in your terminal, equipped with local tools: writes code, uses the terminal, browses the web. Make your own persistent autonomous agent on top!",
+      "language": "Python",
+      "stars": 4261,
+      "contributors": 30,
+      "created_at": "2023-03-24T16:25:01+00:00",
+      "release_count": 79,
+      "release_freq_zh": "日更",
+      "release_freq_en": "Daily",
+      "has_ci": true,
+      "is_upstream": false,
+      "scores": {
+        "code_quality": 8,
+        "maintainability": 7,
+        "robustness": 8,
+        "sustainability": 9,
+        "portability": 8,
+        "extensibility": 9
+      },
+      "total": 8.2,
+      "summary_zh": "成熟的生产级终端AI代理 | 完善的可扩展性与CI/CD基础设施",
+      "summary_en": "Production-grade terminal AI agent | Mature extensibility and CI/CD infrastructure",
+      "recommendation_zh": "推荐用于本地AI辅助开发与自动化任务，插件生态丰富",
+      "recommendation_en": "Recommended for local AI-assisted development and automation tasks with rich plugin ecosystem",
+      "highlights_zh": [
+        "完善的CI/CD体系含性能基准测试和质量门禁",
+        "插件系统+MCP集成+多LLM提供商支持",
+        "79次发布记录，版本管理规范",
+        "类型检查、代码覆盖率、预提交钩子完备"
+      ],
+      "highlights_en": [
+        "Comprehensive CI/CD with performance benchmarks and quality gates",
+        "Plugin system, MCP integration, multi-LLM provider support",
+        "79 releases with disciplined version management",
+        "Type checking, coverage tracking, pre-commit hooks"
+      ],
+      "concerns_zh": [
+        "Python 3.15兼容性问题，依赖链较长",
+        "大型依赖树可能影响冷启动性能"
+      ],
+      "concerns_en": [
+        "Python 3.15 compatibility issues, long dependency chains",
+        "Large dependency tree may impact cold startup performance"
+      ]
+    },
+    {
+      "name": "zeroclaw",
+      "full_name": "zeroclaw-labs/zeroclaw",
+      "html_url": "https://github.com/zeroclaw-labs/zeroclaw",
+      "description": "Fast, small, and fully autonomous AI personal assistant infrastructure, ANY OS, ANY PLATFORM — deploy anywhere, swap anything 🦀",
+      "language": "Rust",
+      "stars": 29666,
+      "contributors": 214,
+      "created_at": "2026-02-13T08:56:04+00:00",
+      "release_count": 11,
+      "release_freq_zh": "周更",
+      "release_freq_en": "Weekly",
+      "has_ci": true,
+      "is_upstream": false,
+      "scores": {
+        "code_quality": 8,
+        "maintainability": 8,
+        "robustness": 7,
+        "sustainability": 8,
+        "portability": 9,
+        "extensibility": 9
+      },
+      "total": 8.2,
+      "summary_zh": "生产级跨平台AI助手 | 高度模块化的Rust多渠道集成框架",
+      "summary_en": "Production-grade cross-platform AI assistant | Highly modular Rust multi-channel integration framework",
+      "recommendation_zh": "适合需要本地化、快速部署的AI助手开发者，侧重硬件和消息渠道集成",
+      "recommendation_en": "Ideal for developers needing local, fast AI assistants with multi-channel and hardware integration",
+      "highlights_zh": [
+        "100% Rust实现，内存占用<5MB，远超同类轻量化优势",
+        "支持20+消息渠道（WhatsApp/Telegram/Discord等）的模块化架构",
+        "完善的CI/CD流程：lint/test/build/security四重门禁"
+      ],
+      "highlights_en": [
+        "100% Rust implementation with <5MB RAM — 99% less than OpenClaw",
+        "Modular architecture supporting 20+ messaging channels (WhatsApp/Telegram/Discord)",
+        "Comprehensive CI/CD: 4-stage gate (lint+test+build+security)"
+      ],
+      "concerns_zh": [
+        "源码样本有限，内存安全边界和并发模型细节未充分暴露"
+      ],
+      "concerns_en": [
+        "Limited source sample — memory safety boundaries and concurrency patterns not fully exposed"
+      ]
+    },
+    {
+      "name": "nanobot",
+      "full_name": "HKUDS/nanobot",
+      "html_url": "https://github.com/HKUDS/nanobot",
+      "description": "\"🐈 nanobot: The Ultra-Lightweight Personal AI Agent\"",
+      "language": "Python",
+      "stars": 38308,
+      "contributors": 204,
+      "created_at": "2026-02-01T07:16:15+00:00",
+      "release_count": 12,
+      "release_freq_zh": "日更",
+      "release_freq_en": "Daily",
+      "has_ci": true,
+      "is_upstream": false,
+      "scores": {
+        "code_quality": 8,
+        "maintainability": 8,
+        "robustness": 7,
+        "sustainability": 8,
+        "portability": 9,
+        "extensibility": 9
+      },
+      "total": 8.2,
+      "summary_zh": "生产级轻量级多平台AI助手框架 | 活跃社区驱动的高扩展性项目",
+      "summary_en": "Production-ready lightweight multi-platform AI assistant framework | Community-driven highly extensible project",
+      "recommendation_zh": "推荐用于快速构建跨平台AI助手，生产环境需注意Alpha状态",
+      "recommendation_en": "Recommended for building cross-platform AI assistants; monitor alpha stability in production",
+      "highlights_zh": [
+        "10+平台桥接(Telegram/钉钉/微信/Slack/Discord/QQ/Matrix/WhatsApp等)",
+        "专业CI/CD+多Python版本测试(3.11-3.13)+Docker部署支持"
+      ],
+      "highlights_en": [
+        "10+ platform bridges (Telegram/DingTalk/WeChat/Slack/Discord/QQ/Matrix/WhatsApp etc.)",
+        "Professional CI/CD with multi-Python version testing (3.11-3.13) and Docker deployment"
+      ],
+      "concerns_zh": [
+        "Alpha状态(Development Status :: 3 - Alpha)不适合关键生产场景",
+        "核心依赖35+个，依赖链复杂度较高"
+      ],
+      "concerns_en": [
+        "Alpha development status unsuitable for critical production scenarios",
+        "Core has 35+ direct dependencies with significant complexity"
+      ]
+    },
+    {
+      "name": "EdgeClaw",
+      "full_name": "OpenBMB/EdgeClaw",
+      "html_url": "https://github.com/OpenBMB/EdgeClaw",
+      "description": "EdgeClaw: Edge-Cloud Collaborative Personal AI Assistant based on OpenClaw",
+      "language": "TypeScript",
+      "stars": 1160,
+      "contributors": 359,
+      "created_at": "2026-02-13T03:49:56+00:00",
+      "release_count": 0,
+      "release_freq_zh": "无",
+      "release_freq_en": "None",
+      "has_ci": true,
+      "is_upstream": false,
+      "scores": {
+        "code_quality": 8,
+        "maintainability": 8,
+        "robustness": 8,
+        "sustainability": 8,
+        "portability": 7,
+        "extensibility": 9
+      },
+      "total": 8.0,
+      "summary_zh": "生产级端云协同AI助手 | 58%成本节省·三级隐私·Claude Code体验",
+      "summary_en": "Production-grade Edge-Cloud Collaborative AI Agent | 58% Cost Savings · Three-tier Privacy · Claude Code Experience",
+      "recommendation_zh": "适合需要降本提效的企业级AI助手开发团队",
+      "recommendation_en": "Ideal for enterprise teams seeking cost-effective AI agent solutions",
+      "highlights_zh": [
+        "5级省钱路由实测节省58%成本，分数反升6.3%",
+        "三级隐私协同(S1/S2/S3)敏感数据不出端",
+        "模块化扩展架构支持8+独立插件热插拔",
+        "多阶段Docker构建配SHA256镜像签名确保可复现性"
+      ],
+      "highlights_en": [
+        "5-tier cost-saving router achieves 58% cost reduction with 6.3% score improvement",
+        "Three-tier privacy collaboration (S1/S2/S3) keeps sensitive data on-premise",
+        "Modular extension architecture supports 8+ hot-swappable plugins",
+        "Multi-stage Docker builds with SHA256 image pinning ensure reproducibility"
+      ],
+      "concerns_zh": [
+        "发布次数为0，建议生产环境使用前锁定特定commit版本"
+      ],
+      "concerns_en": [
+        "Zero official releases; recommend pinning to a specific commit for production"
+      ]
+    },
+    {
+      "name": "lossless-claw-enhanced",
+      "full_name": "win4r/lossless-claw-enhanced",
+      "html_url": "https://github.com/win4r/lossless-claw-enhanced",
+      "description": "Fork of Martian-Engineering/lossless-claw with CJK-aware token estimation",
+      "language": "TypeScript",
+      "stars": 474,
+      "contributors": 30,
+      "created_at": "2026-03-28T01:15:41+00:00",
+      "release_count": 0,
+      "release_freq_zh": "无",
+      "release_freq_en": "None",
+      "has_ci": true,
+      "is_upstream": false,
+      "scores": {
+        "code_quality": 8,
+        "maintainability": 9,
+        "robustness": 8,
+        "sustainability": 8,
+        "portability": 7,
+        "extensibility": 8
+      },
+      "total": 8.0,
+      "summary_zh": "生产级CJC感知上下文管理插件 | DAG摘要+增量压缩保证对话零丢失",
+      "summary_en": "Production-grade CJK-aware context management plugin | DAG summarization with incremental compaction for zero-loss conversations",
+      "recommendation_zh": "CJK用户首选上下文压缩方案，需配合OpenClaw使用",
+      "recommendation_en": "Best choice for CJK users, requires OpenClaw integration",
+      "highlights_zh": [
+        "CJK token估算6倍修正，解决上下文窗口溢出问题",
+        "DAG分层摘要系统保留完整对话历史"
+      ],
+      "highlights_en": [
+        "CJK token estimation 6x correction, prevents context window overflow",
+        "DAG-based hierarchical summarization preserves full conversation history"
+      ],
+      "concerns_zh": [
+        "依赖上游openclaw生态，迁移成本较高"
+      ],
+      "concerns_en": [
+        "Heavy dependency on upstream openclaw ecosystem, migration cost is high"
+      ]
+    },
+    {
+      "name": "kilocode",
+      "full_name": "Kilo-Org/kilocode",
+      "html_url": "https://github.com/Kilo-Org/kilocode",
+      "description": "Kilo is the all-in-one agentic engineering platform. Build, ship, and iterate faster with the most popular open source coding agent. #1 coding agent on OpenRouter. 1.5M+ Kilo Coders. 25T+ tokens processed",
+      "language": "TypeScript",
+      "stars": 17781,
+      "contributors": 429,
+      "created_at": "2025-03-10T15:34:26+00:00",
+      "release_count": 349,
+      "release_freq_zh": "日更",
+      "release_freq_en": "Daily",
+      "has_ci": true,
+      "is_upstream": false,
+      "scores": {
+        "code_quality": 7,
+        "maintainability": 8,
+        "robustness": 8,
+        "sustainability": 9,
+        "portability": 8,
+        "extensibility": 8
+      },
+      "total": 8.0,
+      "summary_zh": "生产级多渠道AI编码助手 | 活跃开源生态与卓越工程实践",
+      "summary_en": "Production-grade multi-platform AI coding agent | Active open source ecosystem with excellent engineering practices",
+      "recommendation_zh": "适合寻求开源替代Copilot的开发者，CLI/VSCode多端覆盖",
+      "recommendation_en": "Ideal for developers seeking open source alternative to Copilot with CLI/VSCode support",
+      "highlights_zh": [
+        "成熟的企业级CI/CD：指数退避重试、速率限制、自定义GitHub App认证",
+        "强大扩展性：MCP市场、插件系统、SDK、多种模式(Architect/Coder/Debugger)"
+      ],
+      "highlights_en": [
+        "Mature enterprise CI/CD: exponential backoff retry, rate limiting, custom GitHub App authentication",
+        "Strong extensibility: MCP marketplace, plugin system, SDK, multiple modes (Architect/Coder/Debugger)"
+      ],
+      "concerns_zh": [
+        "源码样本中未包含实际业务代码，仅有配置和CI/CD，无法深入评估代码风格和单元测试覆盖"
+      ],
+      "concerns_en": [
+        "Source code samples do not include actual business logic code, only config and CI/CD, limiting deep code quality assessment"
+      ]
+    },
+    {
+      "name": "plandex",
+      "full_name": "plandex-ai/plandex",
+      "html_url": "https://github.com/plandex-ai/plandex",
+      "description": "Open source AI coding agent. Designed for large projects and real world tasks.",
+      "language": "Go",
+      "stars": 15212,
+      "contributors": 22,
+      "created_at": "2023-10-24T22:11:43+00:00",
+      "release_count": 73,
+      "release_freq_zh": "日更",
+      "release_freq_en": "Daily",
+      "has_ci": true,
+      "is_upstream": false,
+      "scores": {
+        "code_quality": 8,
+        "maintainability": 8,
+        "robustness": 8,
+        "sustainability": 8,
+        "portability": 8,
+        "extensibility": 8
+      },
+      "total": 8.0,
+      "summary_zh": "生产级多模型AI编程代理 | 大型项目专用，2M上下文窗口",
+      "summary_en": "Production-grade multi-model AI coding agent | Designed for large projects with 2M token context",
+      "recommendation_zh": "适合需要处理复杂多文件任务、追求生产级质量的开发团队",
+      "recommendation_en": "Recommended for dev teams handling complex multi-file tasks requiring production-grade quality",
+      "highlights_zh": [
+        "2M token上下文窗口，支持30+语言的tree-sitter项目映射",
+        "多模型支持(Anthropic/OpenAI/Google/开源)，带token缓存降本",
+        "累积diff审查沙箱机制，确保AI变更安全可控"
+      ],
+      "highlights_en": [
+        "2M token context with tree-sitter project maps for 30+ languages",
+        "Multi-model support (Anthropic/OpenAI/Google/OSS) with token caching",
+        "Cumulative diff review sandbox for safe, controlled AI changes"
+      ],
+      "concerns_zh": [
+        "终端UI形态对非CLI用户有一定学习曲线",
+        "22贡献者规模相对较小，大型变更可能响应较慢"
+      ],
+      "concerns_en": [
+        "Terminal-based UI may have learning curve for non-CLI users",
+        "22 contributors is relatively small, large changes may have slower response"
+      ]
+    },
+    {
+      "name": "lettabot",
+      "full_name": "letta-ai/lettabot",
+      "html_url": "https://github.com/letta-ai/lettabot",
+      "description": "Your personal AI assistant that remembers everything across Telegram, Slack, WhatsApp, and Signal",
+      "language": "TypeScript",
+      "stars": 297,
+      "contributors": 23,
+      "created_at": "2026-01-29T02:02:13+00:00",
+      "release_count": 15,
+      "release_freq_zh": "日更",
+      "release_freq_en": "Daily",
+      "has_ci": true,
+      "is_upstream": false,
+      "scores": {
+        "code_quality": 8,
+        "maintainability": 8,
+        "robustness": 7,
+        "sustainability": 8,
+        "portability": 8,
+        "extensibility": 9
+      },
+      "total": 8.0,
+      "summary_zh": "生产级多渠道AI助手框架 | 模块化持久记忆系统",
+      "summary_en": "Production-ready multi-channel AI assistant with modular persistent memory",
+      "recommendation_zh": "适合需要跨平台AI助手的项目，技能系统设计优秀",
+      "recommendation_en": "Ideal for cross-platform AI assistant projects with excellent skill architecture",
+      "highlights_zh": [
+        "TypeScript + Vitest 完整测试体系，CI/CD 覆盖单元/E2E/Docker 构建",
+        "ClawdHub/skills.sh 技能生态，支持动态扩展工具集",
+        "多渠道统一记忆架构 (Telegram/Slack/Discord/WhatsApp/Signal)"
+      ],
+      "highlights_en": [
+        "Full test suite (unit + E2E) with CI/CD covering lint, build, and Docker",
+        "ClawdHub/skills.sh compatible skill ecosystem for dynamic tool extension",
+        "Unified memory architecture across Telegram, Slack, Discord, WhatsApp, Signal"
+      ],
+      "concerns_zh": [
+        "大量可选依赖 (@slack/bolt, @whiskeysockets/baileys 等) 可能导致包体积膨胀"
+      ],
+      "concerns_en": [
+        "Heavy optional dependencies may bloat bundle size if many channels enabled"
+      ]
+    },
+    {
       "name": "openclaw",
       "full_name": "kalachbeg/openclaw",
       "html_url": "https://github.com/kalachbeg/openclaw",
@@ -49,31 +1243,823 @@
       "has_ci": true,
       "is_upstream": false,
       "scores": {
-        "code_quality": 9,
-        "maintainability": 9,
-        "robustness": 10,
-        "sustainability": 9,
-        "portability": 10,
-        "extensibility": 9
+        "code_quality": 8,
+        "maintainability": 8,
+        "robustness": 8,
+        "sustainability": 7,
+        "portability": 8,
+        "extensibility": 8
       },
-      "total": 9.3,
-      "summary_zh": "生产级多平台AI网关 | 形式化验证驱动",
-      "summary_en": "Production-grade multi-platform AI gateway | Formally verified",
-      "recommendation_zh": "适合高安全、多渠道AI助手部署",
-      "recommendation_en": "Ideal for secure, extensible multi-channel AI assistants",
+      "total": 7.8,
+      "summary_zh": "生产级多平台AI网关 | 形式化验证与插件生态",
+      "summary_en": "Production-grade multi-platform AI gateway with formal verification and plugin ecosystem",
+      "recommendation_zh": "适合需要多渠道集成和形式化安全保证的企业级AI应用",
+      "recommendation_en": "Ideal for enterprise AI apps requiring multi-channel integration and formal safety guarantees",
       "highlights_zh": [
-        "形式化模型一致性检查与CI",
-        "插件SDK+跨平台Docker/原生构建"
+        "形式化conformance测试确保协议安全",
+        "插件SDK支持第三方扩展生态"
       ],
       "highlights_en": [
-        "Formal model conformance in CI",
-        "Plugin SDK + cross-platform Docker/native builds"
+        "Formal conformance testing ensures protocol safety",
+        "Plugin SDK enables third-party extension ecosystem"
       ],
       "concerns_zh": [
-        "暂无正式发布版本"
+        "Stars较低，社区规模有限"
       ],
       "concerns_en": [
-        "No formal releases published yet"
+        "Low star count indicates limited community scale"
+      ]
+    },
+    {
+      "name": "openlegion",
+      "full_name": "openlegion-ai/openlegion",
+      "html_url": "https://github.com/openlegion-ai/openlegion",
+      "description": "Secure autonomous AI agent fleet platform — Docker-isolated, multi-provider, with built-in cost controls. OpenClaw alternative for production use.",
+      "language": "Python",
+      "stars": 81,
+      "contributors": 5,
+      "created_at": "2026-02-19T16:35:14+00:00",
+      "release_count": 3,
+      "release_freq_zh": "不定期",
+      "release_freq_en": "Irregular",
+      "has_ci": true,
+      "is_upstream": false,
+      "scores": {
+        "code_quality": 8,
+        "maintainability": 7,
+        "robustness": 9,
+        "sustainability": 6,
+        "portability": 9,
+        "extensibility": 8
+      },
+      "total": 7.8,
+      "summary_zh": "生产级Docker隔离多代理运行时 — 注重安全沙箱与成本控制",
+      "summary_en": "Production-grade Docker-isolated multi-agent runtime with security sandbox and cost controls",
+      "recommendation_zh": "适合需要容器化隔离、安全沙箱的生产级AI代理编排场景",
+      "recommendation_en": "Suitable for production AI agent orchestration requiring container isolation and security sandboxing",
+      "highlights_zh": [
+        "三层信任域架构 + Docker容器隔离提供强安全边界",
+        "全面的安全防护：SSRF保护、循环检测、沙箱执行、权限体系"
+      ],
+      "highlights_en": [
+        "Three-tier trust zone architecture with Docker container isolation for strong security boundary",
+        "Comprehensive security: SSRF protection, loop detection, sandboxed execution, permission system"
+      ],
+      "concerns_zh": [
+        "项目规模较小(81 stars, 5 contributors)，长期维护风险需评估"
+      ],
+      "concerns_en": [
+        "Small project scale (81 stars, 5 contributors) requires assessment of long-term maintenance risk"
+      ]
+    },
+    {
+      "name": "openclaude",
+      "full_name": "Gitlawb/openclaude",
+      "html_url": "https://github.com/Gitlawb/openclaude",
+      "description": "Open Claude Is Open-source coding-agent CLI for OpenAI, Gemini, DeepSeek, Ollama, Codex, GitHub Models, and 200+ models via OpenAI-compatible APIs.",
+      "language": "TypeScript",
+      "stars": 18448,
+      "contributors": 56,
+      "created_at": "2026-04-01T03:15:49+00:00",
+      "release_count": 1,
+      "release_freq_zh": "不定期",
+      "release_freq_en": "Irregular",
+      "has_ci": true,
+      "is_upstream": false,
+      "scores": {
+        "code_quality": 8,
+        "maintainability": 8,
+        "robustness": 7,
+        "sustainability": 8,
+        "portability": 8,
+        "extensibility": 8
+      },
+      "total": 7.8,
+      "summary_zh": "生产级多模型AI编程助手CLI | 跨平台支持优秀",
+      "summary_en": "Production-grade multi-model AI coding-agent CLI with excellent cross-platform support",
+      "recommendation_zh": "适合需要灵活切换LLM提供商或本地部署的开发者",
+      "recommendation_en": "Ideal for developers needing flexible LLM provider switching or local deployment",
+      "highlights_zh": [
+        "支持200+模型和多种提供商(OpenAI/Gemini/Ollama等)",
+        "完善的跨平台文档(Windows/macOS/Linux/Android Termux)",
+        "全面的安全扫描和PR检查CI/CD工作流"
+      ],
+      "highlights_en": [
+        "Supports 200+ models and multiple providers (OpenAI/Gemini/Ollama/etc.)",
+        "Comprehensive cross-platform documentation (Windows/macOS/Linux/Android Termux)",
+        "Full security scanning and PR validation CI/CD workflow"
+      ],
+      "concerns_zh": [
+        "版本较新(v0.1.8)且发布次数仅1次，长期稳定性待验证"
+      ],
+      "concerns_en": [
+        "Early stage (v0.1.8) with only 1 release, long-term stability unproven"
+      ]
+    },
+    {
+      "name": "claude-hud",
+      "full_name": "jarrodwatts/claude-hud",
+      "html_url": "https://github.com/jarrodwatts/claude-hud",
+      "description": "A Claude Code plugin that shows what's happening - context usage, active tools, running agents, and todo progress",
+      "language": "JavaScript",
+      "stars": 17397,
+      "contributors": 44,
+      "created_at": "2026-01-02T01:35:07+00:00",
+      "release_count": 3,
+      "release_freq_zh": "不定期",
+      "release_freq_en": "Irregular",
+      "has_ci": true,
+      "is_upstream": false,
+      "scores": {
+        "code_quality": 8,
+        "maintainability": 8,
+        "robustness": 7,
+        "sustainability": 9,
+        "portability": 7,
+        "extensibility": 8
+      },
+      "total": 7.8,
+      "summary_zh": "生产级Claude Code状态栏插件 | 架构清晰、高星社区、CI/CD完善",
+      "summary_en": "Production-grade Claude Code statusline plugin | Clean architecture, high community adoption, mature CI/CD",
+      "recommendation_zh": "Claude Code用户推荐安装，开源贡献者可参与生态扩展",
+      "recommendation_en": "Recommended for Claude Code users; contributors welcome for ecosystem extension",
+      "highlights_zh": [
+        "TypeScript + ES2022 + NodeNext 模块化架构，代码质量高",
+        "完善CI/CD：多版本Node测试、覆盖率报告、自动构建发布"
+      ],
+      "highlights_en": [
+        "TypeScript + ES2022 with NodeNext modules for clean architecture",
+        "Mature CI/CD: multi-version Node testing, coverage reports, auto build/release"
+      ],
+      "concerns_zh": [
+        "源码样本有限（仅README/配置），无法完整评估错误处理和边界情况"
+      ],
+      "concerns_en": [
+        "Limited source code samples (README/config only) prevents full error handling assessment"
+      ]
+    },
+    {
+      "name": "copilot-cli",
+      "full_name": "github/copilot-cli",
+      "html_url": "https://github.com/github/copilot-cli",
+      "description": "GitHub Copilot CLI brings the power of Copilot coding agent directly to your terminal. ",
+      "language": "Shell",
+      "stars": 9859,
+      "contributors": 21,
+      "created_at": "2023-01-06T09:22:30+00:00",
+      "release_count": 220,
+      "release_freq_zh": "日更",
+      "release_freq_en": "Daily",
+      "has_ci": true,
+      "is_upstream": false,
+      "scores": {
+        "code_quality": 7,
+        "maintainability": 8,
+        "robustness": 7,
+        "sustainability": 8,
+        "portability": 9,
+        "extensibility": 8
+      },
+      "total": 7.8,
+      "summary_zh": "GitHub官方AI终端助手 | 多平台多安装方式支持MCP扩展",
+      "summary_en": "GitHub-official AI CLI assistant | Multi-platform with MCP extensibility",
+      "recommendation_zh": "适合需要AI辅助编程的开发者，尤其是GitHub生态用户",
+      "recommendation_en": "Ideal for developers needing AI coding assistance, especially GitHub ecosystem users",
+      "highlights_zh": [
+        "支持6种安装方式，覆盖主流平台",
+        "MCP服务器扩展能力强",
+        "与GitHub工作流深度集成"
+      ],
+      "highlights_en": [
+        "Six installation methods across major platforms",
+        "Strong MCP server extensibility",
+        "Deep GitHub workflow integration"
+      ],
+      "concerns_zh": [
+        "Shell项目缺少代码样本，无法评估实际代码质量"
+      ],
+      "concerns_en": [
+        "Shell project lacks code samples to assess actual code quality"
+      ]
+    },
+    {
+      "name": "kimi-cli",
+      "full_name": "MoonshotAI/kimi-cli",
+      "html_url": "https://github.com/MoonshotAI/kimi-cli",
+      "description": "Kimi Code CLI is your next CLI agent.",
+      "language": "Python",
+      "stars": 7648,
+      "contributors": 59,
+      "created_at": "2025-10-15T12:58:03+00:00",
+      "release_count": 83,
+      "release_freq_zh": "日更",
+      "release_freq_en": "Daily",
+      "has_ci": true,
+      "is_upstream": false,
+      "scores": {
+        "code_quality": 7,
+        "maintainability": 8,
+        "robustness": 7,
+        "sustainability": 8,
+        "portability": 9,
+        "extensibility": 8
+      },
+      "total": 7.8,
+      "summary_zh": "生产级多平台AI编程助手 | 完善的CI/CD与类型检查",
+      "summary_en": "Production-grade multi-platform AI coding assistant with comprehensive CI/CD and type checking",
+      "recommendation_zh": "推荐用于企业级终端开发场景，需Python 3.12+环境",
+      "recommendation_en": "Recommended for enterprise terminal development scenarios, requires Python 3.12+",
+      "highlights_zh": [
+        "完善的CI/CD管道：多组件独立工作流、多Python版本(3.12-3.14)与多平台(Linux/macOS/Windows)测试",
+        "严格的类型检查：pyright strict模式配合ruff全面lint规则",
+        "优秀的扩展性：ACP协议支持IDE集成、MCP工具支持、Workspace结构的monorepo"
+      ],
+      "highlights_en": [
+        "Comprehensive CI/CD pipeline: separate workflows for components, multi-Python (3.12-3.14) and multi-platform testing",
+        "Strict type checking: pyright strict mode with comprehensive ruff linting rules",
+        "Excellent extensibility: ACP protocol for IDE integration, MCP tools support, workspace-based monorepo structure"
+      ],
+      "concerns_zh": [
+        "源码样本有限，仅能评估配置层面，未见实际Python实现细节",
+        "依赖较多(含transitive constraints)，可能存在潜在版本冲突风险"
+      ],
+      "concerns_en": [
+        "Limited source code samples - can only evaluate configuration level, actual Python implementation details not visible",
+        "Many dependencies with transitive constraints may pose potential version conflict risks"
+      ]
+    },
+    {
+      "name": "llama-terminal-completion",
+      "full_name": "adammpkins/llama-terminal-completion",
+      "html_url": "https://github.com/adammpkins/llama-terminal-completion",
+      "description": "AI terminal assistant for any OpenAI-compatible API. Features interactive chat TUI, command generation, code explanation, and streaming responses. Works with Ollama, OpenAI, LM Studio, and more.",
+      "language": "Go",
+      "stars": 190,
+      "contributors": 3,
+      "created_at": "2023-08-17T05:43:37+00:00",
+      "release_count": 1,
+      "release_freq_zh": "不定期",
+      "release_freq_en": "Irregular",
+      "has_ci": true,
+      "is_upstream": false,
+      "scores": {
+        "code_quality": 8,
+        "maintainability": 8,
+        "robustness": 8,
+        "sustainability": 7,
+        "portability": 9,
+        "extensibility": 7
+      },
+      "total": 7.8,
+      "summary_zh": "生产级跨平台终端AI助手 | 高可移植性与安全性",
+      "summary_en": "Production-ready cross-platform terminal AI assistant with high portability and safety",
+      "recommendation_zh": "本地LLM集成首选 | 适合需要安全命令执行的开发者",
+      "recommendation_en": "Best for local LLM integration and developers needing safe command execution",
+      "highlights_zh": [
+        "多平台交叉编译支持(linux/darwin/windows amd64/arm64)",
+        "危险命令确认机制和API密钥配置安全最佳实践",
+        "核心模块client和config测试覆盖率超88%"
+      ],
+      "highlights_en": [
+        "Multi-platform cross-compilation (linux/darwin/windows amd64/arm64)",
+        "Dangerous command confirmation and secure API key configuration",
+        "Core modules (client/config) with >88% test coverage"
+      ],
+      "concerns_zh": [
+        "TUI模块测试覆盖率仅61.7%，复杂UI逻辑缺乏充分测试",
+        "仅3位贡献者，长期维护存在人员风险"
+      ],
+      "concerns_en": [
+        "TUI module only 61.7% coverage, insufficient testing for complex UI logic",
+        "Only 3 contributors, sustainability risk for long-term maintenance"
+      ]
+    },
+    {
+      "name": "agent-zero",
+      "full_name": "agent0ai/agent-zero",
+      "html_url": "https://github.com/agent0ai/agent-zero",
+      "description": "Agent Zero AI framework",
+      "language": "Python",
+      "stars": 16819,
+      "contributors": 37,
+      "created_at": "2024-06-10T09:10:45+00:00",
+      "release_count": 48,
+      "release_freq_zh": "日更",
+      "release_freq_en": "Daily",
+      "has_ci": true,
+      "is_upstream": false,
+      "scores": {
+        "code_quality": 7,
+        "maintainability": 8,
+        "robustness": 7,
+        "sustainability": 8,
+        "portability": 9,
+        "extensibility": 8
+      },
+      "total": 7.8,
+      "summary_zh": "生产级多渠道AI代理框架 | 高度可移植但代码质量有提升空间",
+      "summary_en": "Production-ready multi-channel AI agent framework with high portability but room for code quality improvement",
+      "recommendation_zh": "适合需要透明可控AI代理的企业级项目，Docker部署便捷",
+      "recommendation_en": "Ideal for enterprise projects requiring transparent, controllable AI agents with easy Docker deployment",
+      "highlights_zh": [
+        "OS原生工具集成：代理直接调用系统命令创建动态工具",
+        "SKILL.md标准兼容：与Claude Code、Copilot等生态互操作",
+        "多架构Docker支持：amd64/arm64双平台构建"
+      ],
+      "highlights_en": [
+        "OS-native tool integration: agents create dynamic tools via system commands",
+        "SKILL.md standard compatibility: interop with Claude Code, Copilot ecosystem",
+        "Multi-arch Docker support: amd64/arm64 dual-platform builds"
+      ],
+      "concerns_zh": [
+        "Python源码样本不足，难以全面评估代码质量",
+        "双Python运行时(3.12/3.13)可能增加维护复杂度"
+      ],
+      "concerns_en": [
+        "Insufficient Python source samples for comprehensive code quality assessment",
+        "Dual Python runtime (3.12/3.13) may increase maintenance complexity"
+      ]
+    },
+    {
+      "name": "claw-empire",
+      "full_name": "GreenSheep01201/claw-empire",
+      "html_url": "https://github.com/GreenSheep01201/claw-empire",
+      "description": "Command Your AI Agent Empire from the CEO Desk — A local-first AI agent office simulator that orchestrates CLI, OAuth, and API-connected agents (Claude Code, Codex CLI, Gemini CLI, OpenCode, and more) as a virtual autonomous company.",
+      "language": "TypeScript",
+      "stars": 1034,
+      "contributors": 12,
+      "created_at": "2026-02-18T13:42:25+00:00",
+      "release_count": 24,
+      "release_freq_zh": "日更",
+      "release_freq_en": "Daily",
+      "has_ci": true,
+      "is_upstream": false,
+      "scores": {
+        "code_quality": 8,
+        "maintainability": 8,
+        "robustness": 8,
+        "sustainability": 7,
+        "portability": 8,
+        "extensibility": 8
+      },
+      "total": 7.8,
+      "summary_zh": "生产级AI代理编排平台 | 像素风可视化+多提供商统一管理",
+      "summary_en": "Production-grade AI agent orchestration platform with pixel-art visualization and multi-provider unified management",
+      "recommendation_zh": "适合需要本地优先编排多AI代理的开发团队，尤其推荐用于自主工作流和虚拟协作场景",
+      "recommendation_en": "Ideal for dev teams needing local-first multi-agent orchestration, especially for autonomous workflows and virtual collaboration",
+      "highlights_zh": [
+        "CI/CD 流水线包含完整的格式检查、类型检查、Lint、OpenAPI 契约验证和 E2E 测试",
+        "Docker 官方支持完整的多阶段构建和容器化运行时路径处理",
+        "Zod schema 验证 + OAuth token 加密 + Unicode/Bidi 安全防护",
+        "6种可扩展办公室 Pack（开发/报告/调研/小说/视频/角色扮演）",
+        "支持 7+ 种 AI 提供商（Claude Code/Codex/Gemini/OpenCode/Kimi/Copilot/Antigravity）"
+      ],
+      "highlights_en": [
+        "CI/CD pipeline includes complete format, type, lint, OpenAPI contract, and E2E testing",
+        "Official Docker support with multi-stage builds and containerized runtime path handling",
+        "Zod schema validation + OAuth token encryption + Unicode/Bidi security guards",
+        "6 extensible office packs (dev/report/research/novel/video/roleplay)",
+        "Supports 7+ AI providers (Claude Code/Codex/Gemini/OpenCode/Kimi/Copilot/Antigravity)"
+      ],
+      "concerns_zh": [
+        "Node.js 22+ 强制要求限制了老旧系统环境部署",
+        "无数据库迁移版本控制方案，依赖运行时迁移脚本",
+        "前端依赖 @remotion/cli 和 pixi.js 可能带来较大 bundle size"
+      ],
+      "concerns_en": [
+        "Node.js 22+ mandatory requirement limits legacy system deployment",
+        "No formal database migration versioning, relies on runtime migration scripts",
+        "Frontend dependencies on @remotion/cli and pixi.js may increase bundle size"
+      ]
+    },
+    {
+      "name": "autobot",
+      "full_name": "crystal-autobot/autobot",
+      "html_url": "https://github.com/crystal-autobot/autobot",
+      "description": "Ultra-efficient personal AI assistant powered by Crystal",
+      "language": "Crystal",
+      "stars": 76,
+      "contributors": 3,
+      "created_at": "2026-02-12T20:05:57+00:00",
+      "release_count": 15,
+      "release_freq_zh": "日更",
+      "release_freq_en": "Daily",
+      "has_ci": true,
+      "is_upstream": false,
+      "scores": {
+        "code_quality": 8,
+        "maintainability": 7,
+        "robustness": 8,
+        "sustainability": 7,
+        "portability": 9,
+        "extensibility": 8
+      },
+      "total": 7.8,
+      "summary_zh": "轻量高效的生产级AI助手 | Crystal语言极致性能与安全沙箱",
+      "summary_en": "Production-grade personal AI assistant | Crystal-powered efficiency with kernel-level sandboxing",
+      "recommendation_zh": "资源受限环境首选，推荐需要多Bot隔离和安全沙箱的企业场景",
+      "recommendation_en": "Best for resource-constrained deployments and secure multi-bot enterprise scenarios",
+      "highlights_zh": [
+        "Crystal语言实现2MB单文件、~5MB内存、<20ms启动的极致性能",
+        "Docker/bubblewrap内核级沙箱隔离，比应用层验证更安全"
+      ],
+      "highlights_en": [
+        "Crystal delivers 2MB binary, ~5MB RAM, <20ms startup — extreme efficiency",
+        "Kernel-enforced sandboxing via Docker/bubblewrap provides superior security over app-level validation"
+      ],
+      "concerns_zh": [
+        "Crystal生态系统规模较小，第三方库和社区支持有限"
+      ],
+      "concerns_en": [
+        "Crystal's ecosystem is relatively small with limited third-party libraries and community support"
+      ]
+    },
+    {
+      "name": "moxxy",
+      "full_name": "moxxy-ai/moxxy",
+      "html_url": "https://github.com/moxxy-ai/moxxy",
+      "description": "Moxxy Personal Assistant",
+      "language": "Rust",
+      "stars": 43,
+      "contributors": 4,
+      "created_at": "2026-02-21T20:09:15+00:00",
+      "release_count": 26,
+      "release_freq_zh": "日更",
+      "release_freq_en": "Daily",
+      "has_ci": true,
+      "is_upstream": false,
+      "scores": {
+        "code_quality": 7,
+        "maintainability": 8,
+        "robustness": 7,
+        "sustainability": 7,
+        "portability": 9,
+        "extensibility": 9
+      },
+      "total": 7.8,
+      "summary_zh": "生产级自托管多智能体框架 | Rust高性能跨平台运行时",
+      "summary_en": "Production-ready self-hosted multi-agent AI runtime | Rust-powered cross-platform",
+      "recommendation_zh": "适合需要数据主权的企业级AI工作流自动化",
+      "recommendation_en": "Ideal for enterprise AI workflow automation requiring data sovereignty",
+      "highlights_zh": [
+        "Rust生态高性能：WASM沙箱+ReAct循环执行模型",
+        "跨平台支持完善：Linux/macOS/Windows多架构发布"
+      ],
+      "highlights_en": [
+        "Rust performance: WASM sandboxing with ReAct loop execution",
+        "Cross-platform: Multi-architecture builds for Linux/macOS/Windows"
+      ],
+      "concerns_zh": [
+        "社区规模小(43 stars, 4 contributors)，长期维护存在风险"
+      ],
+      "concerns_en": [
+        "Small community (43 stars, 4 contributors) poses long-term maintenance risk"
+      ]
+    },
+    {
+      "name": "picobot",
+      "full_name": "louisho5/picobot",
+      "html_url": "https://github.com/louisho5/picobot",
+      "description": "A lightweight self-hosted bot in a single binary, written in Go.",
+      "language": "Go",
+      "stars": 1173,
+      "contributors": 6,
+      "created_at": "2026-02-07T16:18:22+00:00",
+      "release_count": 11,
+      "release_freq_zh": "周更",
+      "release_freq_en": "Weekly",
+      "has_ci": true,
+      "is_upstream": false,
+      "scores": {
+        "code_quality": 8,
+        "maintainability": 8,
+        "robustness": 7,
+        "sustainability": 7,
+        "portability": 9,
+        "extensibility": 8
+      },
+      "total": 7.8,
+      "summary_zh": "轻量级跨平台AI代理机器人 | 9MB单二进制 | 适合低资源环境部署",
+      "summary_en": "Lightweight cross-platform AI agent bot | 9MB single binary | Ideal for low-resource deployments",
+      "recommendation_zh": "适合资源受限环境如$5 VPS或边缘设备使用",
+      "recommendation_en": "Best for resource-constrained environments like $5 VPS or edge devices",
+      "highlights_zh": [
+        "极小二进制体积（~9MB）大幅降低部署资源需求",
+        "支持多平台（linux/amd64, linux/arm64, darwin/arm64）和Docker多架构构建"
+      ],
+      "highlights_en": [
+        "Extremely small binary size (~9MB) significantly reduces deployment resource requirements",
+        "Multi-platform support (linux/amd64, linux/arm64, darwin/arm64) with Docker multi-arch builds"
+      ],
+      "concerns_zh": [
+        "exec工具执行shell命令存在潜在安全风险，需用户自行控制输入"
+      ],
+      "concerns_en": [
+        "The exec tool executing shell commands presents potential security risks requiring user input control"
+      ]
+    },
+    {
+      "name": "poco-claw",
+      "full_name": "poco-ai/poco-claw",
+      "html_url": "https://github.com/poco-ai/poco-claw",
+      "description": "A more beautiful and easier-to-use alternative to OpenClaw. It features a nicer Web UI, built-in IM support, and a sandboxed runtime for improved safety. Under the hood, it is powered by a Claude Code–based agent.",
+      "language": "TypeScript",
+      "stars": 1262,
+      "contributors": 6,
+      "created_at": "2026-01-08T10:48:17+00:00",
+      "release_count": 8,
+      "release_freq_zh": "周更",
+      "release_freq_en": "Weekly",
+      "has_ci": true,
+      "is_upstream": false,
+      "scores": {
+        "code_quality": 8,
+        "maintainability": 8,
+        "robustness": 7,
+        "sustainability": 7,
+        "portability": 8,
+        "extensibility": 8
+      },
+      "total": 7.7,
+      "summary_zh": "生产级云端AI Agent平台 | 沙箱隔离+MCP扩展+多端IM集成",
+      "summary_en": "Production-ready cloud AI agent platform with sandbox isolation, MCP extensibility, and multi-channel IM integration",
+      "recommendation_zh": "适合需要安全执行环境和多渠道集成的企业级AI助手场景",
+      "recommendation_en": "Ideal for enterprise AI assistant scenarios requiring secure execution and multi-channel integration",
+      "highlights_zh": [
+        "完善的多语言代码检查CI (ESLint/Ruff/Prettier/Pyrefly)",
+        "沙箱隔离容器保障主机安全",
+        "支持MCP协议和自定义Skills的插件化架构"
+      ],
+      "highlights_en": [
+        "Comprehensive multi-language linting CI pipeline (ESLint/Ruff/Prettier/Pyrefly)",
+        "Sandboxed container isolation ensures host security",
+        "Plugin architecture supporting MCP protocol and custom Skills"
+      ],
+      "concerns_zh": [
+        "依赖上游Claude Code生态，外部依赖风险"
+      ],
+      "concerns_en": [
+        "Relies on upstream Claude Code ecosystem, external dependency risk"
+      ]
+    },
+    {
+      "name": "opencode-telegram-bot",
+      "full_name": "grinev/opencode-telegram-bot",
+      "html_url": "https://github.com/grinev/opencode-telegram-bot",
+      "description": "OpenCode mobile client via Telegram: run and monitor AI coding tasks from your phone while everything runs locally on your machine. Scheduled tasks support. Can be used as lightweight OpenClaw alternative.",
+      "language": "TypeScript",
+      "stars": 370,
+      "contributors": 10,
+      "created_at": "2026-02-09T11:13:23+00:00",
+      "release_count": 29,
+      "release_freq_zh": "日更",
+      "release_freq_en": "Daily",
+      "has_ci": true,
+      "is_upstream": false,
+      "scores": {
+        "code_quality": 8,
+        "maintainability": 8,
+        "robustness": 7,
+        "sustainability": 8,
+        "portability": 8,
+        "extensibility": 7
+      },
+      "total": 7.7,
+      "summary_zh": "生产级 Telegram 远程编程助手 | 代码规范、可持续维护",
+      "summary_en": "Production-ready Telegram bot for remote AI coding | well-structured and maintainable",
+      "recommendation_zh": "适合追求本地化 AI 编程且需要移动端监控的开发者",
+      "recommendation_en": "Ideal for developers needing mobile access to local AI coding workflows",
+      "highlights_zh": [
+        "TypeScript + ESLint + Prettier 完整代码规范配置",
+        "CI/CD 完整流水线：lint/build/test + 自动发布"
+      ],
+      "highlights_en": [
+        "Complete code standards with TypeScript, ESLint and Prettier",
+        "Full CI/CD pipeline with lint/build/test and automated publishing"
+      ],
+      "concerns_zh": [
+        "源码样本有限，仅能从配置文件推断代码结构"
+      ],
+      "concerns_en": [
+        "Limited source code samples available for deep analysis"
+      ]
+    },
+    {
+      "name": "cc-connect",
+      "full_name": "chenhg5/cc-connect",
+      "html_url": "https://github.com/chenhg5/cc-connect",
+      "description": "Bridge local AI coding agents (Claude Code, Cursor, Gemini CLI, Codex) to messaging platforms (Feishu/Lark, DingTalk, Slack, Telegram, Discord, LINE, WeChat Work). Chat with your AI dev assistant from anywhere — no public IP required for most platforms.",
+      "language": "Go",
+      "stars": 4468,
+      "contributors": 43,
+      "created_at": "2026-02-28T02:39:39+00:00",
+      "release_count": 21,
+      "release_freq_zh": "日更",
+      "release_freq_en": "Daily",
+      "has_ci": true,
+      "is_upstream": false,
+      "scores": {
+        "code_quality": 7,
+        "maintainability": 8,
+        "robustness": 7,
+        "sustainability": 8,
+        "portability": 8,
+        "extensibility": 8
+      },
+      "total": 7.7,
+      "summary_zh": "生产级多渠道AI助手桥接器 | 活跃维护的插件化架构",
+      "summary_en": "Production-grade multi-channel AI agent bridge | Actively maintained plugin architecture",
+      "recommendation_zh": "适合需要跨平台远程控制本地AI Agent的开发者，支持10+平台",
+      "recommendation_en": "Ideal for developers needing cross-platform remote control of local AI agents, supporting 10+ platforms",
+      "highlights_zh": [
+        "插件化架构设计优秀：core/隔离、registry模式、接口驱动",
+        "多测试层级覆盖：lint→单元→冒烟→回归→性能，race检测+Codecov"
+      ],
+      "highlights_en": [
+        "Excellent plugin architecture: core/ isolation, registry pattern, interface-driven",
+        "Multi-layer test coverage: lint→unit→smoke→regression→performance with race detection and Codecov"
+      ],
+      "concerns_zh": [
+        "源码样本有限（仅文档/CI配置），无法直接评估实际代码实现质量"
+      ],
+      "concerns_en": [
+        "Limited source code samples (docs/CI config only), cannot directly assess actual implementation quality"
+      ]
+    },
+    {
+      "name": "claude-code.nvim",
+      "full_name": "greggh/claude-code.nvim",
+      "html_url": "https://github.com/greggh/claude-code.nvim",
+      "description": "Seamless integration between Claude Code AI assistant and Neovim",
+      "language": "Lua",
+      "stars": 1983,
+      "contributors": 10,
+      "created_at": "2025-02-24T21:33:05+00:00",
+      "release_count": 3,
+      "release_freq_zh": "不定期",
+      "release_freq_en": "Irregular",
+      "has_ci": true,
+      "is_upstream": false,
+      "scores": {
+        "code_quality": 7,
+        "maintainability": 8,
+        "robustness": 7,
+        "sustainability": 8,
+        "portability": 8,
+        "extensibility": 8
+      },
+      "total": 7.7,
+      "summary_zh": "生产级Neovim AI助手集成插件 | 代码规范与自动化测试完备",
+      "summary_en": "Production-ready Neovim AI assistant integration | Well-structured with comprehensive testing",
+      "recommendation_zh": "适合追求高效AI辅助编码的Neovim用户 | 维护活跃可纳入工具链",
+      "recommendation_en": "Ideal for Neovim users seeking AI-assisted coding | Active maintenance, safe to adopt",
+      "highlights_zh": [
+        "44个自动化测试覆盖，CI/CD多Neovim版本验证",
+        "LuaCATS类型注解 + Luacheck静态分析保障代码规范",
+        "多插件管理器支持(lazy/packer/vim-plug)开箱即用"
+      ],
+      "highlights_en": [
+        "44 automated tests with CI/CD testing on stable and nightly Neovim",
+        "LuaCATS annotations and Luacheck static analysis enforce code standards",
+        "Multi-plugin manager support (lazy/packer/vim-plug) for easy adoption"
+      ],
+      "concerns_zh": [
+        "未提供实际Lua源码样本，无法完全验证代码质量细节"
+      ],
+      "concerns_en": [
+        "Actual Lua source code not provided, limiting full code quality verification"
+      ]
+    },
+    {
+      "name": "sidekick-agent-hub",
+      "full_name": "cesarandreslopez/sidekick-agent-hub",
+      "html_url": "https://github.com/cesarandreslopez/sidekick-agent-hub",
+      "description": "Multi-provider AI coding assistant & agent session monitor for VS Code and the   terminal — inline completions, code transforms, and a full TUI dashboard for  Claude Code, OpenCode, and Codex. Switch between multiple Claude Code accounts.",
+      "language": "TypeScript",
+      "stars": 60,
+      "contributors": 1,
+      "created_at": "2026-01-10T08:48:58+00:00",
+      "release_count": 54,
+      "release_freq_zh": "日更",
+      "release_freq_en": "Daily",
+      "has_ci": true,
+      "is_upstream": false,
+      "scores": {
+        "code_quality": 8,
+        "maintainability": 7,
+        "robustness": 8,
+        "sustainability": 6,
+        "portability": 9,
+        "extensibility": 8
+      },
+      "total": 7.7,
+      "summary_zh": "生产级多代理AI助手监控平台 | 完善的CI/CD与模块化架构",
+      "summary_en": "Production-grade multi-agent AI assistant monitoring platform with comprehensive CI/CD and modular architecture",
+      "recommendation_zh": "适合需要多AI提供商和会话监控的开发者 | 单人维护需关注",
+      "recommendation_en": "Suitable for developers needing multi-provider AI monitoring | Single-maintainer risk",
+      "highlights_zh": [
+        "模块化多提供商架构支持Claude Max/API、OpenCode、Codex",
+        "完善的CI/CD流程含测试、构建、lint和跨平台发布"
+      ],
+      "highlights_en": [
+        "Modular multi-provider architecture supporting Claude Max/API, OpenCode, Codex",
+        "Comprehensive CI/CD with tests, build, lint, and cross-platform publishing"
+      ],
+      "concerns_zh": [
+        "单人贡献者模式存在长期维护风险"
+      ],
+      "concerns_en": [
+        "Single-contributor model presents long-term maintenance risk"
+      ]
+    },
+    {
+      "name": "ClawX",
+      "full_name": "ValueCell-ai/ClawX",
+      "html_url": "https://github.com/ValueCell-ai/ClawX",
+      "description": "ClawX is a desktop app that provides a graphical interface for OpenClaw AI agents. It turns CLI-based AI orchestration into a desktop experience without using the terminal. China website is https://clawx.com.cn.",
+      "language": "TypeScript",
+      "stars": 6239,
+      "contributors": 19,
+      "created_at": "2026-02-05T13:58:36+00:00",
+      "release_count": 143,
+      "release_freq_zh": "日更",
+      "release_freq_en": "Daily",
+      "has_ci": true,
+      "is_upstream": false,
+      "scores": {
+        "code_quality": 8,
+        "maintainability": 8,
+        "robustness": 8,
+        "sustainability": 7,
+        "portability": 8,
+        "extensibility": 7
+      },
+      "total": 7.7,
+      "summary_zh": "生产级跨平台桌面AI助手 | 深度集成OpenClaw的Electron+React应用",
+      "summary_en": "Production-grade cross-platform desktop AI assistant | Electron+React app deeply integrated with OpenClaw",
+      "recommendation_zh": "适合需要图形化OpenClaw管理的用户，专业级但存在上游强依赖",
+      "recommendation_en": "For users needing GUI-based OpenClaw management; professional-grade but tightly coupled to upstream",
+      "highlights_zh": [
+        "完善的CI/CD体系：lint/typecheck/unit/e2e/regression测试全覆盖",
+        "零配置门槛：安装即用，内置引导向导和技能市场",
+        "跨平台支持：macOS/Windows/Linux双架构(x64/arm64)"
+      ],
+      "highlights_en": [
+        "Comprehensive CI/CD: lint/typecheck/unit/e2e/regression testing coverage",
+        "Zero-config barrier: plug-and-play with guided wizard and skill marketplace",
+        "Cross-platform: macOS/Windows/Linux with dual architectures (x64/arm64)"
+      ],
+      "concerns_zh": [
+        "大量原生依赖(node-llama-cpp/whiskeysockets/baileys)增加构建复杂度和包体积",
+        "与上游OpenClaw强耦合，版本同步风险"
+      ],
+      "concerns_en": [
+        "Heavy native dependencies (node-llama-cpp/whiskeysockets/baileys) increase build complexity and package size",
+        "Tightly coupled with upstream OpenClaw, version synchronization risk"
+      ]
+    },
+    {
+      "name": "zclaw",
+      "full_name": "tnm/zclaw",
+      "html_url": "https://github.com/tnm/zclaw",
+      "description": "Your personal AI assistant at all-in 888KiB (~35KB in app code). Running on an ESP32. GPIO, cron, custom tools, memory, and more.",
+      "language": "C",
+      "stars": 2049,
+      "contributors": 4,
+      "created_at": "2026-02-16T19:52:01+00:00",
+      "release_count": 4,
+      "release_freq_zh": "周更",
+      "release_freq_en": "Weekly",
+      "has_ci": true,
+      "is_upstream": false,
+      "scores": {
+        "code_quality": 8,
+        "maintainability": 8,
+        "robustness": 8,
+        "sustainability": 7,
+        "portability": 7,
+        "extensibility": 8
+      },
+      "total": 7.7,
+      "summary_zh": "极简AI助手 | 固件体积约束严苛（888KiB all-in）",
+      "summary_en": "Minimal AI assistant | Strict 888KiB all-in firmware budget",
+      "recommendation_zh": "资源极度受限的嵌入式AI项目首选",
+      "recommendation_en": "Best for ultra-resource-constrained embedded AI projects",
+      "highlights_zh": [
+        "888 KiB all-in固件大小约束，CI自动守卫",
+        "完整测试矩阵：固件多目标+主机测试+stack/binary守卫"
+      ],
+      "highlights_en": [
+        "888 KiB all-in firmware budget with CI guardrails",
+        "Complete test matrix: multi-target builds + host tests + stack/binary guards"
+      ],
+      "concerns_zh": [
+        "C语言单文件逻辑较多，长期维护需注意模块边界",
+        "4人贡献者且主要依赖单维护者可持续性风险"
+      ],
+      "concerns_en": [
+        "C code with some monolithic files; modular boundaries need discipline",
+        "4 contributors with single primary maintainer poses sustainability risk"
       ]
     },
     {
@@ -85,39 +2071,1297 @@
       "stars": 53,
       "contributors": 353,
       "created_at": "2026-02-27T05:03:15+00:00",
-      "release_count": 83,
+      "release_count": 84,
       "release_freq_zh": "日更",
       "release_freq_en": "Daily",
       "has_ci": true,
       "is_upstream": false,
       "scores": {
-        "code_quality": 9,
-        "maintainability": 9,
+        "code_quality": 7,
+        "maintainability": 8,
+        "robustness": 7,
+        "sustainability": 8,
+        "portability": 7,
+        "extensibility": 8
+      },
+      "total": 7.5,
+      "summary_zh": "生产级 Android 配套 APK 自动构建 | 高可持续性多平台镜像方案",
+      "summary_en": "Production-grade Android companion APK auto-builder with high sustainability",
+      "recommendation_zh": "适合需要稳定 APK 自动发布的团队，支持多架构和插件扩展",
+      "recommendation_en": "Ideal for teams requiring stable APK auto-release with multi-arch and plugin support",
+      "highlights_zh": [
+        "多阶段 Docker 构建 + pnpm store 缓存优化 CI 效率",
+        "定时同步上游仓库并自动解决冲突的自动化流程",
+        "插件化架构支持按需安装运行时环境（Bun/Homebrew）"
+      ],
+      "highlights_en": [
+        "Multi-stage Docker build with pnpm store caching optimizes CI efficiency",
+        "Scheduled upstream sync with automatic conflict resolution workflow",
+        "Plugin-based architecture supports on-demand runtime environments (Bun/Homebrew)"
+      ],
+      "concerns_zh": [
+        "Dockerfile 中存在 [REDACTED] 标记，源码可见性受限"
+      ],
+      "concerns_en": [
+        "Dockerfile contains [REDACTED] markers, limiting source code visibility"
+      ]
+    },
+    {
+      "name": "QVerisBot",
+      "full_name": "QVerisAI/QVerisBot",
+      "html_url": "https://github.com/QVerisAI/QVerisBot",
+      "description": "Your own professional personal AI assistant. Any OS. Any Platform. The lobster way. 🦞 ",
+      "language": "TypeScript",
+      "stars": 186,
+      "contributors": 359,
+      "created_at": "2026-01-26T13:29:12+00:00",
+      "release_count": 3,
+      "release_freq_zh": "不定期",
+      "release_freq_en": "Irregular",
+      "has_ci": true,
+      "is_upstream": false,
+      "scores": {
+        "code_quality": 7,
+        "maintainability": 8,
         "robustness": 8,
-        "sustainability": 9,
+        "sustainability": 7,
+        "portability": 8,
+        "extensibility": 7
+      },
+      "total": 7.5,
+      "summary_zh": "生产级多平台AI助手 | 容器化部署完善但代码样本有限",
+      "summary_en": "Production-ready multi-platform AI assistant | Solid containerization but limited code samples",
+      "recommendation_zh": "适合需要跨平台AI助手的开发者，重点关注Docker部署能力",
+      "recommendation_en": "Ideal for developers needing cross-platform AI assistant with strong Docker deployment",
+      "highlights_zh": [
+        "多阶段Docker构建优化镜像体积并内置重试机制",
+        "完善的CI/CD流水线支持多平台测试（Node/macOS/Android/Windows）",
+        "CodeQL安全扫描覆盖JS/TS/Python/Java/Swift多语言"
+      ],
+      "highlights_en": [
+        "Multi-stage Docker builds with retry logic for reliability",
+        "Comprehensive CI/CD pipeline testing on Node/macOS/Android/Windows",
+        "CodeQL security scanning across JS/TS/Python/Java/Swift"
+      ],
+      "concerns_zh": [
+        "源码样本主要为配置文件，缺乏核心业务逻辑代码来全面评估质量"
+      ],
+      "concerns_en": [
+        "Sample primarily contains config files, core business logic code not available for full assessment"
+      ]
+    },
+    {
+      "name": "FlyEnv",
+      "full_name": "xpf0000/FlyEnv",
+      "html_url": "https://github.com/xpf0000/FlyEnv",
+      "description": "Lightweight Native Local Dev Toolbox for Windows, macOS & Linux. Run OpenClaw/n8n/Apache/Nginx/Caddy/Tomcat/PHP/Node.js/Bun/Deno/Python/Java/Go/Ruby/Perl/Rust/Erlang/MySQL/PostgreSQL/MariaDB/MongoDB/Redis/RabbitMQ/Mailpit/Elasticsearch without Docker. The faster, modular alternative to XAMPP/MAMP/Laravel Herd/NVM/FNM/PHPStudy...",
+      "language": "TypeScript",
+      "stars": 2675,
+      "contributors": 36,
+      "created_at": "2020-04-11T13:56:40+00:00",
+      "release_count": 32,
+      "release_freq_zh": "日更",
+      "release_freq_en": "Daily",
+      "has_ci": true,
+      "is_upstream": false,
+      "scores": {
+        "code_quality": 7,
+        "maintainability": 7,
+        "robustness": 7,
+        "sustainability": 8,
         "portability": 8,
         "extensibility": 8
       },
-      "total": 8.5,
-      "summary_zh": "Android Node 伴侣 APK 自动发布 | 基础设施生产级",
-      "summary_en": "Android Node Companion APK Auto-Release | Production-Grade Infrastructure",
-      "recommendation_zh": "推荐用于 OpenClaw 自托管 Android 节点部署",
-      "recommendation_en": "Recommended for self-hosted OpenClaw Android node deployment",
+      "total": 7.5,
+      "summary_zh": "生产级跨平台本地开发环境管理器 | 模块化架构 + 完善CI/CD",
+      "summary_en": "Production-grade cross-platform dev environment manager | modular architecture + robust CI/CD",
+      "recommendation_zh": "适合需要快速切换多版本运行时、无Docker开销的开发团队",
+      "recommendation_en": "Ideal for dev teams needing instant runtime version switching without Docker overhead",
       "highlights_zh": [
-        "多阶段 Docker 构建、SHA256 锁定与缓存优化",
-        "CI/CD 完整，自动上游同步与冲突规则处理"
+        "完善的GitHub Actions CI/CD（支持三平台并行构建+代码签名）",
+        "模块化架构支持自定义模块，扩展性强",
+        "跨平台支持（Windows/macOS/Linux）+ 多架构（x64/arm64）"
       ],
       "highlights_en": [
-        "Multi-stage Docker with SHA256 pinning and cache optimization",
-        "Full CI/CD with automated upstream sync and custom conflict rules"
+        "Robust GitHub Actions CI/CD with cross-platform parallel builds and code signing",
+        "Modular architecture supporting custom modules for extensibility",
+        "Cross-platform support (Windows/macOS/Linux) with multi-architecture (x64/arm64)"
       ],
       "concerns_zh": [
-        "Android 签名依赖 GitHub Secrets 配置",
-        "上游同步采用自定义规则，冲突处理需长期维护"
+        "依赖数量庞大（100+），安全维护成本较高",
+        "TypeScript仅用Babel转译，缺少tsc类型检查CI环节",
+        "Electron框架较重，对低配设备不友好"
       ],
       "concerns_en": [
-        "Android signing requires GitHub Secrets configuration",
-        "Upstream sync uses custom rules requiring ongoing maintenance"
+        "Large dependency count (100+) increases security maintenance burden",
+        "TypeScript only transpiled via Babel, lacks tsc type-checking in CI",
+        "Electron framework adds weight, not ideal for low-end devices"
+      ]
+    },
+    {
+      "name": "superset",
+      "full_name": "superset-sh/superset",
+      "html_url": "https://github.com/superset-sh/superset",
+      "description": "Code Editor for the AI Agents Era - Run an army of Claude Code, Codex, etc. on your machine",
+      "language": "TypeScript",
+      "stars": 8814,
+      "contributors": 55,
+      "created_at": "2025-10-21T09:16:51+00:00",
+      "release_count": 110,
+      "release_freq_zh": "日更",
+      "release_freq_en": "Daily",
+      "has_ci": true,
+      "is_upstream": false,
+      "scores": {
+        "code_quality": 8,
+        "maintainability": 8,
+        "robustness": 7,
+        "sustainability": 8,
+        "portability": 6,
+        "extensibility": 8
+      },
+      "total": 7.5,
+      "summary_zh": "生产级AI代码助手编排平台 | 现代化TypeScript+Electron架构",
+      "summary_en": "Production-grade AI coding agent orchestration platform | Modern TypeScript+Electron architecture",
+      "recommendation_zh": "推荐追求高效并行AI开发体验的团队，macOS用户优先",
+      "recommendation_en": "Recommended for teams seeking efficient parallel AI development, macOS users prioritized",
+      "highlights_zh": [
+        "完善的Monorepo架构（Turbo+Bun）和CI/CD流水线（5+工作流）",
+        "支持10+种CLI编程代理的通用兼容性设计"
+      ],
+      "highlights_en": [
+        "Well-structured Monorepo (Turbo+Bun) with comprehensive CI/CD (5+ workflows)",
+        "Universal compatibility design supporting 10+ CLI coding agents"
+      ],
+      "concerns_zh": [
+        "仅macOS正式支持，Windows/Linux未测试，平台锁定风险"
+      ],
+      "concerns_en": [
+        "Only macOS officially supported, Windows/Linux untested, platform lock-in risk"
+      ]
+    },
+    {
+      "name": "claude-squad",
+      "full_name": "smtg-ai/claude-squad",
+      "html_url": "https://github.com/smtg-ai/claude-squad",
+      "description": "Manage multiple AI terminal agents like Claude Code, Codex, OpenCode, and Amp.",
+      "language": "Go",
+      "stars": 6869,
+      "contributors": 14,
+      "created_at": "2025-03-09T20:00:41+00:00",
+      "release_count": 17,
+      "release_freq_zh": "日更",
+      "release_freq_en": "Daily",
+      "has_ci": true,
+      "is_upstream": false,
+      "scores": {
+        "code_quality": 8,
+        "maintainability": 7,
+        "robustness": 6,
+        "sustainability": 8,
+        "portability": 9,
+        "extensibility": 7
+      },
+      "total": 7.5,
+      "summary_zh": "生产级AI终端多会话管理工具 | CI/CD完善，跨平台构建成熟",
+      "summary_en": "Production-grade AI terminal multi-session manager | Mature CI/CD and cross-platform build",
+      "recommendation_zh": "适合需要并行管理多个AI编码助手的开发者 | 推荐用于大规模vibe coding场景",
+      "recommendation_en": "For developers managing multiple AI coding assistants in parallel | Ideal for large-scale vibe coding workflows",
+      "highlights_zh": [
+        "完整CI/CD流程：lint+test+build+release自动化",
+        "多平台交叉编译：linux/darwin/windows × amd64/arm64"
+      ],
+      "highlights_en": [
+        "Complete CI/CD pipeline: lint + test + build + release automation",
+        "Multi-platform cross-compilation: linux/darwin/windows × amd64/arm64"
+      ],
+      "concerns_zh": [
+        "源码样本仅含配置/工作流文件，无法评估实际Go代码质量",
+        "外部依赖：tmux和gh为必需依赖，缺乏fallback机制"
+      ],
+      "concerns_en": [
+        "Source samples only contain config/workflow files, unable to assess actual Go code quality",
+        "External dependencies: tmux and gh are hard requirements, no fallback mechanism"
+      ]
+    },
+    {
+      "name": "byterover-cli",
+      "full_name": "campfirein/byterover-cli",
+      "html_url": "https://github.com/campfirein/byterover-cli",
+      "description": "ByteRover CLI (brv) - The portable memory layer for  autonomous coding agents (formerly Cipher)",
+      "language": "TypeScript",
+      "stars": 4326,
+      "contributors": 13,
+      "created_at": "2025-06-19T22:40:22+00:00",
+      "release_count": 0,
+      "release_freq_zh": "无",
+      "release_freq_en": "None",
+      "has_ci": true,
+      "is_upstream": false,
+      "scores": {
+        "code_quality": 8,
+        "maintainability": 7,
+        "robustness": 6,
+        "sustainability": 7,
+        "portability": 9,
+        "extensibility": 8
+      },
+      "total": 7.5,
+      "summary_zh": "生产级AI编程助手的持久化记忆CLI | 专业工程实践与多平台分发",
+      "summary_en": "Production-grade persistent memory CLI for AI coding agents | Professional engineering with multi-platform distribution",
+      "recommendation_zh": "适合需要上下文记忆的AI编程工作流，专业但需补充测试覆盖",
+      "recommendation_en": "Ideal for AI coding workflows needing context memory, professional but needs more test coverage",
+      "highlights_zh": [
+        "TypeScript + ESLint/Prettier 完整类型安全体系",
+        "oclif 框架 + GitHub Actions 多平台打包发布流水线（macOS/Linux三架构）",
+        "20+ LLM 提供商集成，支持 MCP 协议扩展",
+        "智能 Auto-update 机制与云端同步协作能力"
+      ],
+      "highlights_en": [
+        "Full TypeScript type safety with ESLint/Prettier enforcement",
+        "oclif framework with multi-platform CI/CD (macOS/Linux, 3 architectures)",
+        "20+ LLM provider integrations with MCP protocol support",
+        "Smart auto-update mechanism and cloud sync collaboration features"
+      ],
+      "concerns_zh": [
+        "源码样本中未发现测试用例，难以评估实际测试覆盖率",
+        "大型依赖树（50+）存在潜在供应链安全风险",
+        "production 环境配置通过 secrets 直接注入，缺少模板校验"
+      ],
+      "concerns_en": [
+        "No test cases visible in samples, unclear actual test coverage",
+        "Large dependency tree (50+) poses supply chain security risks",
+        "Production config injected via secrets lacks template validation"
+      ]
+    },
+    {
+      "name": "opencrabs",
+      "full_name": "adolfousier/opencrabs",
+      "html_url": "https://github.com/adolfousier/opencrabs",
+      "description": "The self-improving all channels AI agent. Self-healing. Fully autonomous. Single Rust binary.",
+      "language": "Rust",
+      "stars": 620,
+      "contributors": 4,
+      "created_at": "2026-02-14T00:05:58+00:00",
+      "release_count": 94,
+      "release_freq_zh": "日更",
+      "release_freq_en": "Daily",
+      "has_ci": true,
+      "is_upstream": false,
+      "scores": {
+        "code_quality": 8,
+        "maintainability": 8,
+        "robustness": 7,
+        "sustainability": 6,
+        "portability": 8,
+        "extensibility": 8
+      },
+      "total": 7.5,
+      "summary_zh": "生产级多渠道自主AI代理 | 跨平台Rust二进制 | 模块化工具生态",
+      "summary_en": "Production-grade multi-channel autonomous AI agent | Cross-platform Rust binary | Modular tool ecosystem",
+      "recommendation_zh": "适合需要跨平台统一入口的AI助手开发团队",
+      "recommendation_en": "Ideal for teams needing unified cross-platform AI assistant",
+      "highlights_zh": [
+        "94次发布验证的成熟CI/CD流程，三平台测试覆盖",
+        "模块化架构（brain/channels/database）支持热插拔渠道",
+        "editions 2024 + Rust 1.91现代语法特性"
+      ],
+      "highlights_en": [
+        "Mature CI/CD with 94 releases, cross-platform testing on Linux/Windows/macOS",
+        "Modular architecture (brain/channels/database) with hot-swappable channels",
+        "Modern Rust practices with edition 2024 and Rust 1.91"
+      ],
+      "concerns_zh": [
+        "仅4名贡献者存在总线因子风险，项目复杂度较高"
+      ],
+      "concerns_en": [
+        "Only 4 contributors creates bus factor risk for a project of this complexity"
+      ]
+    },
+    {
+      "name": "localclaw",
+      "full_name": "sunkencity999/localclaw",
+      "html_url": "https://github.com/sunkencity999/localclaw",
+      "description": "Your own personal AI assistant configured to work WELL with small, open-source models. Built on Openclaw.",
+      "language": "TypeScript",
+      "stars": 78,
+      "contributors": 321,
+      "created_at": "2026-02-02T18:01:44+00:00",
+      "release_count": 0,
+      "release_freq_zh": "无",
+      "release_freq_en": "None",
+      "has_ci": true,
+      "is_upstream": false,
+      "scores": {
+        "code_quality": 7,
+        "maintainability": 7,
+        "robustness": 7,
+        "sustainability": 7,
+        "portability": 8,
+        "extensibility": 8
+      },
+      "total": 7.3,
+      "summary_zh": "生产级本地优先AI助手CLI | 成熟多渠道插件生态与形式化验证",
+      "summary_en": "Production-grade local-first AI CLI | Mature multi-channel plugin ecosystem with formal verification",
+      "recommendation_zh": "适合需要本地运行、重视隐私且需集成多渠道的AI助手场景",
+      "recommendation_en": "Ideal for local-first AI assistant use cases requiring privacy and multi-channel integration",
+      "highlights_zh": [
+        "形式化模型验证确保核心系统可靠性 (precedence, pairing, routing 等)",
+        "插件SDK与Clawhub生态提供强扩展性"
+      ],
+      "highlights_en": [
+        "Formal model verification ensures core system reliability (precedence, pairing, routing)",
+        "Plugin SDK with Clawhub ecosystem provides strong extensibility"
+      ],
+      "concerns_zh": [
+        "npm包包含70+ dist目录导致包体积过大",
+        "secrets检测工具版本固定(1.5.0)可能存在已知漏洞"
+      ],
+      "concerns_en": [
+        "npm package includes 70+ dist directories, bloating package size",
+        "Fixed detect-secrets version (1.5.0) may have known vulnerabilities"
+      ]
+    },
+    {
+      "name": "DenchClaw",
+      "full_name": "DenchHQ/DenchClaw",
+      "html_url": "https://github.com/DenchHQ/DenchClaw",
+      "description": "Fully Managed OpenClaw Framework for all knowledge work ever. CRM Automation and Outreach agents. The only local productivity tool you need.",
+      "language": "TypeScript",
+      "stars": 1479,
+      "contributors": 366,
+      "created_at": "2026-02-01T06:25:42+00:00",
+      "release_count": 19,
+      "release_freq_zh": "日更",
+      "release_freq_en": "Daily",
+      "has_ci": true,
+      "is_upstream": false,
+      "scores": {
+        "code_quality": 8,
+        "maintainability": 7,
+        "robustness": 7,
+        "sustainability": 8,
+        "portability": 6,
+        "extensibility": 8
+      },
+      "total": 7.3,
+      "summary_zh": "生产级本地CRM框架 | TypeScript严格类型 + 活跃社区(366贡献者)驱动",
+      "summary_en": "Production-grade local CRM framework | TypeScript strict types with active community (366 contributors)",
+      "recommendation_zh": "适合需要本地部署的AI CRM/自动化场景，需Node 22+环境",
+      "recommendation_en": "Ideal for AI CRM and automation requiring local deployment with Node 22+",
+      "highlights_zh": [
+        "TypeScript严格类型检查(no-explicit-any: error)",
+        "活跃开源社区(366贡献者,19次发布)"
+      ],
+      "highlights_en": [
+        "Strict TypeScript with no-explicit-any enforcement",
+        "Active open source community (366 contributors, 19 releases)"
+      ],
+      "concerns_zh": [
+        "仅支持Node 22+限制了部署灵活性"
+      ],
+      "concerns_en": [
+        "Node 22+ requirement restricts deployment flexibility"
+      ]
+    },
+    {
+      "name": "nanoclaw",
+      "full_name": "qwibitai/nanoclaw",
+      "html_url": "https://github.com/qwibitai/nanoclaw",
+      "description": "A lightweight alternative to OpenClaw that runs in containers for security. Connects to WhatsApp, Telegram, Slack, Discord, Gmail and other messaging apps,, has memory, scheduled jobs, and runs directly on Anthropic's Agents SDK",
+      "language": "TypeScript",
+      "stars": 26754,
+      "contributors": 57,
+      "created_at": "2026-01-31T15:47:22+00:00",
+      "release_count": 0,
+      "release_freq_zh": "无",
+      "release_freq_en": "None",
+      "has_ci": true,
+      "is_upstream": false,
+      "scores": {
+        "code_quality": 8,
+        "maintainability": 8,
+        "robustness": 7,
+        "sustainability": 7,
+        "portability": 6,
+        "extensibility": 8
+      },
+      "total": 7.3,
+      "summary_zh": "轻量级容器隔离AI助手 | 小而美的可定制个人助手",
+      "summary_en": "Lightweight container-isolated AI assistant | Small, customizable personal assistant",
+      "recommendation_zh": "追求轻量安全AI助手的个人用户首选，企业级使用需评估CI依赖",
+      "recommendation_en": "Best for personal users wanting lightweight secure AI; enterprise use requires evaluating Claude Code dependency",
+      "highlights_zh": [
+        "容器级安全隔离( Docker/Apple Container)，文件系统隔离而非仅权限检查",
+        "极小代码库(34.9k tokens)，TypeScript + ESLint + Vitest 完整工具链"
+      ],
+      "highlights_en": [
+        "Container-level security isolation (Docker/Apple Container), filesystem isolation vs permission checks",
+        "Extremely small codebase (34.9k tokens), complete toolchain with TypeScript + ESLint + Vitest"
+      ],
+      "concerns_zh": [
+        "依赖 Claude Code CLI（非开源）作为运行时核心"
+      ],
+      "concerns_en": [
+        "Depends on Claude Code CLI (closed-source) as runtime core"
+      ]
+    },
+    {
+      "name": "Anthropic-Cybersecurity-Skills",
+      "full_name": "mukul975/Anthropic-Cybersecurity-Skills",
+      "html_url": "https://github.com/mukul975/Anthropic-Cybersecurity-Skills",
+      "description": "754 structured cybersecurity skills for AI agents · Mapped to 5 frameworks: MITRE ATT&CK, NIST CSF 2.0, MITRE ATLAS, D3FEND & NIST AI RMF · agentskills.io standard · Works with Claude Code, GitHub Copilot, Codex CLI, Cursor, Gemini CLI & 20+ platforms · 26 security domains · Apache 2.0",
+      "language": "Python",
+      "stars": 4088,
+      "contributors": 2,
+      "created_at": "2026-02-25T09:47:50+00:00",
+      "release_count": 3,
+      "release_freq_zh": "不定期",
+      "release_freq_en": "Irregular",
+      "has_ci": true,
+      "is_upstream": false,
+      "scores": {
+        "code_quality": 7,
+        "maintainability": 8,
+        "robustness": 7,
+        "sustainability": 6,
+        "portability": 8,
+        "extensibility": 8
+      },
+      "total": 7.3,
+      "summary_zh": "高质量AI安全技能知识库 | 754项技能映射五大框架但贡献者稀少",
+      "summary_en": "High-quality AI security knowledge base | 754 skills mapped to 5 frameworks but sparse contributors",
+      "recommendation_zh": "适合作为AI安全代理的知识增强层，不建议作为独立安全工具依赖",
+      "recommendation_en": "Best as knowledge augmentation layer for AI agents, not as standalone security tool dependency",
+      "highlights_zh": [
+        "标准化的agentskills.io格式，754项技能覆盖26个安全领域",
+        "CI/CD自动化验证框架确保技能元数据一致性"
+      ],
+      "highlights_en": [
+        "Standardized agentskills.io format with 754 skills across 26 security domains",
+        "Automated CI/CD validation ensures consistent skill metadata"
+      ],
+      "concerns_zh": [
+        "仅2名贡献者，长期维护风险较高",
+        "缺少代码级单元测试，纯文档驱动项目"
+      ],
+      "concerns_en": [
+        "Only 2 contributors, higher long-term maintenance risk",
+        "No unit tests at code level, documentation-driven project"
+      ]
+    },
+    {
+      "name": "picoclaw",
+      "full_name": "sipeed/picoclaw",
+      "html_url": "https://github.com/sipeed/picoclaw",
+      "description": "Tiny, Fast, and Deployable anywhere — automate the mundane, unleash your creativity",
+      "language": "Go",
+      "stars": 27761,
+      "contributors": 192,
+      "created_at": "2026-02-04T12:32:35+00:00",
+      "release_count": 11,
+      "release_freq_zh": "周更",
+      "release_freq_en": "Weekly",
+      "has_ci": true,
+      "is_upstream": false,
+      "scores": {
+        "code_quality": 6,
+        "maintainability": 7,
+        "robustness": 5,
+        "sustainability": 7,
+        "portability": 10,
+        "extensibility": 9
+      },
+      "total": 7.3,
+      "summary_zh": "超轻量级AI助手 | 嵌入式/边缘计算首选",
+      "summary_en": "Ultra-lightweight AI Assistant | Ideal for Embedded/Edge Computing",
+      "recommendation_zh": "适合边缘AI、IoT设备、嵌入式系统的轻量级AI助手开发",
+      "recommendation_en": "Ideal for edge AI, IoT devices, and embedded system AI assistant development",
+      "highlights_zh": [
+        "极低资源占用：<10MB RAM，比同类产品节省99%内存",
+        "真正的跨平台：支持x86/ARM/MIPS/RISC-V/LoongArch单一二进制",
+        "多渠道集成：Telegram/Discord/WeChat/Matrix等10+渠道",
+        "MCP协议支持：可连接任意MCP服务器扩展功能"
+      ],
+      "highlights_en": [
+        "Extremely low resource usage: <10MB RAM, 99% less memory than comparable tools",
+        "True cross-platform: single binary supporting x86/ARM/MIPS/RISC-V/LoongArch",
+        "Multi-channel integration: 10+ channels including Telegram/Discord/WeChat/Matrix",
+        "MCP protocol support: connects to any MCP server for extended capabilities"
+      ],
+      "concerns_zh": [
+        "v0.x阶段，功能和API可能不稳定，大量PR合并导致内存上升至10-20MB",
+        "明确警告存在未解决的安全问题，不建议生产部署至v1.0",
+        "95%代码由AI生成，人类代码审查程度未知，可能存在隐藏缺陷"
+      ],
+      "concerns_en": [
+        "v0.x stage with unstable features/API; mass PR merges increased RAM to 10-20MB",
+        "Explicitly warns about unresolved security issues; not recommended for production until v1.0",
+        "95% code generated by AI with unknown human review level; potential hidden defects"
+      ]
+    },
+    {
+      "name": "fastclaw",
+      "full_name": "fastclaw-ai/fastclaw",
+      "html_url": "https://github.com/fastclaw-ai/fastclaw",
+      "description": "Faster and better openclaw alternative",
+      "language": "Go",
+      "stars": 490,
+      "contributors": 2,
+      "created_at": "2026-03-09T09:07:00+00:00",
+      "release_count": 32,
+      "release_freq_zh": "日更",
+      "release_freq_en": "Daily",
+      "has_ci": true,
+      "is_upstream": false,
+      "scores": {
+        "code_quality": 7,
+        "maintainability": 7,
+        "robustness": 7,
+        "sustainability": 5,
+        "portability": 9,
+        "extensibility": 8
+      },
+      "total": 7.2,
+      "summary_zh": "成熟的多渠道AI Agent运行时框架 | 小团队维护风险",
+      "summary_en": "Production-ready multi-channel AI Agent runtime | Small team maintenance risk",
+      "recommendation_zh": "适合自托管AI助手需求，技术选型成熟，需关注长期维护",
+      "recommendation_en": "Suitable for self-hosted AI assistant needs with mature tech stack, monitor long-term maintenance",
+      "highlights_zh": [
+        "跨平台单二进制部署（Win/Mac/Linux, amd64/arm64），零依赖运行",
+        "完整安全体系：Docker沙箱+AES-256加密凭证+策略引擎+循环检测"
+      ],
+      "highlights_en": [
+        "Cross-platform single-binary deployment (Win/Mac/Linux, amd64/arm64) with zero external dependencies",
+        "Comprehensive security: Docker sandbox + AES-256 credential encryption + policy engine + loop detection"
+      ],
+      "concerns_zh": [
+        "仅2名贡献者，长期维护存在单点风险"
+      ],
+      "concerns_en": [
+        "Only 2 contributors creates single-point-of-failure risk for long-term maintenance"
+      ]
+    },
+    {
+      "name": "Canopy",
+      "full_name": "kwalus/Canopy",
+      "html_url": "https://github.com/kwalus/Canopy",
+      "description": "A local-first, encrypted Slack/Discord alternative built for the agentic era. AI agents, such as openclaw, join channels, receive tasks, and coordinate on equal footing with humans — over a serverless P2P mesh.",
+      "language": "Python",
+      "stars": 274,
+      "contributors": 2,
+      "created_at": "2026-02-20T21:01:23+00:00",
+      "release_count": 17,
+      "release_freq_zh": "日更",
+      "release_freq_en": "Daily",
+      "has_ci": true,
+      "is_upstream": false,
+      "scores": {
+        "code_quality": 7,
+        "maintainability": 7,
+        "robustness": 7,
+        "sustainability": 6,
+        "portability": 8,
+        "extensibility": 8
+      },
+      "total": 7.2,
+      "summary_zh": "生产级本地优先 P2P 协作平台 | 面向 AI Agent 的模块化通信工具",
+      "summary_en": "Production-ready local-first P2P collaboration | Modular comms for AI agents and humans",
+      "recommendation_zh": "适合需要本地数据主权和多 Agent 协作的团队早期采用",
+      "recommendation_en": "Suitable for teams needing local data sovereignty and multi-agent coordination",
+      "highlights_zh": [
+        "E2E 加密 + ChaCha20-Poly1305 + 非 root Docker 容器",
+        "MCP/REST 多协议支持，AI Agent 一等公民",
+        "Docker 多平台部署 + Windows 系统托盘"
+      ],
+      "highlights_en": [
+        "E2E encryption with ChaCha20-Poly1305 + non-root Docker",
+        "MCP/REST multi-protocol, AI agents as first-class citizens",
+        "Docker multi-platform + Windows system tray"
+      ],
+      "concerns_zh": [
+        "仅 2 名贡献者，Alpha 阶段，长期维护风险较高"
+      ],
+      "concerns_en": [
+        "Only 2 contributors, Alpha stage — higher long-term maintenance risk"
+      ]
+    },
+    {
+      "name": "jrdev",
+      "full_name": "presstab/jrdev",
+      "html_url": "https://github.com/presstab/jrdev",
+      "description": "JrDev is a free open-source AI developer assistant for the terminal. It provides CLI/TUI interfaces to interact with LLMs for code generation, project context management, and Git operations.",
+      "language": "Python",
+      "stars": 67,
+      "contributors": 4,
+      "created_at": "2025-03-13T04:34:48+00:00",
+      "release_count": 12,
+      "release_freq_zh": "日更",
+      "release_freq_en": "Daily",
+      "has_ci": true,
+      "is_upstream": false,
+      "scores": {
+        "code_quality": 7,
+        "maintainability": 8,
+        "robustness": 6,
+        "sustainability": 5,
+        "portability": 9,
+        "extensibility": 8
+      },
+      "total": 7.2,
+      "summary_zh": "模块化AI编程助手 | 专业工程实践但早期阶段",
+      "summary_en": "Modular AI coding assistant | Professional engineering with early-stage maturity",
+      "recommendation_zh": "适合技术爱好者尝鲜，生产使用需等待稳定版",
+      "recommendation_en": "Suitable for tech enthusiasts to try; wait for stable release for production use",
+      "highlights_zh": [
+        "多模型分层策略平衡成本与性能",
+        "模块化架构（commands/agents/services分离）便于扩展"
+      ],
+      "highlights_en": [
+        "Multi-model tiered strategy balancing cost and performance",
+        "Modular architecture (commands/agents/services separation) for easy extensibility"
+      ],
+      "concerns_zh": [
+        "早期访问软件，存在快速breaking changes风险"
+      ],
+      "concerns_en": [
+        "Early access software with rapid breaking change risks"
+      ]
+    },
+    {
+      "name": "tinyagi",
+      "full_name": "TinyAGI/tinyagi",
+      "html_url": "https://github.com/TinyAGI/tinyagi",
+      "description": "TinyAGI is the agent teams orchestrator for One Person Company. (fka TinyClaw)",
+      "language": "TypeScript",
+      "stars": 3484,
+      "contributors": 10,
+      "created_at": "2026-02-09T00:34:11+00:00",
+      "release_count": 20,
+      "release_freq_zh": "日更",
+      "release_freq_en": "Daily",
+      "has_ci": true,
+      "is_upstream": false,
+      "scores": {
+        "code_quality": 7,
+        "maintainability": 8,
+        "robustness": 6,
+        "sustainability": 7,
+        "portability": 8,
+        "extensibility": 7
+      },
+      "total": 7.2,
+      "summary_zh": "活跃的实验性多智能体编排平台 | 架构清晰但稳定性待验证",
+      "summary_en": "Active experimental multi-agent orchestration platform with clear architecture but unverified stability",
+      "recommendation_zh": "适合个人开发者快速搭建AI助手团队，生产环境需谨慎评估",
+      "recommendation_en": "Ideal for solo developers to quickly build AI agent teams; evaluate carefully for production",
+      "highlights_zh": [
+        "TypeScript monorepo架构清晰，packages职责分离良好",
+        "完善的CI/CD、容器化部署和实验性Discord社区支持"
+      ],
+      "highlights_en": [
+        "Well-structured TypeScript monorepo with clear package separation",
+        "Complete CI/CD pipeline, containerization, and active Discord community"
+      ],
+      "concerns_zh": [
+        "项目标记为experimental，API可能不稳定",
+        "缺乏可见的测试代码和单元测试覆盖",
+        "外部CLI依赖(Claude Code/Codex)以|| true静默失败"
+      ],
+      "concerns_en": [
+        "Project marked as experimental with potentially unstable APIs",
+        "No visible test code or unit test coverage",
+        "External CLI dependencies silently fail with || true"
+      ]
+    },
+    {
+      "name": "natively-cluely-ai-assistant",
+      "full_name": "Natively-AI-assistant/natively-cluely-ai-assistant",
+      "html_url": "https://github.com/Natively-AI-assistant/natively-cluely-ai-assistant",
+      "description": "Natively - Free open-source AI interview copilot & meeting assistant. The best Cluely alternative, Final Round AI alternative, and Interview Coder alternative. Real-time transcription, undetectable stealth mode, local RAG, BYOK. No subscriptions. No data breaches.",
+      "language": "TypeScript",
+      "stars": 892,
+      "contributors": 9,
+      "created_at": "2026-01-27T12:32:08+00:00",
+      "release_count": 22,
+      "release_freq_zh": "日更",
+      "release_freq_en": "Daily",
+      "has_ci": true,
+      "is_upstream": false,
+      "scores": {
+        "code_quality": 7,
+        "maintainability": 7,
+        "robustness": 6,
+        "sustainability": 7,
+        "portability": 8,
+        "extensibility": 7
+      },
+      "total": 7.0,
+      "summary_zh": "生产级Electron桌面应用 | 多LLM集成与本地RAG | 跨平台AI面试助手",
+      "summary_en": "Production-grade Electron app | Multi-LLM integration with local RAG | Cross-platform AI interview copilot",
+      "recommendation_zh": "适合需要本地AI辅助面试/会议场景的用户，贡献者需熟悉TypeScript+Electron+Rust",
+      "recommendation_en": "Ideal for users needing local AI interview/meeting assistance; contributors need TypeScript+Electron+Rust expertise",
+      "highlights_zh": [
+        "完整的多LLM后端支持（OpenAI/Claude/Gemini/Ollama）+ 多级容错链路",
+        "原生Rust模块实现零拷贝音频处理（WebRTC VAD），<500ms延迟",
+        "跨平台构建（macOS/Windows/Linux）+ ARM64/x64多架构支持"
+      ],
+      "highlights_en": [
+        "Full multi-LLM backend support (OpenAI/Claude/Gemini/Ollama) with multi-tier fallback chains",
+        "Native Rust module for zero-copy audio processing (WebRTC VAD), <500ms latency",
+        "Cross-platform builds (macOS/Windows/Linux) with ARM64/x64 multi-arch support"
+      ],
+      "concerns_zh": [
+        "无测试框架可见（缺少单元/E2E测试），容错依赖变更日志而非代码证据",
+        "ISC与AGPL-3.0许可证声明不一致，license字段需统一",
+        "空author字段与空keywords数组，package.json元数据不完整"
+      ],
+      "concerns_en": [
+        "No testing framework visible (lacks unit/E2E tests), fault tolerance depends on changelog not code evidence",
+        "ISC vs AGPL-3.0 license declaration inconsistency, needs unified license field",
+        "Empty author field and empty keywords array, incomplete package.json metadata"
+      ]
+    },
+    {
+      "name": "oli",
+      "full_name": "amrit110/oli",
+      "html_url": "https://github.com/amrit110/oli",
+      "description": "A simple, fast terminal based AI coding assistant",
+      "language": "Rust",
+      "stars": 241,
+      "contributors": 3,
+      "created_at": "2025-02-11T22:16:18+00:00",
+      "release_count": 6,
+      "release_freq_zh": "周更",
+      "release_freq_en": "Weekly",
+      "has_ci": true,
+      "is_upstream": false,
+      "scores": {
+        "code_quality": 7,
+        "maintainability": 8,
+        "robustness": 6,
+        "sustainability": 6,
+        "portability": 8,
+        "extensibility": 7
+      },
+      "total": 7.0,
+      "summary_zh": "早期 Rust+React 混合架构终端 AI 助手 | 代码规范但仍需完善",
+      "summary_en": "Early-stage Rust+React hybrid terminal AI assistant with solid code standards",
+      "recommendation_zh": "技术架构优秀，适合尝鲜 AI 编程助手，生产环境需谨慎",
+      "recommendation_en": "Excellent architecture for AI coding exploration, caution for production",
+      "highlights_zh": [
+        "Rust 后端 + React/Ink 前端的现代化混合架构设计",
+        "完善的 CI/CD 配置 (clippy/rustfmt/Codecov/pre-commit)"
+      ],
+      "highlights_en": [
+        "Modern hybrid architecture with Rust backend and React/Ink frontend",
+        "Comprehensive CI/CD pipeline with clippy, rustfmt, Codecov, pre-commit"
+      ],
+      "concerns_zh": [
+        "项目标注为早期阶段 (v0.1.4)，存在潜在 bugs",
+        "前端测试完全缺失 (package.json 中 test 仅为占位符)",
+        "仅 3 位贡献者，可持续性存在风险"
+      ],
+      "concerns_en": [
+        "Project marked as early-stage (v0.1.4) with potential bugs",
+        "Frontend tests completely missing (test script is placeholder)",
+        "Only 3 contributors, sustainability concerns"
+      ]
+    },
+    {
+      "name": "formax",
+      "full_name": "yusifeng/formax",
+      "html_url": "https://github.com/yusifeng/formax",
+      "description": "Terminal-first AI assistant for software engineering tasks (inspired by Claude Code v2.0.67)",
+      "language": "TypeScript",
+      "stars": 131,
+      "contributors": 1,
+      "created_at": "2025-12-30T19:09:00+00:00",
+      "release_count": 0,
+      "release_freq_zh": "无",
+      "release_freq_en": "None",
+      "has_ci": true,
+      "is_upstream": false,
+      "scores": {
+        "code_quality": 8,
+        "maintainability": 8,
+        "robustness": 5,
+        "sustainability": 6,
+        "portability": 7,
+        "extensibility": 8
+      },
+      "total": 7.0,
+      "summary_zh": "架构精良的多端AI编程助手原型 | Beta阶段存已知功能缺口",
+      "summary_en": "Well-architected multi-frontend AI coding assistant prototype | Beta stage with known feature gaps",
+      "recommendation_zh": "适合架构学习与实验，生产日用需等待正式版",
+      "recommendation_en": "Suitable for architecture learning and experiments; await stable release for production use",
+      "highlights_zh": [
+        "语义层抽象设计优秀，实现TUI/Web/app-server三端语义一致",
+        "治理文档完善：AGENTS.md、ARCHITECTURE.md、CODEMAP.md 构成可靠开发指南"
+      ],
+      "highlights_en": [
+        "Excellent semantic layer abstraction achieving consistency across TUI/Web/app-server",
+        "Comprehensive governance docs (AGENTS.md, ARCHITECTURE.md, CODEMAP.md) enable reliable development"
+      ],
+      "concerns_zh": [
+        "Beta阶段，WebFetch/WebSearch不稳定、hooks不完整、单贡献者维护存在可持续性风险"
+      ],
+      "concerns_en": [
+        "Beta stage with unstable WebFetch/WebSearch, incomplete hooks, and single-maintainer sustainability risk"
+      ]
+    },
+    {
+      "name": "context-optimizer-mcp-server",
+      "full_name": "malaksedarous/context-optimizer-mcp-server",
+      "html_url": "https://github.com/malaksedarous/context-optimizer-mcp-server",
+      "description": "A Model Context Protocol (MCP) server that provides context optimization tools for AI coding assistants including GitHub Copilot, Cursor AI, Claude Desktop, and other MCP-compatible assistants enabling them to extract targeted information rather than processing large terminal outputs and files wasting their context.",
+      "language": "TypeScript",
+      "stars": 55,
+      "contributors": 1,
+      "created_at": "2025-08-08T17:23:29+00:00",
+      "release_count": 4,
+      "release_freq_zh": "周更",
+      "release_freq_en": "Weekly",
+      "has_ci": true,
+      "is_upstream": false,
+      "scores": {
+        "code_quality": 7,
+        "maintainability": 6,
+        "robustness": 7,
+        "sustainability": 5,
+        "portability": 9,
+        "extensibility": 8
+      },
+      "total": 7.0,
+      "summary_zh": "MCP生态上下文优化工具 | 跨平台TypeScript实现",
+      "summary_en": "MCP ecosystem context optimizer | Cross-platform TypeScript implementation",
+      "recommendation_zh": "适合探索MCP工具生态，长期项目需评估单人维护风险",
+      "recommendation_en": "Good for exploring MCP ecosystem, evaluate single-maintainer risk for long-term projects",
+      "highlights_zh": [
+        "多LLM提供商支持（Gemini/Claude/OpenAI）增强灵活性",
+        "无原生依赖，Node.js 18+跨平台兼容性强"
+      ],
+      "highlights_en": [
+        "Multi-LLM provider support (Gemini/Claude/OpenAI) for flexibility",
+        "No native dependencies, strong cross-platform compatibility with Node.js 18+"
+      ],
+      "concerns_zh": [
+        "单人维护可持续性风险，Stars仅55用户基础较小"
+      ],
+      "concerns_en": [
+        "Single-maintainer sustainability risk, limited user base with only 55 stars"
+      ]
+    },
+    {
+      "name": "awesome-agent-skills",
+      "full_name": "VoltAgent/awesome-agent-skills",
+      "html_url": "https://github.com/VoltAgent/awesome-agent-skills",
+      "description": "Claude Code Skills and 1000+ agent skills from official dev teams and the community, compatible with Codex, Antigravity, Gemini CLI, Cursor and others.",
+      "language": "Unknown",
+      "stars": 14537,
+      "contributors": 65,
+      "created_at": "2025-10-28T08:55:32+00:00",
+      "release_count": 0,
+      "release_freq_zh": "无",
+      "release_freq_en": "None",
+      "has_ci": false,
+      "is_upstream": false,
+      "scores": {
+        "code_quality": 5,
+        "maintainability": 7,
+        "robustness": 4,
+        "sustainability": 8,
+        "portability": 9,
+        "extensibility": 8
+      },
+      "total": 6.8,
+      "summary_zh": "AI助手技能精选列表 | 社区驱动型知识库项目",
+      "summary_en": "Curated collection of 1000+ AI agent skills | Community-driven knowledge base",
+      "recommendation_zh": "推荐作为技能发现和学习的参考资源，不适合作为核心依赖",
+      "recommendation_en": "Best as a reference for skill discovery; not suitable as a production dependency",
+      "highlights_zh": [
+        "社区活跃度高（14.5k stars、65位贡献者）",
+        "多框架兼容（Claude Code、Codex、Cursor等）"
+      ],
+      "highlights_en": [
+        "Strong community engagement (14.5k stars, 65 contributors)",
+        "Multi-framework compatibility (Claude Code, Codex, Cursor, etc.)"
+      ],
+      "concerns_zh": [
+        "非传统软件项目，缺少代码质量和测试覆盖评估依据"
+      ],
+      "concerns_en": [
+        "Not a traditional software project; limited basis for code quality/testing assessment"
+      ]
+    },
+    {
+      "name": "ocode",
+      "full_name": "haasonsaas/ocode",
+      "html_url": "https://github.com/haasonsaas/ocode",
+      "description": "OCode is a sophisticated terminal-native AI coding assistant that provides deep codebase intelligence and autonomous task execution",
+      "language": "Python",
+      "stars": 126,
+      "contributors": 3,
+      "created_at": "2025-05-27T00:03:55+00:00",
+      "release_count": 0,
+      "release_freq_zh": "无",
+      "release_freq_en": "None",
+      "has_ci": true,
+      "is_upstream": false,
+      "scores": {
+        "code_quality": 7,
+        "maintainability": 7,
+        "robustness": 6,
+        "sustainability": 5,
+        "portability": 8,
+        "extensibility": 8
+      },
+      "total": 6.8,
+      "summary_zh": "专业级终端AI编程助手 | 成熟CI/CD但仍处Alpha阶段",
+      "summary_en": "Professional terminal AI coding assistant | Mature CI/CD but still in Alpha",
+      "recommendation_zh": "适合技术探索者，生产环境建议等待正式版发布",
+      "recommendation_en": "Suitable for tech explorers, wait for stable release for production",
+      "highlights_zh": [
+        "完善的CI/CD流程（lint/安全/测试跨平台矩阵）",
+        "19+专业工具集覆盖文件/数据/系统操作",
+        "支持MCP协议扩展，语义搜索可选集成",
+        "多Python版本(3.8-3.13)和操作系统支持"
+      ],
+      "highlights_en": [
+        "Comprehensive CI/CD with lint/security/cross-platform test matrix",
+        "19+ specialized tools covering file/data/system operations",
+        "MCP protocol support with optional semantic search integration",
+        "Multi-Python (3.8-3.13) and multi-OS support"
+      ],
+      "concerns_zh": [
+        "项目仍处Alpha阶段，仅3位贡献者且无正式发布版本",
+        "mypy关闭了严格类型检查（disallow_untyped_defs=false）",
+        "安全扫描使用continue-on-error规避问题",
+        "缺少源码样本难以评估实际代码质量"
+      ],
+      "concerns_en": [
+        "Project in Alpha with only 3 contributors and no releases",
+        "mypy strict type checking disabled (disallow_untyped_defs=false)",
+        "Security scans use continue-on-error to bypass issues",
+        "No source code samples provided to assess actual implementation quality"
+      ]
+    },
+    {
+      "name": "Clawlet",
+      "full_name": "Kxrbx/Clawlet",
+      "html_url": "https://github.com/Kxrbx/Clawlet",
+      "description": "🌸 A lightweight AI agent framework with identity awareness inspired by OpenClaw, aimed to be very simple to set up and easy to use, get up and running in 2 minutes.",
+      "language": "Python",
+      "stars": 14,
+      "contributors": 1,
+      "created_at": "2026-02-10T19:17:27+00:00",
+      "release_count": 1,
+      "release_freq_zh": "不定期",
+      "release_freq_en": "Irregular",
+      "has_ci": true,
+      "is_upstream": false,
+      "scores": {
+        "code_quality": 6,
+        "maintainability": 7,
+        "robustness": 8,
+        "sustainability": 4,
+        "portability": 8,
+        "extensibility": 8
+      },
+      "total": 6.8,
+      "summary_zh": "轻量级AI Agent框架 | 多渠道/多模型支持，安全加固完善",
+      "summary_en": "Lightweight AI agent framework | Multi-channel/model support with hardened security",
+      "recommendation_zh": "适合个人开发者快速搭建本地AI助手，生产环境需谨慎评估",
+      "recommendation_en": "Ideal for personal local AI assistant setup; caution for production use",
+      "highlights_zh": [
+        "18+ LLM提供商支持，本地Ollama/LM Studio免费运行",
+        "安全加固的Shell工具和命令执行机制",
+        "Pydantic配置验证、熔断器、限流等工程化特性",
+        "多渠道集成(Telegram/Discord/Slack/WhatsApp)",
+        "SQLite/PostgreSQL混合持久化，O(1)记忆检索"
+      ],
+      "highlights_en": [
+        "18+ LLM providers with free local Ollama/LM Studio support",
+        "Hardened shell tool with cross-platform injection prevention",
+        "Pydantic validation, circuit breaker, and rate limiting built-in",
+        "Multi-channel integration (Telegram/Discord/Slack/WhatsApp)",
+        "Hybrid SQLite/PostgreSQL persistence with O(1) memory recall"
+      ],
+      "concerns_zh": [
+        "单贡献者项目，长期维护风险高",
+        "Alpha阶段(3-Alpha)，仅1次发布",
+        "Stars仅14，用户社区基础薄弱",
+        "未提供正式安全审计报告"
+      ],
+      "concerns_en": [
+        "Single contributor poses long-term maintenance risk",
+        "Alpha stage (3-Alpha) with only 1 release",
+        "Only 14 stars indicates weak community foundation",
+        "No formal security audit available"
+      ]
+    },
+    {
+      "name": "nanocode",
+      "full_name": "Lyt060814/nanocode",
+      "html_url": "https://github.com/Lyt060814/nanocode",
+      "description": "Lightweight Claude Code alternative: ~1.8% lines, ~90% capability",
+      "language": "TypeScript",
+      "stars": 60,
+      "contributors": 1,
+      "created_at": "2026-04-01T03:25:36+00:00",
+      "release_count": 1,
+      "release_freq_zh": "不定期",
+      "release_freq_en": "Irregular",
+      "has_ci": false,
+      "is_upstream": false,
+      "scores": {
+        "code_quality": 6,
+        "maintainability": 7,
+        "robustness": 7,
+        "sustainability": 5,
+        "portability": 8,
+        "extensibility": 7
+      },
+      "total": 6.7,
+      "summary_zh": "轻量级AI编程助手 | 专注核心智能体能力",
+      "summary_en": "Ultra-lightweight AI coding agent | Core agent focus",
+      "recommendation_zh": "适合学习和研究AI编程助手架构，生产环境需评估维护风险",
+      "recommendation_en": "Suitable for learning agent architecture; evaluate maintenance risks for production",
+      "highlights_zh": [
+        "~9K LOC 实现 Claude Code 85-90% 能力，架构精简",
+        "3层上下文压缩 + 并行工具执行，智能体核心设计完善"
+      ],
+      "highlights_en": [
+        "~9K LOC achieves 85-90% of Claude Code capability with focused architecture",
+        "3-layer context compression + parallel tool execution demonstrate solid agent design"
+      ],
+      "concerns_zh": [
+        "单贡献者 + 无 CI/CD + 仅1次发布，可持续性存疑"
+      ],
+      "concerns_en": [
+        "Single contributor + no CI/CD + only 1 release raises sustainability concerns"
+      ]
+    },
+    {
+      "name": "droidclaw",
+      "full_name": "unitedbyai/droidclaw",
+      "html_url": "https://github.com/unitedbyai/droidclaw",
+      "description": "turn old phones into ai agents - give it a goal in plain english. it reads the screen, thinks about what to do, taps and types via adb, and repeats until the job is done. ",
+      "language": "TypeScript",
+      "stars": 1307,
+      "contributors": 2,
+      "created_at": "2026-02-06T03:29:38+00:00",
+      "release_count": 7,
+      "release_freq_zh": "周更",
+      "release_freq_en": "Weekly",
+      "has_ci": false,
+      "is_upstream": false,
+      "scores": {
+        "code_quality": 7,
+        "maintainability": 7,
+        "robustness": 6,
+        "sustainability": 6,
+        "portability": 7,
+        "extensibility": 7
+      },
+      "total": 6.7,
+      "summary_zh": "架构清晰的多LLM Android控制代理 | 需补充测试与CI",
+      "summary_en": "Well-architected multi-LLM Android controller agent | needs tests & CI",
+      "recommendation_zh": "适合技术用户探索AI手机控制，生产部署需完善测试覆盖",
+      "recommendation_en": "Good for tech users exploring AI phone control; needs tests for production use",
+      "highlights_zh": [
+        "感知→推理→执行的清晰闭环设计，代码结构模块化",
+        "支持5种LLM提供商（Groq/OpenAI/Bedrock/OpenRouter/Ollama）"
+      ],
+      "highlights_en": [
+        "Clean perception→reasoning→action loop with modular code structure",
+        "Multi-provider LLM support (Groq/OpenAI/Bedrock/OpenRouter/Ollama)"
+      ],
+      "concerns_zh": [
+        "代码样本中无单元测试覆盖，reliability存疑"
+      ],
+      "concerns_en": [
+        "No visible test suite in code samples, reliability uncertain"
+      ]
+    },
+    {
+      "name": "flowlyai",
+      "full_name": "Nocetic/flowlyai",
+      "html_url": "https://github.com/Nocetic/flowlyai",
+      "description": "Flowly is 100x faster than OpenClaw. Your AI, your SOUL",
+      "language": "Python",
+      "stars": 26,
+      "contributors": 1,
+      "created_at": "2026-02-02T22:49:37+00:00",
+      "release_count": 5,
+      "release_freq_zh": "周更",
+      "release_freq_en": "Weekly",
+      "has_ci": false,
+      "is_upstream": false,
+      "scores": {
+        "code_quality": 7,
+        "maintainability": 6,
+        "robustness": 6,
+        "sustainability": 5,
+        "portability": 8,
+        "extensibility": 8
+      },
+      "total": 6.7,
+      "summary_zh": "新兴本地AI助手框架 | 多渠道多代理集成但社区基础薄弱",
+      "summary_en": "Emerging local AI assistant framework with multi-channel/agent integration but weak community foundation",
+      "recommendation_zh": "适合技术用户本地部署的个人AI助手，生产环境需谨慎评估",
+      "recommendation_en": "Suitable for tech-savvy users seeking local AI deployment; evaluate carefully for production",
+      "highlights_zh": [
+        "多渠道集成（Telegram/WhatsApp/Discord/Slack）开箱即用",
+        "多代理框架支持Claude Code/Codex等外部AI协作",
+        "跨平台支持（macOS/Linux/Windows）及后台服务化"
+      ],
+      "highlights_en": [
+        "Multi-channel integration (Telegram/WhatsApp/Discord/Slack) out-of-box",
+        "Multi-agent framework supporting Claude Code/Codex collaboration",
+        "Cross-platform support (macOS/Linux/Windows) with background service"
+      ],
+      "concerns_zh": [
+        "无CI/CD流水线，代码质量保障缺失",
+        "仅1个贡献者，Stars仅26，社区基础薄弱",
+        "项目处于Alpha阶段，API可能频繁变更"
+      ],
+      "concerns_en": [
+        "No CI/CD pipeline, lacking code quality assurance",
+        "Only 1 contributor with 26 stars, weak community foundation",
+        "Project in Alpha stage, API may change frequently"
+      ]
+    },
+    {
+      "name": "clawdroid",
+      "full_name": "KarakuriAgent/clawdroid",
+      "html_url": "https://github.com/KarakuriAgent/clawdroid",
+      "description": "Android AI assistant with an embedded Go backend. Install the APK, launch, and start chatting — no separate server setup needed. ",
+      "language": "Go",
+      "stars": 7,
+      "contributors": 50,
+      "created_at": "2026-02-17T08:41:48+00:00",
+      "release_count": 5,
+      "release_freq_zh": "周更",
+      "release_freq_en": "Weekly",
+      "has_ci": true,
+      "is_upstream": false,
+      "scores": {
+        "code_quality": 7,
+        "maintainability": 8,
+        "robustness": 6,
+        "sustainability": 5,
+        "portability": 7,
+        "extensibility": 7
+      },
+      "total": 6.7,
+      "summary_zh": "生产级Android AI助手 | 嵌入式Go后端多渠道架构",
+      "summary_en": "Production-ready Android AI assistant with embedded Go backend multi-channel architecture",
+      "recommendation_zh": "适合需要本地AI助手的Android高级用户，嵌入式设计开箱即用",
+      "recommendation_en": "Ideal for power Android users needing an embedded local AI assistant with multi-channel support",
+      "highlights_zh": [
+        "Go后端与Kotlin前端通过WebSocket清晰分离，模块化设计",
+        "完整的CI/CD流程覆盖lint、test、multi-ABI构建"
+      ],
+      "highlights_en": [
+        "Clean WebSocket-based separation between Go backend and Kotlin frontend with modular architecture",
+        "Comprehensive CI/CD with linting, testing, and multi-ABI Android builds"
+      ],
+      "concerns_zh": [
+        "项目较新(7 stars)，长期维护可持续性待验证"
+      ],
+      "concerns_en": [
+        "Very early-stage project (7 stars) with uncertain long-term maintenance sustainability"
+      ]
+    },
+    {
+      "name": "subzeroclaw",
+      "full_name": "jmlago/subzeroclaw",
+      "html_url": "https://github.com/jmlago/subzeroclaw",
+      "description": "",
+      "language": "C",
+      "stars": 117,
+      "contributors": 1,
+      "created_at": "2026-02-16T15:37:40+00:00",
+      "release_count": 0,
+      "release_freq_zh": "无",
+      "release_freq_en": "None",
+      "has_ci": false,
+      "is_upstream": false,
+      "scores": {
+        "code_quality": 7,
+        "maintainability": 8,
+        "robustness": 4,
+        "sustainability": 5,
+        "portability": 9,
+        "extensibility": 6
+      },
+      "total": 6.5,
+      "summary_zh": "极简嵌入式 LLM 代理运行时 | 适合单设备可控场景",
+      "summary_en": "Ultra-minimal C-based LLM agent runtime | for single-device controlled environments",
+      "recommendation_zh": "仅推荐用于隔离环境下的嵌入式自动化任务",
+      "recommendation_en": "Only for embedded automation in isolated environments",
+      "highlights_zh": [
+        "极小代码量(380行)和二进制(54KB)，适合边缘硬件",
+        "纯C标准库实现，无外部依赖（cJSON可选内嵌）"
+      ],
+      "highlights_en": [
+        "~380 lines C with 54KB binary, ideal for edge hardware",
+        "Pure C standard library, minimal dependencies (cJSON vendored)"
+      ],
+      "concerns_zh": [
+        "无安全检查直接执行任意shell命令，存在极高风险"
+      ],
+      "concerns_en": [
+        "Executes arbitrary shell commands without any safety checks - extreme risk"
+      ]
+    },
+    {
+      "name": "pickle-bot",
+      "full_name": "czl9707/pickle-bot",
+      "html_url": "https://github.com/czl9707/pickle-bot",
+      "description": "Your own AI assistant, speak like a cat.",
+      "language": "Python",
+      "stars": 10,
+      "contributors": 2,
+      "created_at": "2026-02-18T04:43:51+00:00",
+      "release_count": 8,
+      "release_freq_zh": "周更",
+      "release_freq_en": "Weekly",
+      "has_ci": true,
+      "is_upstream": false,
+      "scores": {
+        "code_quality": 7,
+        "maintainability": 7,
+        "robustness": 6,
+        "sustainability": 5,
+        "portability": 7,
+        "extensibility": 7
+      },
+      "total": 6.5,
+      "summary_zh": "架构规范的个人AI助手项目，依赖现代Python工具链但社区基础薄弱",
+      "summary_en": "Well-architected personal AI assistant with modern Python toolchain but limited community foundation",
+      "recommendation_zh": "适合技术能力强的个人用户，生产环境需谨慎评估",
+      "recommendation_en": "Suitable for technically capable individual users; evaluate carefully for production use",
+      "highlights_zh": [
+        "使用pydantic进行严格数据验证和类型安全",
+        "支持多平台(Telegram/Discord/CLI/HTTP API)统一交互",
+        "具备Skills插件系统和Memory记忆系统"
+      ],
+      "highlights_en": [
+        "Pydantic-based strict data validation and type safety",
+        "Multi-platform support (Telegram/Discord/CLI/HTTP API) with unified interaction",
+        "Extensible Skills plugin system and Memory management"
+      ],
+      "concerns_zh": [
+        "Stars仅10、贡献者仅2，社区基础薄弱可持续性存疑",
+        "仅测试Python 3.13单一版本，跨版本兼容性未验证",
+        "源码样本缺失，难以评估实际代码实现质量"
+      ],
+      "concerns_en": [
+        "Only 10 stars and 2 contributors - weak community foundation questions sustainability",
+        "Only tests Python 3.13, cross-version compatibility unverified",
+        "Source code samples missing - actual implementation quality hard to assess"
       ]
     },
     {
@@ -126,7 +3370,7 @@
       "html_url": "https://github.com/friuns2/openclaw-android-assistant",
       "description": "🦞 AnyClaw — OpenClaw + Codex CLI running natively on Android. Two AI agents in one APK. No root. No Termux.",
       "language": "TypeScript",
-      "stars": 202,
+      "stars": 205,
       "contributors": 353,
       "created_at": "2026-02-23T03:19:22+00:00",
       "release_count": 24,
@@ -135,31 +3379,953 @@
       "has_ci": true,
       "is_upstream": false,
       "scores": {
-        "code_quality": 9,
-        "maintainability": 9,
-        "robustness": 7,
-        "sustainability": 8,
-        "portability": 8,
-        "extensibility": 9
+        "code_quality": 7,
+        "maintainability": 6,
+        "robustness": 6,
+        "sustainability": 7,
+        "portability": 6,
+        "extensibility": 6
       },
-      "total": 8.3,
-      "summary_zh": "Android嵌入式双AI代理 | 自包含高扩展APK",
-      "summary_en": "Embedded dual-AI agents on Android | Self-contained extensible APK",
-      "recommendation_zh": "推荐移动AI开发者用于代理部署",
-      "recommendation_en": "Recommended for mobile AI agent deployment",
+      "total": 6.3,
+      "summary_zh": "生产级双AI助手安卓应用 | 架构复杂但可持续",
+      "summary_en": "Production-grade dual AI assistant Android app | Complex architecture but sustainable",
+      "recommendation_zh": "适合需要移动端AI编程助手的开发者，技术门槛较高但功能完整",
+      "recommendation_en": "Ideal for developers needing mobile AI coding assistance; high technical barrier but full-featured",
       "highlights_zh": [
-        "多阶段Docker可重现构建与缓存优化",
-        "自动化CI/CD及上游同步机制"
+        "自包含APK无需Root或Termux即可运行双AI代理",
+        "多阶段Docker构建配合缓存策略，专业CI/CD流程",
+        "353贡献者活跃社区，24次发布持续迭代"
       ],
       "highlights_en": [
-        "Multi-stage reproducible Docker with cache optimization",
-        "Automated CI/CD and upstream sync mechanism"
+        "Self-contained APK running dual AI agents without root or Termux",
+        "Multi-stage Docker builds with caching, professional CI/CD pipeline",
+        "Active community with 353 contributors and 24 releases"
       ],
       "concerns_zh": [
-        "全权限模式与嵌入Linux提取存在潜在稳定性风险"
+        "多技术栈(Android+Kotlin+Vue.js+Node.js)导致架构复杂",
+        "缺少测试代码样例，可靠性验证不足",
+        "重度依赖上游OpenClaw项目更新"
       ],
       "concerns_en": [
-        "Full-access mode and embedded Linux extraction carry stability risks"
+        "Multi-tech stack (Android+Kotlin+Vue.js+Node.js) adds complexity",
+        "No test code samples visible, insufficient reliability verification",
+        "Heavy dependency on upstream OpenClaw project updates"
+      ]
+    },
+    {
+      "name": "atomicbot",
+      "full_name": "AtomicBot-ai/atomicbot",
+      "html_url": "https://github.com/AtomicBot-ai/atomicbot",
+      "description": "The Fastest Way to Run OpenClaw 🦞 ",
+      "language": "TypeScript",
+      "stars": 254,
+      "contributors": 353,
+      "created_at": "2026-02-02T09:48:10+00:00",
+      "release_count": 16,
+      "release_freq_zh": "日更",
+      "release_freq_en": "Daily",
+      "has_ci": true,
+      "is_upstream": false,
+      "scores": {
+        "code_quality": 6,
+        "maintainability": 5,
+        "robustness": 5,
+        "sustainability": 7,
+        "portability": 8,
+        "extensibility": 7
+      },
+      "total": 6.3,
+      "summary_zh": "容器化优先的跨平台AI助手 | Docker基础设施优秀但缺少TypeScript源码样本",
+      "summary_en": "Container-first cross-platform AI assistant | Excellent Docker infrastructure but TypeScript source samples missing",
+      "recommendation_zh": "生产可用 | 适合容器化部署场景，需补充源码测试覆盖",
+      "recommendation_en": "Production-ready | Best for containerized deployments, needs more test coverage",
+      "highlights_zh": [
+        "Docker多阶段构建最佳实践，镜像大小优化",
+        "CI/CD矩阵化策略，支持多平台测试",
+        "可重现构建（SHA256固定基础镜像）"
+      ],
+      "highlights_en": [
+        "Multi-stage Docker builds with optimal image size",
+        "Matrix-based CI/CD for multi-platform testing",
+        "Reproducible builds with pinned base image digests"
+      ],
+      "concerns_zh": [
+        "缺少TypeScript/JavaScript核心源码样本，无法评估业务逻辑质量",
+        "Python测试仅在skills目录，缺乏集成测试",
+        "混合使用pnpm和bun可能增加维护复杂度"
+      ],
+      "concerns_en": [
+        "Missing TypeScript/JavaScript core source samples, unable to assess business logic quality",
+        "Python tests only in skills directory, lacking integration tests",
+        "Mixed pnpm and bun usage may increase maintenance complexity"
+      ]
+    },
+    {
+      "name": "ClawTeam-OpenClaw",
+      "full_name": "win4r/ClawTeam-OpenClaw",
+      "html_url": "https://github.com/win4r/ClawTeam-OpenClaw",
+      "description": "ClawTeam fork fully adapted for OpenClaw — multi-agent swarm coordination with OpenClaw as the default agent",
+      "language": "Python",
+      "stars": 1067,
+      "contributors": 11,
+      "created_at": "2026-03-18T09:52:54+00:00",
+      "release_count": 2,
+      "release_freq_zh": "不定期",
+      "release_freq_en": "Irregular",
+      "has_ci": true,
+      "is_upstream": false,
+      "scores": {
+        "code_quality": 6,
+        "maintainability": 6,
+        "robustness": 5,
+        "sustainability": 7,
+        "portability": 7,
+        "extensibility": 7
+      },
+      "total": 6.3,
+      "summary_zh": "面向CLI编程智能体的多智能体集群协调框架 | OpenClaw深度适配版",
+      "summary_en": "Multi-agent swarm coordination framework for CLI coding agents | OpenClaw-deep adaptation",
+      "recommendation_zh": "OpenClaw生态首选多智能体框架，CLI自动化任务协作推荐采用",
+      "recommendation_en": "Preferred for OpenClaw ecosystem; recommended for CLI automated task orchestration",
+      "highlights_zh": [
+        "OpenClaw默认集成 + 多智能体自协调机制",
+        "Git worktree实现真实隔离，跨平台支持完善"
+      ],
+      "highlights_en": [
+        "OpenClaw default integration with self-coordinating multi-agent mechanism",
+        "Git worktree isolation with comprehensive cross-platform support"
+      ],
+      "concerns_zh": [
+        "无实际代码样本，代码质量无法直接验证"
+      ],
+      "concerns_en": [
+        "No actual code samples provided, code quality cannot be directly verified"
+      ]
+    },
+    {
+      "name": "safeclaw",
+      "full_name": "princezuda/safeclaw",
+      "html_url": "https://github.com/princezuda/safeclaw",
+      "description": "Safeclaw is the alternative to openclaw.. You can naturally chat with it via text and voice, and you can choose not to use a language model., By default it picks up on intent and semantics..  No prompt injection while you get over ninety percent of what openclaw does plus tts and voice to text  ",
+      "language": "Python",
+      "stars": 124,
+      "contributors": 3,
+      "created_at": "2026-02-02T23:11:15+00:00",
+      "release_count": 11,
+      "release_freq_zh": "周更",
+      "release_freq_en": "Weekly",
+      "has_ci": true,
+      "is_upstream": false,
+      "scores": {
+        "code_quality": 6,
+        "maintainability": 6,
+        "robustness": 6,
+        "sustainability": 5,
+        "portability": 8,
+        "extensibility": 7
+      },
+      "total": 6.3,
+      "summary_zh": "隐私优先的本地自动化助手 | 零成本替代方案，可选LLM增强",
+      "summary_en": "Privacy-first local automation assistant | Zero-cost alternative with optional LLM enhancement",
+      "recommendation_zh": "适合隐私敏感、预算有限的用户；生产环境需谨慎评估",
+      "recommendation_en": "Suitable for privacy-sensitive, budget-conscious users; evaluate production readiness carefully",
+      "highlights_zh": [
+        "模块化插件架构，支持多渠道集成（Telegram、Discord等）",
+        "本地优先设计，默认零成本，支持离线运行",
+        "CI/CD完善，跨平台（Linux/macOS/Windows）测试",
+        "可选ML特性（Whisper、YOLO）灵活配置"
+      ],
+      "highlights_en": [
+        "Modular plugin architecture with multi-channel integrations (Telegram, Discord, etc.)",
+        "Local-first design with zero default cost, offline-capable",
+        "Comprehensive CI/CD with cross-platform testing (Linux/macOS/Windows)",
+        "Flexible ML features (Whisper, YOLO) as optional dependencies"
+      ],
+      "concerns_zh": [
+        "项目仍处Alpha阶段，3人团队维护124星项目可持续性存疑",
+        "大量per-file-ignores暗示代码技术债",
+        "Web爬虫和SFTP功能存在安全风险",
+        "缺乏测试覆盖率数据"
+      ],
+      "concerns_en": [
+        "Alpha-stage project with only 3 maintainers for 124 stars raises sustainability concerns",
+        "Extensive per-file-ignores suggest accumulated technical debt",
+        "Web crawling and SFTP features introduce security surface",
+        "No visible test coverage metrics"
+      ]
+    },
+    {
+      "name": "mimiclaw",
+      "full_name": "memovai/mimiclaw",
+      "html_url": "https://github.com/memovai/mimiclaw",
+      "description": "MimiClaw: Run OpenClaw on a $5 chip. No OS(Linux). No Node.js. No Mac mini. No Raspberry Pi. No VPS. Hardware agents OS.",
+      "language": "C",
+      "stars": 5080,
+      "contributors": 6,
+      "created_at": "2026-02-04T04:25:33+00:00",
+      "release_count": 2,
+      "release_freq_zh": "不定期",
+      "release_freq_en": "Irregular",
+      "has_ci": true,
+      "is_upstream": false,
+      "scores": {
+        "code_quality": 7,
+        "maintainability": 8,
+        "robustness": 6,
+        "sustainability": 6,
+        "portability": 4,
+        "extensibility": 7
+      },
+      "total": 6.3,
+      "summary_zh": "极致轻量边缘AI助手 | ESP32-S3专用固件",
+      "summary_en": "Ultra-lightweight edge AI assistant firmware | ESP32-S3 exclusive",
+      "recommendation_zh": "适合硬件极客与边缘AI开发者，资源受限场景首选",
+      "recommendation_en": "Best for hardware enthusiasts and edge-AI devs in resource-constrained scenarios",
+      "highlights_zh": [
+        "纯C实现，$5芯片上运行完整AI助手，无OS依赖",
+        "双层配置系统 + 串口CLI，生产环境灵活调试",
+        "多语言文档（EN/CN/JA）+ 专业CI/CD发布流程"
+      ],
+      "highlights_en": [
+        "Pure C implementation — full AI assistant on $5 chip, no OS dependency",
+        "Dual-layer config with runtime CLI — production-friendly debugging",
+        "Multi-language docs (EN/CN/JA) + professional CI/CD release pipeline"
+      ],
+      "concerns_zh": [
+        "仅6位贡献者，发布仅2次，长期维护风险较高",
+        "严重依赖ESP32-S3硬件平台，代码无可移植性",
+        "文档中未见测试框架，无法评估运行时稳定性"
+      ],
+      "concerns_en": [
+        "Only 6 contributors and 2 releases — high long-term maintenance risk",
+        "Heavily ESP32-S3-specific — no code portability to other platforms",
+        "No test framework visible in docs — runtime stability unverifiable"
+      ]
+    },
+    {
+      "name": "angel-claw",
+      "full_name": "Abdur-rahmaanJ/angel-claw",
+      "html_url": "https://github.com/Abdur-rahmaanJ/angel-claw",
+      "description": "Lean. Compatible. Based OpenClaw. Python ❤️",
+      "language": "Python",
+      "stars": 5,
+      "contributors": 1,
+      "created_at": "2026-02-16T08:01:36+00:00",
+      "release_count": 7,
+      "release_freq_zh": "周更",
+      "release_freq_en": "Weekly",
+      "has_ci": false,
+      "is_upstream": false,
+      "scores": {
+        "code_quality": 7,
+        "maintainability": 6,
+        "robustness": 7,
+        "sustainability": 3,
+        "portability": 7,
+        "extensibility": 8
+      },
+      "total": 6.3,
+      "summary_zh": "功能完备的安全多租户AI代理OS | 单维护者可持续性风险较高",
+      "summary_en": "Feature-rich secure multi-tenant AI agent OS | High sustainability risk due to single maintainer",
+      "recommendation_zh": "技术架构优秀，适合有DevOps能力的团队 POC；生产环境需评估单点维护风险",
+      "recommendation_en": "Excellent architecture for POC; evaluate single-maintainer risk for production use",
+      "highlights_zh": [
+        "完整的运行时沙箱隔离（30s超时+线程池）",
+        "AES-128加密用户密钥库+多模型支持"
+      ],
+      "highlights_en": [
+        "Complete runtime sandboxing with 30s timeout and thread pools",
+        "AES-128 encrypted user vaults with multi-model LLM support"
+      ],
+      "concerns_zh": [
+        "单贡献者+无CI/CD+仅5 Stars，社区可持续性极低",
+        "Redis外部依赖增加运维复杂度"
+      ],
+      "concerns_en": [
+        "Single contributor + no CI/CD + only 5 Stars = extremely low community sustainability",
+        "External Redis dependency increases operational complexity"
+      ]
+    },
+    {
+      "name": "Awesome-OpenClaw",
+      "full_name": "EthanYolo01/Awesome-OpenClaw",
+      "html_url": "https://github.com/EthanYolo01/Awesome-OpenClaw",
+      "description": "A carefully curated list of awesome OpenClaw resources — not everything, just the best.  Skills · Plugins · MCP · Tools · Deployments · Security · Research · Alternatives。精心策划的 OpenClaw 优质资源大合集 —— 不求大而全，只求真有用。 ",
+      "language": "Unknown",
+      "stars": 148,
+      "contributors": 1,
+      "created_at": "2026-03-19T01:06:21+00:00",
+      "release_count": 0,
+      "release_freq_zh": "无",
+      "release_freq_en": "None",
+      "has_ci": false,
+      "is_upstream": false,
+      "scores": {
+        "code_quality": 7,
+        "maintainability": 6,
+        "robustness": 4,
+        "sustainability": 4,
+        "portability": 9,
+        "extensibility": 7
+      },
+      "total": 6.2,
+      "summary_zh": "单维护者精选资源列表 | 文档质量优秀但社区可持续性存疑",
+      "summary_en": "Single-maintainer curated resource list | Excellent documentation but questionable community sustainability",
+      "recommendation_zh": "适合快速了解 OpenClaw 生态，选型决策参考",
+      "recommendation_en": "Good for quickly understanding OpenClaw ecosystem and informed decision-making",
+      "highlights_zh": [
+        "文档结构规范：CONTRIBUTING.md、PR模板、安全报告流程完备",
+        "视觉资产精良：ecosystem-map.svg 采用专业渐变和过滤效果"
+      ],
+      "highlights_en": [
+        "Well-structured documentation: CONTRIBUTING.md, PR templates, security reporting flow complete",
+        "Professional visual assets: ecosystem-map.svg with gradient fills and filter effects"
+      ],
+      "concerns_zh": [
+        "单一贡献者维护，148 stars 社区关注度较低，无 CI/CD 自动验证链接有效性"
+      ],
+      "concerns_en": [
+        "Single contributor maintaining, low community attention at 148 stars, no CI/CD to verify link validity"
+      ]
+    },
+    {
+      "name": "GoGogot",
+      "full_name": "aspasskiy/GoGogot",
+      "html_url": "https://github.com/aspasskiy/GoGogot",
+      "description": "Lightweight self-hosted AI agent. Open-source OpenClaw alternative in Go.",
+      "language": "Go",
+      "stars": 115,
+      "contributors": 1,
+      "created_at": "2026-02-23T12:14:24+00:00",
+      "release_count": 10,
+      "release_freq_zh": "周更",
+      "release_freq_en": "Weekly",
+      "has_ci": false,
+      "is_upstream": false,
+      "scores": {
+        "code_quality": 7,
+        "maintainability": 6,
+        "robustness": 5,
+        "sustainability": 4,
+        "portability": 8,
+        "extensibility": 7
+      },
+      "total": 6.2,
+      "summary_zh": "轻量级自托管AI助手 | 接口设计优秀但单点维护风险",
+      "summary_en": "Lightweight self-hosted AI agent | Strong interfaces but single-maintainer risk",
+      "recommendation_zh": "个人/小团队自用优先，不建议作为生产关键基础设施",
+      "recommendation_en": "Best for personal/small team use; not recommended as critical production infra",
+      "highlights_zh": [
+        "Clean Go interfaces (Backend/Transport/Tool) 实现高度解耦",
+        "多平台Docker镜像支持 (amd64/arm64)，环境变量配置灵活"
+      ],
+      "highlights_en": [
+        "Clean Go interfaces (Backend/Transport/Tool) for high decoupling",
+        "Multi-platform Docker images (amd64/arm64) with flexible env config"
+      ],
+      "concerns_zh": [
+        "单人维护，无CI/CD，版本115但无测试可见性",
+        "无issue模板/贡献指南，单点故障风险显著"
+      ],
+      "concerns_en": [
+        "Single maintainer, no CI/CD, 115 stars but no visible tests",
+        "No issue templates/CONTRIBUTING, single point of failure risk"
+      ]
+    },
+    {
+      "name": "mini-claw",
+      "full_name": "htlin222/mini-claw",
+      "html_url": "https://github.com/htlin222/mini-claw",
+      "description": "🦞 Minimalist alternative to OpenClaw — lightweight personal AI assistant with multi-platform messaging support",
+      "language": "TypeScript",
+      "stars": 75,
+      "contributors": 1,
+      "created_at": "2026-02-01T03:52:34+00:00",
+      "release_count": 0,
+      "release_freq_zh": "无",
+      "release_freq_en": "None",
+      "has_ci": false,
+      "is_upstream": false,
+      "scores": {
+        "code_quality": 7,
+        "maintainability": 8,
+        "robustness": 6,
+        "sustainability": 5,
+        "portability": 6,
+        "extensibility": 5
+      },
+      "total": 6.2,
+      "summary_zh": "文档完善、设计简洁的个人AI助手 | 单人维护可持续性存疑",
+      "summary_en": "Well-documented personal AI assistant | Single-maintainer sustainability risk",
+      "recommendation_zh": "适合个人使用的小型Telegram AI助手，需增加CI/CD和社区参与",
+      "recommendation_en": "Personal Telegram AI bot - needs CI/CD and community for production use",
+      "highlights_zh": [
+        "代码质量高：TypeScript + ESLint + Vitest 100% 覆盖",
+        "文档完善：README + CLAUDE.md + Makefile 清晰易用",
+        "功能完整：会话管理、限流、权限控制、超时保护"
+      ],
+      "highlights_en": [
+        "High code quality: TypeScript + ESLint + Vitest 100% coverage",
+        "Excellent documentation: README + CLAUDE.md + Makefile",
+        "Complete features: session management, rate limiting, access control"
+      ],
+      "concerns_zh": [
+        "单人维护无CI/CD，版本发布数为0",
+        "依赖外部Pi代理，Node.js 22+版本要求"
+      ],
+      "concerns_en": [
+        "Single maintainer with no CI/CD, zero releases",
+        "Depends on external Pi agent, Node.js 22+ requirement"
+      ]
+    },
+    {
+      "name": "troublemaker",
+      "full_name": "tinyfatco/troublemaker",
+      "html_url": "https://github.com/tinyfatco/troublemaker",
+      "description": "Mom, liberated. Multi-platform AI agent runtime.",
+      "language": "TypeScript",
+      "stars": 46,
+      "contributors": 1,
+      "created_at": "2026-02-13T19:25:02+00:00",
+      "release_count": 0,
+      "release_freq_zh": "无",
+      "release_freq_en": "None",
+      "has_ci": false,
+      "is_upstream": false,
+      "scores": {
+        "code_quality": 6,
+        "maintainability": 5,
+        "robustness": 6,
+        "sustainability": 5,
+        "portability": 8,
+        "extensibility": 7
+      },
+      "total": 6.2,
+      "summary_zh": "早期多平台AI代理运行时 | Docker化部署灵活 | 单人维护存风险",
+      "summary_en": "Early-stage multi-platform AI agent runtime | Docker-ready deployment | Single-maintainer risk",
+      "recommendation_zh": "适合技术团队探索AI Agent | 生产环境需补充监控与CI/CD",
+      "recommendation_en": "For tech teams exploring AI agents | Production needs monitoring + CI/CD",
+      "highlights_zh": [
+        "多平台适配器架构（Slack/Telegram/Email），统一网关设计",
+        "Docker化完整：系统依赖、Chromium、GitHub CLI等预装",
+        "支持host和docker sandbox双模式运行"
+      ],
+      "highlights_en": [
+        "Multi-adapter architecture (Slack/Telegram/Email) with unified gateway",
+        "Full Docker setup: system deps, Chromium, GitHub CLI pre-installed",
+        "Dual sandbox modes: host or Docker container execution"
+      ],
+      "concerns_zh": [
+        "单人贡献者、无CI/CD，代码质量缺乏自动化验证",
+        "版本0.1.0，生产级稳定性未验证",
+        "大量依赖外部包（mariozechner/*），上游变更风险"
+      ],
+      "concerns_en": [
+        "Single contributor, no CI/CD — no automated quality gates",
+        "Version 0.1.0 — production stability unproven",
+        "Heavy external dependencies (mariozechner/*) create upstream risk"
+      ]
+    },
+    {
+      "name": "openclawWeComzh",
+      "full_name": "luolin-ai/openclawWeComzh",
+      "html_url": "https://github.com/luolin-ai/openclawWeComzh",
+      "description": "Open-source implementation of the AEON Protocol for advanced AI cognitive observability, featuring real-time dialectic flow tracking, automated memory distillation (Auto-Seal), and knowledge aging visualization.",
+      "language": "TypeScript",
+      "stars": 109,
+      "contributors": 365,
+      "created_at": "2026-02-18T08:31:19+00:00",
+      "release_count": 2,
+      "release_freq_zh": "不定期",
+      "release_freq_en": "Irregular",
+      "has_ci": true,
+      "is_upstream": false,
+      "scores": {
+        "code_quality": 7,
+        "maintainability": 5,
+        "robustness": 7,
+        "sustainability": 3,
+        "portability": 8,
+        "extensibility": 6
+      },
+      "total": 6.0,
+      "summary_zh": "功能完善的本地化AI网关 | 项目已停止维护存在长期风险",
+      "summary_en": "Feature-rich localized AI gateway | Project EOL with long-term viability concerns",
+      "recommendation_zh": "不建议新项目采用，建议迁移至上游OpenAEON",
+      "recommendation_en": "Not recommended for new projects; migrate to upstream OpenAEON",
+      "highlights_zh": [
+        "TypeScript类型安全完善，导出结构清晰（含plugin-sdk）",
+        "多架构Dockerfile支持，跨平台安装脚本完善（macOS/Linux/Windows）"
+      ],
+      "highlights_en": [
+        "Comprehensive TypeScript typing with clear export structure (including plugin-sdk)",
+        "Multi-architecture Dockerfile support with cross-platform install scripts"
+      ],
+      "concerns_zh": [
+        "项目明确声明不再维护（EOL），所有更新迁移至OpenAEON仓库",
+        "仅有2次发布、1个maintainer，长期维护风险高"
+      ],
+      "concerns_en": [
+        "Project explicitly declared EOL; all updates migrating to OpenAEON repository",
+        "Only 2 releases and 1 maintainer indicate high long-term maintenance risk"
+      ]
+    },
+    {
+      "name": "OpenCray",
+      "full_name": "CrayBotAGI/OpenCray",
+      "html_url": "https://github.com/CrayBotAGI/OpenCray",
+      "description": "openclaw小龙虾机器人：openclaw中文版！接入国产生态：钉钉、QQ、微信、国产大模型！你专属的个人AI助手。任何操作系统，任何平台。龙虾的方式!",
+      "language": "TypeScript",
+      "stars": 72,
+      "contributors": 365,
+      "created_at": "2026-01-28T12:22:12+00:00",
+      "release_count": 0,
+      "release_freq_zh": "无",
+      "release_freq_en": "None",
+      "has_ci": true,
+      "is_upstream": false,
+      "scores": {
+        "code_quality": 6,
+        "maintainability": 5,
+        "robustness": 5,
+        "sustainability": 5,
+        "portability": 8,
+        "extensibility": 6
+      },
+      "total": 5.8,
+      "summary_zh": "国产生态多渠道AI助手 | 早期开发阶段",
+      "summary_en": "Multi-channel AI gateway for Chinese platforms | Early-stage development",
+      "recommendation_zh": "适合尝鲜国产平台集成，功能尚不完整",
+      "recommendation_en": "Suitable for early adopters of Chinese platform integrations, features incomplete",
+      "highlights_zh": [
+        "多平台支持：钉钉/QQ/飞书/KOOK 集成",
+        "Docker容器化 + 完整CI/CD工作流"
+      ],
+      "highlights_en": [
+        "Multi-platform support: DingTalk/QQ/Feishu/KOOK integration",
+        "Docker containerization with complete CI/CD workflows"
+      ],
+      "concerns_zh": [
+        "微信接入未完成(TODO)，仅72 Stars用户基础薄弱",
+        "作为OpenClaw中文分支需持续同步上游更新"
+      ],
+      "concerns_en": [
+        "WeChat integration incomplete (TODO), only 72 Stars indicates limited adoption",
+        "As OpenClaw Chinese fork, requires continuous upstream sync"
+      ]
+    },
+    {
+      "name": "nanoclaw-py",
+      "full_name": "ApeCodeAI/nanoclaw-py",
+      "html_url": "https://github.com/ApeCodeAI/nanoclaw-py",
+      "description": "Yet another nano alternative to OpenClaw. It can read/write files, execute commands, search the web, and schedule tasks — all in ~500 lines of Python.",
+      "language": "Python",
+      "stars": 91,
+      "contributors": 1,
+      "created_at": "2026-02-07T02:46:49+00:00",
+      "release_count": 0,
+      "release_freq_zh": "无",
+      "release_freq_en": "None",
+      "has_ci": false,
+      "is_upstream": false,
+      "scores": {
+        "code_quality": 7,
+        "maintainability": 6,
+        "robustness": 5,
+        "sustainability": 4,
+        "portability": 6,
+        "extensibility": 7
+      },
+      "total": 5.8,
+      "summary_zh": "轻量级 Claude AI 助手项目 | MCP 工具架构优秀但可持续性存疑",
+      "summary_en": "Lightweight Claude AI assistant | Excellent MCP tool architecture but sustainability concerns",
+      "recommendation_zh": "适合个人实验和原型开发，生产环境需谨慎",
+      "recommendation_en": "Suitable for personal experiments and prototyping; caution advised for production use",
+      "highlights_zh": [
+        "MCP 工具架构设计清晰，6 个工具支持任务调度和消息推送",
+        "代码组织良好，模块职责分明，约 500 行简洁实现"
+      ],
+      "highlights_en": [
+        "Clean MCP tool architecture with 6 tools for task scheduling and messaging",
+        "Well-organized code with clear module responsibilities in ~500 lines"
+      ],
+      "concerns_zh": [
+        "单一贡献者可持续性风险，无测试覆盖，无 CI/CD",
+        "生产部署需额外考虑安全性和错误处理"
+      ],
+      "concerns_en": [
+        "Single contributor sustainability risk, no test coverage, no CI/CD",
+        "Production deployment requires additional security and error handling considerations"
+      ]
+    },
+    {
+      "name": "trinity-claw",
+      "full_name": "TrinityClaw/trinity-claw",
+      "html_url": "https://github.com/TrinityClaw/trinity-claw",
+      "description": "A self-hosted AI agent that thinks, acts, and improves itself – all running privately on your own machine. Browses the web, writes and executes code, manages files, sends emails, monitors URLs, builds websites, and learns from every interaction.",
+      "language": "Python",
+      "stars": 5,
+      "contributors": 1,
+      "created_at": "2026-03-07T19:42:07+00:00",
+      "release_count": 0,
+      "release_freq_zh": "无",
+      "release_freq_en": "None",
+      "has_ci": true,
+      "is_upstream": false,
+      "scores": {
+        "code_quality": 6,
+        "maintainability": 6,
+        "robustness": 5,
+        "sustainability": 5,
+        "portability": 7,
+        "extensibility": 6
+      },
+      "total": 5.8,
+      "summary_zh": "自托管多技能AI代理MVP | 架构合理但成熟度极低",
+      "summary_en": "Self-hosted multi-skill AI agent MVP | Solid architecture but extremely low maturity",
+      "recommendation_zh": "观望期，慎用生产环境",
+      "recommendation_en": "Watch phase - cautious for production use",
+      "highlights_zh": [
+        "Docker容器化部署完善，支持HF Spaces/Mac/Linux多平台",
+        "动态技能架构（dynamic skills）设计合理",
+        "基础设施完整：PostgreSQL、ChromaDB、LiteLLM、Nginx",
+        ".gitattributes处理跨平台换行符，跨平台兼容性好"
+      ],
+      "highlights_en": [
+        "Docker containerized with HF Spaces/Mac/Linux multi-platform support",
+        "Dynamic skill architecture design is well-structured",
+        "Complete infrastructure: PostgreSQL, ChromaDB, LiteLLM, Nginx",
+        "Cross-platform line ending handling via .gitattributes"
+      ],
+      "concerns_zh": [
+        "单贡献者，5 stars，零release，成熟度极低",
+        "docker-compose.yml中硬编码凭证（sk-1234567890）",
+        "提供的源码样本不足（仅6个文件），无Python代码可审计",
+        "无测试代码可见，健壮性无法评估"
+      ],
+      "concerns_en": [
+        "Single contributor, 5 stars, zero releases - extremely low maturity",
+        "Hardcoded credentials (sk-1234567890) in docker-compose.yml",
+        "Insufficient code sample (only 6 files), no Python code to audit",
+        "No visible tests - robustness cannot be assessed"
+      ]
+    },
+    {
+      "name": "supaclaw",
+      "full_name": "vincenzodomina/supaclaw",
+      "html_url": "https://github.com/vincenzodomina/supaclaw",
+      "description": "A basic version of OpenClaw but built entirely on Supabase built-in features.",
+      "language": "TypeScript",
+      "stars": 58,
+      "contributors": 2,
+      "created_at": "2026-02-12T09:31:42+00:00",
+      "release_count": 0,
+      "release_freq_zh": "无",
+      "release_freq_en": "None",
+      "has_ci": false,
+      "is_upstream": false,
+      "scores": {
+        "code_quality": 6,
+        "maintainability": 5,
+        "robustness": 6,
+        "sustainability": 5,
+        "portability": 5,
+        "extensibility": 7
+      },
+      "total": 5.7,
+      "summary_zh": "Supabase原生AI代理框架 | 最小化基础设施但可持续性存疑",
+      "summary_en": "Supabase-native AI agent framework | Minimal infra but uncertain sustainability",
+      "recommendation_zh": "适合Supabase深度用户快速原型，谨慎用于生产",
+      "recommendation_en": "Ideal for Supabase power users prototyping; use cautiously in production",
+      "highlights_zh": [
+        "充分利用Supabase内置能力(Edge Functions/pg_cron/pgvector)减少外部依赖",
+        "良好的安全设计(无凭证暴露/模拟Bash环境/审计回滚机制)"
+      ],
+      "highlights_en": [
+        "Leverages Supabase built-ins (Edge Functions/pg_cron/pgvector) minimizing external deps",
+        "Strong security design with credential isolation and simulated bash environment"
+      ],
+      "concerns_zh": [
+        "无CI/CD和测试覆盖，质量保障缺失",
+        "贡献者极少(2人)且无正式发布版本，长期维护风险高"
+      ],
+      "concerns_en": [
+        "No CI/CD pipeline or test coverage, lacking quality assurance",
+        "Very few contributors (2) with zero releases, high long-term maintenance risk"
+      ]
+    },
+    {
+      "name": "shrew",
+      "full_name": "Masmedeam/shrew",
+      "html_url": "https://github.com/Masmedeam/shrew",
+      "description": "",
+      "language": "Go",
+      "stars": 9,
+      "contributors": 1,
+      "created_at": "2026-02-20T20:17:15+00:00",
+      "release_count": 2,
+      "release_freq_zh": "不定期",
+      "release_freq_en": "Irregular",
+      "has_ci": false,
+      "is_upstream": false,
+      "scores": {
+        "code_quality": 6,
+        "maintainability": 5,
+        "robustness": 4,
+        "sustainability": 4,
+        "portability": 8,
+        "extensibility": 5
+      },
+      "total": 5.3,
+      "summary_zh": "超轻量级单二进制AI终端助手 | 安全性与可持续性待提升",
+      "summary_en": "Ultra-lightweight single-binary AI CLI agent | Security and sustainability need improvement",
+      "recommendation_zh": "适合本地快速实验，生产环境需补充安全加固与测试覆盖",
+      "recommendation_en": "Suitable for local experiments; production use requires security hardening and test coverage",
+      "highlights_zh": [
+        "单一静态二进制，零外部依赖，跨平台构建完善（Makefile支持Linux/macOS amd64/arm64）",
+        "Vault系统设计精巧，敏感信息仅在执行时注入，本地存储隔离"
+      ],
+      "highlights_en": [
+        "Single static binary with zero external dependencies, excellent cross-platform build support",
+        "Vault system design is elegant, secrets injected at execution time only and stored locally"
+      ],
+      "concerns_zh": [
+        "api.go中多处忽略错误（json.Marshal、io.ReadAll），http.Client无超时配置",
+        "runShellCommand无命令参数清理，存在命令注入风险",
+        "writeFile使用0644权限过于宽松",
+        "单贡献者维护，无CI/CD，缺少单元测试",
+        "daemon.go中resp.Body被io.ReadAll消耗后可能无法json解码"
+      ],
+      "concerns_en": [
+        "Multiple ignored errors in api.go (json.Marshal, io.ReadAll), http.Client has no timeout",
+        "runShellCommand lacks command argument sanitization, command injection risk",
+        "writeFile uses overly permissive 0644 file permissions",
+        "Single contributor, no CI/CD, lack of unit tests",
+        "resp.Body consumed by io.ReadAll may prevent subsequent json decoding in daemon.go"
+      ]
+    },
+    {
+      "name": "openzca",
+      "full_name": "darkamenosa/openzca",
+      "html_url": "https://github.com/darkamenosa/openzca",
+      "description": "Free to use alternative zcacli for integrate Zalo with OpenClaw",
+      "language": "JavaScript",
+      "stars": 71,
+      "contributors": 1,
+      "created_at": "2026-02-11T08:50:07+00:00",
+      "release_count": 47,
+      "release_freq_zh": "日更",
+      "release_freq_en": "Daily",
+      "has_ci": false,
+      "is_upstream": false,
+      "scores": {
+        "code_quality": 6,
+        "maintainability": 5,
+        "robustness": 4,
+        "sustainability": 4,
+        "portability": 6,
+        "extensibility": 6
+      },
+      "total": 5.2,
+      "summary_zh": "活跃的单人维护者Zalo CLI工具 | TypeScript+模块化架构但CLI单体文件需重构",
+      "summary_en": "Active single-maintainer Zalo CLI tool | TypeScript + modular architecture but monolithic CLI file needs refactoring",
+      "recommendation_zh": "适合个人使用/OpenClaw插件集成原型，生产环境需完善测试和CI",
+      "recommendation_en": "Suitable for personal use or OpenClaw plugin prototype; production needs tests and CI",
+      "highlights_zh": [
+        "TypeScript + tsup构建，类型安全",
+        "功能完整：认证/消息/群组/监听/数据库，文档详尽"
+      ],
+      "highlights_en": [
+        "TypeScript + tsup build with type safety",
+        "Feature-complete: auth/msg/group/listen/db with thorough documentation"
+      ],
+      "concerns_zh": [
+        "5400行单体cli.ts文件维护困难，无CI/CD，单人维护 sustainability 风险"
+      ],
+      "concerns_en": [
+        "5400-line monolithic cli.ts hard to maintain, no CI/CD, single-maintainer sustainability risk"
+      ]
+    },
+    {
+      "name": "atombot",
+      "full_name": "daegwang/atombot",
+      "html_url": "https://github.com/daegwang/atombot",
+      "description": "A tiny but powerful personal AI assistant 🐙",
+      "language": "Python",
+      "stars": 12,
+      "contributors": 1,
+      "created_at": "2026-03-06T01:43:49+00:00",
+      "release_count": 0,
+      "release_freq_zh": "无",
+      "release_freq_en": "None",
+      "has_ci": false,
+      "is_upstream": false,
+      "scores": {
+        "code_quality": 6,
+        "maintainability": 6,
+        "robustness": 4,
+        "sustainability": 3,
+        "portability": 7,
+        "extensibility": 5
+      },
+      "total": 5.2,
+      "summary_zh": "极简架构的早期个人助手 | 依赖单维护者可持续性存疑",
+      "summary_en": "Minimalist personal AI assistant | Single-maintainer sustainability risk",
+      "recommendation_zh": "适合个人实验使用，生产环境需等待测试覆盖和社区建设",
+      "recommendation_en": "Suitable for personal experiments; production use requires test coverage and community growth",
+      "highlights_zh": [
+        "极简设计：~500行核心代码，模块化架构清晰",
+        "多后端支持：兼容OpenAI/Codex/LM Studio/Ollama"
+      ],
+      "highlights_en": [
+        "Minimalist design: ~500 lines core with clean modular architecture",
+        "Multi-backend support: OpenAI/Codex/LM Studio/Ollama compatible"
+      ],
+      "concerns_zh": [
+        "缺少测试、CI/CD和正式发布，可持续性风险高"
+      ],
+      "concerns_en": [
+        "Lacks tests, CI/CD and releases — high sustainability risk"
+      ]
+    },
+    {
+      "name": "hermitclaw",
+      "full_name": "brendanhogan/hermitclaw",
+      "html_url": "https://github.com/brendanhogan/hermitclaw",
+      "description": "",
+      "language": "Python",
+      "stars": 319,
+      "contributors": 2,
+      "created_at": "2026-02-15T21:54:01+00:00",
+      "release_count": 0,
+      "release_freq_zh": "无",
+      "release_freq_en": "None",
+      "has_ci": false,
+      "is_upstream": false,
+      "scores": {
+        "code_quality": 6,
+        "maintainability": 5,
+        "robustness": 3,
+        "sustainability": 3,
+        "portability": 7,
+        "extensibility": 6
+      },
+      "total": 5.0,
+      "summary_zh": "创新性AI宠物项目 | 代码简洁但缺乏测试与安全加固",
+      "summary_en": "Creative AI pet project | Simple code but lacks testing and security hardening",
+      "recommendation_zh": "适合实验性探索，生产环境需加固安全与测试",
+      "recommendation_en": "Good for experimental exploration; production use requires security hardening and testing",
+      "highlights_zh": [
+        "代码哲学清晰：极简可读，文件短小专注",
+        "多LLM支持：OpenAI/Ollama/OpenRouter灵活切换"
+      ],
+      "highlights_en": [
+        "Clear code philosophy: radically simple and readable",
+        "Multi-LLM support: OpenAI/Ollama/OpenRouter flexibility"
+      ],
+      "concerns_zh": [
+        "无CI/CD、0个release、仅2贡献者，可持续性极低",
+        "安全护栏可被绕过，README明确警告非安全边界"
+      ],
+      "concerns_en": [
+        "No CI/CD, 0 releases, only 2 contributors — very low sustainability",
+        "Security guardrails are bypassable, README explicitly warns not a security boundary"
+      ]
+    },
+    {
+      "name": "babyclaw",
+      "full_name": "yogesharc/babyclaw",
+      "html_url": "https://github.com/yogesharc/babyclaw",
+      "description": "A lightweight alternative to OpenClaw built on Claude Agent SDK.",
+      "language": "JavaScript",
+      "stars": 15,
+      "contributors": 1,
+      "created_at": "2026-02-09T15:20:33+00:00",
+      "release_count": 0,
+      "release_freq_zh": "无",
+      "release_freq_en": "None",
+      "has_ci": false,
+      "is_upstream": false,
+      "scores": {
+        "code_quality": 5,
+        "maintainability": 6,
+        "robustness": 4,
+        "sustainability": 3,
+        "portability": 7,
+        "extensibility": 5
+      },
+      "total": 5.0,
+      "summary_zh": "个人VPS助手工具 | 轻量单文件架构但安全与工程实践不足",
+      "summary_en": "Personal VPS assistant tool | Lightweight single-file but lacks security & engineering rigor",
+      "recommendation_zh": "适合个人技术用户自托管，不建议生产环境使用",
+      "recommendation_en": "Suitable for personal tech users self-hosting, not recommended for production",
+      "highlights_zh": [
+        "单文件架构，简单易懂",
+        "基于官方 Claude Agent SDK，支持 Telegram 远程控制"
+      ],
+      "highlights_en": [
+        "Single-file architecture, easy to understand",
+        "Built on official Claude Agent SDK with Telegram remote control"
+      ],
+      "concerns_zh": [
+        "无测试、无CI/CD、无发布流程，工程成熟度低",
+        "手动.env解析未使用dotenv库",
+        "缺少输入验证和速率限制，存在安全风险"
+      ],
+      "concerns_en": [
+        "No tests, CI/CD or release process - low engineering maturity",
+        "Manual .env parsing instead of using dotenv library",
+        "Missing input validation and rate limiting - security concerns"
+      ]
+    },
+    {
+      "name": "ZeroClaw-Android",
+      "full_name": "Natfii/ZeroClaw-Android",
+      "html_url": "https://github.com/Natfii/ZeroClaw-Android",
+      "description": "Run AI agents 24/7 on your Android phone. Native Rust core, 25+ providers (OpenAI, Claude, Gemini, Groq, DeepSeek,         Ollama), encrypted key storage, plugin browser, Material You UI. Self-hosted alternative to Mac Mini setups. MIT           licensed.",
+      "language": "Unknown",
+      "stars": 278,
+      "contributors": 1,
+      "created_at": "2026-02-16T01:20:24+00:00",
+      "release_count": 28,
+      "release_freq_zh": "日更",
+      "release_freq_en": "Daily",
+      "has_ci": false,
+      "is_upstream": false,
+      "scores": {
+        "code_quality": 3,
+        "maintainability": 2,
+        "robustness": 4,
+        "sustainability": 1,
+        "portability": 7,
+        "extensibility": 4
+      },
+      "total": 3.5,
+      "summary_zh": "已归档的AI代理运行器 | 纯AI生成代码、安全性存疑、单人维护",
+      "summary_en": "Archived AI agent runner | AI-generated code, safety concerns, single-maintainer",
+      "recommendation_zh": "不建议采用 - 项目已归档且自述存在安全隐患",
+      "recommendation_en": "Not recommended - project archived with self-admitted safety issues",
+      "highlights_zh": [
+        "支持25+ LLM服务商(GPT/Claude/Gemini等)集成",
+        "原生Rust核心 + Material You UI设计",
+        "支持MQTT协议和加密密钥存储"
+      ],
+      "highlights_en": [
+        "25+ LLM providers supported (OpenAI/Claude/Gemini/Groq/DeepSeek/Ollama)",
+        "Native Rust core with Material You UI",
+        "MQTT support and encrypted key storage"
+      ],
+      "concerns_zh": [
+        "项目已归档，不接受新贡献",
+        "README自述代码\"too unsafe\"且基本全为AI生成",
+        "单人维护无CI/CD，长期维护无保障",
+        "2026年3月仍有推送但已归档，状态异常"
+      ],
+      "concerns_en": [
+        "Project explicitly archived - no longer accepting contributions",
+        "Self-described as \"too unsafe\" with nearly entirely AI-generated codebase",
+        "Single maintainer with no CI/CD pipeline",
+        "Recent commits but archived status indicates abandoned development"
       ]
     }
   ]
