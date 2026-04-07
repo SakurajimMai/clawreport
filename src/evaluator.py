@@ -4,11 +4,14 @@
 
 import json
 import os
+import re
 from datetime import datetime, timezone
 
 from openai import OpenAI
 
 from config import DATA_DIR, DIMENSIONS, LLM_API_KEY, LLM_BASE_URL, LLM_MODEL
+
+REQUIRED_SCORE_IDS = tuple(d["id"] for d in DIMENSIONS)
 
 SYSTEM_PROMPT = """你是一位资深的开源项目代码审计专家。
 你需要根据提供的项目元数据和源码样本，对该项目进行多维度的代码质量评估。
@@ -70,6 +73,171 @@ def _build_user_prompt(project: dict) -> str:
     )
 
 
+def _is_grok_model(model: str) -> bool:
+    return model.strip().lower().startswith("grok")
+
+
+def _build_chat_completion_kwargs(messages: list[dict], **extra) -> dict:
+    """统一构造 chat/completions 请求参数。"""
+    kwargs = {
+        "model": LLM_MODEL,
+        "messages": messages,
+        "stream": False,
+    }
+    kwargs.update(extra)
+
+    if _is_grok_model(LLM_MODEL):
+        kwargs.setdefault("reasoning_effort", "none")
+
+    return kwargs
+
+
+def _extract_response_content(response) -> str:
+    """统一提取模型响应文本。"""
+    if isinstance(response, str):
+        return response
+
+    if hasattr(response, "choices"):
+        content = response.choices[0].message.content
+        if isinstance(content, str):
+            return content
+        if isinstance(content, list):
+            parts = []
+            for item in content:
+                if isinstance(item, dict) and item.get("type") == "text":
+                    parts.append(item.get("text", ""))
+                else:
+                    text = getattr(item, "text", "")
+                    if text:
+                        parts.append(text)
+            return "".join(parts)
+        return "" if content is None else str(content)
+
+    return str(response)
+
+
+def _clean_response_text(content: str) -> str:
+    """去掉 markdown 包裹和推理标签。"""
+    content = content.strip()
+    if content.startswith("```"):
+        lines = content.splitlines()
+        if lines:
+            lines = lines[1:]
+        if lines and lines[-1].strip() == "```":
+            lines = lines[:-1]
+        content = "\n".join(lines).strip()
+
+    return re.sub(r"<think>[\s\S]*?</think>", "", content, flags=re.IGNORECASE).strip()
+
+
+def _extract_json_object(text: str) -> str | None:
+    match = re.search(r"\{[\s\S]*\}", text)
+    return match.group(0) if match else None
+
+
+def _parse_json_payload(content: str) -> dict | None:
+    """兼容 SSE 错误流和混合文本，提取首个 JSON 对象。"""
+    cleaned = _clean_response_text(content)
+    candidates = []
+
+    for line in cleaned.splitlines():
+        stripped = line.strip()
+        if stripped.lower().startswith("data:"):
+            payload = stripped.split(":", 1)[1].strip()
+            if payload and payload != "[DONE]":
+                candidates.append(payload)
+                extracted = _extract_json_object(payload)
+                if extracted and extracted != payload:
+                    candidates.append(extracted)
+
+    candidates.append(cleaned)
+    extracted = _extract_json_object(cleaned)
+    if extracted and extracted != cleaned:
+        candidates.append(extracted)
+
+    seen = set()
+    for candidate in candidates:
+        candidate = candidate.strip()
+        if not candidate or candidate in seen:
+            continue
+        seen.add(candidate)
+        try:
+            payload = json.loads(candidate)
+        except json.JSONDecodeError:
+            continue
+        if isinstance(payload, dict):
+            return payload
+
+    return None
+
+
+def _is_error_payload(content: str, payload: dict | None) -> bool:
+    if isinstance(payload, dict) and payload.get("error"):
+        return True
+    lowered = content.lower()
+    return "event: error" in lowered or lowered.startswith("error:")
+
+
+def _format_error_message(payload: dict | None, fallback: str) -> str:
+    if isinstance(payload, dict):
+        error = payload.get("error")
+        if isinstance(error, dict):
+            message = error.get("message") or error.get("type")
+            if message:
+                return str(message)
+            return json.dumps(error, ensure_ascii=False)
+        if error:
+            return str(error)
+    return fallback.strip()[:200] or "未知错误"
+
+
+def _normalize_number(value) -> int | float:
+    number = round(float(value), 1)
+    return int(number) if number.is_integer() else number
+
+
+def _validate_evaluation(payload: dict, project_name: str) -> dict | None:
+    """验证评估结构，避免下游直接访问缺失字段。"""
+    scores = payload.get("scores")
+    if not isinstance(scores, dict):
+        print(f"  ❌ 评估结果缺少 scores ({project_name})")
+        print(f"     响应预览: {json.dumps(payload, ensure_ascii=False)[:500]}")
+        return None
+
+    missing = [dim_id for dim_id in REQUIRED_SCORE_IDS if dim_id not in scores]
+    if missing:
+        print(f"  ❌ 评估结果缺少评分维度 ({project_name}): {', '.join(missing)}")
+        print(f"     响应预览: {json.dumps(payload, ensure_ascii=False)[:500]}")
+        return None
+
+    normalized_scores = {}
+    for dim_id in REQUIRED_SCORE_IDS:
+        try:
+            score = float(scores[dim_id])
+        except (TypeError, ValueError):
+            print(f"  ❌ 评分不是数字 ({project_name}): {dim_id}={scores[dim_id]!r}")
+            return None
+        if not 1 <= score <= 10:
+            print(f"  ❌ 评分超出范围 ({project_name}): {dim_id}={score}")
+            return None
+        normalized_scores[dim_id] = _normalize_number(score)
+
+    total = payload.get("total")
+    if total in (None, ""):
+        total = round(sum(float(score) for score in normalized_scores.values()) / len(normalized_scores), 1)
+    else:
+        try:
+            total = round(float(total), 1)
+        except (TypeError, ValueError):
+            print(f"  ❌ total 不是数字 ({project_name}): {total!r}")
+            return None
+
+    normalized = dict(payload)
+    normalized["scores"] = normalized_scores
+    normalized["total"] = total
+    return normalized
+
+
 def _test_api_connection(client: OpenAI) -> bool:
     """预检测 API 连通性"""
     print(f"\n🔑 API 配置:")
@@ -79,22 +247,15 @@ def _test_api_connection(client: OpenAI) -> bool:
     print(f"\n🧪 测试 API 连通性...")
     try:
         response = client.chat.completions.create(
-            model=LLM_MODEL,
-            messages=[{"role": "user", "content": "回复 OK"}],
-            max_tokens=10,
+            **_build_chat_completion_kwargs(
+                [{"role": "user", "content": "回复 OK"}],
+                max_tokens=10,
+            )
         )
-        # 兼容不同代理 API 的返回格式（部分代理可能返回字符串而非标准对象）
-        if isinstance(response, str):
-            content = response
-        elif hasattr(response, "choices"):
-            content = response.choices[0].message.content
-        else:
-            content = str(response)
+        content = _extract_response_content(response)
+        payload = _parse_json_payload(content)
 
-        if content:
-            print(f"   ✅ API 正常，返回: {content.strip()[:50]}")
-            return True
-        else:
+        if not content:
             finish_reason = (
                 response.choices[0].finish_reason
                 if hasattr(response, "choices")
@@ -103,6 +264,16 @@ def _test_api_connection(client: OpenAI) -> bool:
             print(f"   ❌ API 返回空内容! finish_reason={finish_reason}")
             print(f"   原始响应: {response}")
             return False
+
+        if _is_error_payload(content, payload):
+            message = _format_error_message(payload, content)
+            print(f"   ❌ API 返回错误响应: {message}")
+            print(f"   原始响应: {content.strip()[:200]}")
+            return False
+
+        if content:
+            print(f"   ✅ API 正常，返回: {_clean_response_text(content)[:50]}")
+            return True
     except Exception as e:
         print(f"   ❌ API 连接失败: {type(e).__name__}: {e}")
         return False
@@ -112,50 +283,35 @@ def evaluate_project(client: OpenAI, project: dict) -> dict | None:
     """调用 LLM 评估单个项目"""
     try:
         response = client.chat.completions.create(
-            model=LLM_MODEL,
-            messages=[
-                {"role": "system", "content": SYSTEM_PROMPT},
-                {"role": "user", "content": _build_user_prompt(project)},
-            ],
-            temperature=0.3,
+            **_build_chat_completion_kwargs(
+                [
+                    {"role": "system", "content": SYSTEM_PROMPT},
+                    {"role": "user", "content": _build_user_prompt(project)},
+                ],
+                temperature=0.3,
+            )
         )
-        # 兼容不同 API 的返回格式
-        if isinstance(response, str):
-            content = response
-        elif hasattr(response, "choices"):
-            content = response.choices[0].message.content
-        else:
-            content = str(response)
+        content = _extract_response_content(response)
 
-        # 处理空返回
         if not content:
             print(f"  ❌ LLM 返回空内容 ({project['full_name']})")
             print(f"     finish_reason: {response.choices[0].finish_reason if hasattr(response, 'choices') else 'N/A'}")
             print(f"     原始响应: {response}")
             return None
 
-        # 清理可能的 markdown 代码块包裹
-        content = content.strip()
-        if content.startswith("```"):
-            content = content.split("\n", 1)[1] if "\n" in content else content[3:]
-            content = content.rsplit("```", 1)[0]
-            content = content.strip()
+        payload = _parse_json_payload(content)
+        if payload is None:
+            print(f"  ❌ JSON 解析失败 ({project['full_name']})")
+            print(f"     LLM 原始返回内容: {_clean_response_text(content)[:500] if content else '(空)'}")
+            return None
 
-        # 清理推理模型的 <think>...</think> 标签
-        import re as _re
-        content = _re.sub(r"<think>[\s\S]*?</think>", "", content).strip()
+        if _is_error_payload(content, payload):
+            message = _format_error_message(payload, content)
+            print(f"  ❌ LLM 返回错误响应 ({project['full_name']}): {message}")
+            print(f"     原始响应: {_clean_response_text(content)[:500]}")
+            return None
 
-        # 兜底：从混合文本中提取第一个 JSON 对象
-        if not content.startswith("{"):
-            match = _re.search(r"\{[\s\S]*\}", content)
-            if match:
-                content = match.group(0)
-
-        return json.loads(content)
-    except json.JSONDecodeError as e:
-        print(f"  ❌ JSON 解析失败 ({project['full_name']}): {e}")
-        print(f"     LLM 原始返回内容: {content[:500] if content else '(空)'}")
-        return None
+        return _validate_evaluation(payload, project["full_name"])
     except Exception as e:
         print(f"  ❌ LLM 评估失败 ({project['full_name']}): {type(e).__name__}: {e}")
         return None
@@ -183,7 +339,7 @@ def main():
         print("   LLM_BASE_URL — 例如 https://newapi.ixacg.com/v1")
         print("   LLM_API_KEY  — 你的 API 密钥")
         print("   LLM_MODEL    — 例如 gpt-4o")
-        return
+        raise SystemExit(1)
 
     results = []
     for i, project in enumerate(projects, 1):
@@ -221,6 +377,10 @@ def main():
             print(f"  ✅ 总分: {evaluation['total']}")
         else:
             print(f"  ⏭️  跳过")
+
+    if not results:
+        print("\n❌ 没有任何项目评估成功，已终止生成结果文件。")
+        raise SystemExit(1)
 
     # 按总分降序排列
     results.sort(key=lambda r: r["total"], reverse=True)
