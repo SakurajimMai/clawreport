@@ -36,6 +36,28 @@ class RecordingClient(FakeClient):
         return self._response
 
 
+class SequenceClient:
+    def __init__(self, responses):
+        self._responses = list(responses)
+        self.calls = []
+        self.chat = SimpleNamespace(
+            completions=SimpleNamespace(create=self._create)
+        )
+
+    def _create(self, **kwargs):
+        self.calls.append(kwargs)
+        response = self._responses.pop(0)
+        if isinstance(response, Exception):
+            raise response
+        return response
+
+
+class FakeHTTPError(Exception):
+    def __init__(self, status_code, message):
+        super().__init__(message)
+        self.status_code = status_code
+
+
 class EvaluatorTests(unittest.TestCase):
     def test_api_connection_rejects_sse_error_payload(self):
         client = FakeClient(
@@ -169,6 +191,62 @@ class EvaluatorTests(unittest.TestCase):
         request = client.calls[0]
         self.assertFalse(request["stream"])
         self.assertNotIn("reasoning_effort", request)
+
+    def test_api_connection_retries_transient_gateway_errors(self):
+        client = SequenceClient(
+            [
+                FakeHTTPError(502, "Bad gateway"),
+                "OK",
+            ]
+        )
+
+        with patch.object(evaluator.time, "sleep") as sleep_mock:
+            with redirect_stdout(io.StringIO()):
+                ok = evaluator._test_api_connection(client)
+
+        self.assertTrue(ok)
+        self.assertEqual(len(client.calls), 2)
+        sleep_mock.assert_called_once()
+
+    def test_evaluate_project_retries_transient_gateway_errors(self):
+        project = {
+            "full_name": "openclaw/openclaw",
+            "description": "demo",
+            "language": "Python",
+            "stars": 1,
+            "contributors": 1,
+            "release_count": 0,
+            "has_ci": True,
+            "pushed_at": "2026-04-07T00:00:00Z",
+            "topics": [],
+            "source_samples": [],
+        }
+        client = SequenceClient(
+            [
+                FakeHTTPError(502, "Bad gateway"),
+                """
+                {
+                  "scores": {
+                    "code_quality": 8,
+                    "maintainability": 7,
+                    "robustness": 6,
+                    "sustainability": 5,
+                    "portability": 7,
+                    "extensibility": 9
+                  },
+                  "total": 7.0
+                }
+                """,
+            ]
+        )
+
+        with patch.object(evaluator.time, "sleep") as sleep_mock:
+            with redirect_stdout(io.StringIO()):
+                result = evaluator.evaluate_project(client, project)
+
+        self.assertIsNotNone(result)
+        self.assertEqual(len(client.calls), 2)
+        sleep_mock.assert_called_once()
 
 
 if __name__ == "__main__":

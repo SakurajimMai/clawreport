@@ -5,6 +5,7 @@
 import json
 import os
 import re
+import time
 from datetime import datetime, timezone
 
 from openai import OpenAI
@@ -12,6 +13,8 @@ from openai import OpenAI
 from config import DATA_DIR, DIMENSIONS, LLM_API_KEY, LLM_BASE_URL, LLM_MODEL
 
 REQUIRED_SCORE_IDS = tuple(d["id"] for d in DIMENSIONS)
+MAX_REQUEST_ATTEMPTS = max(1, int(os.getenv("LLM_MAX_RETRIES", "3")))
+RETRY_BACKOFF_SECONDS = max(0.0, float(os.getenv("LLM_RETRY_BACKOFF_SECONDS", "2")))
 
 SYSTEM_PROMPT = """你是一位资深的开源项目代码审计专家。
 你需要根据提供的项目元数据和源码样本，对该项目进行多维度的代码质量评估。
@@ -90,6 +93,58 @@ def _build_chat_completion_kwargs(messages: list[dict], **extra) -> dict:
         kwargs.setdefault("reasoning_effort", "none")
 
     return kwargs
+
+
+def _is_retryable_exception(exc: Exception) -> bool:
+    status_code = getattr(exc, "status_code", None)
+    if status_code in {429, 500, 502, 503, 504}:
+        return True
+
+    message = str(exc).lower()
+    retry_markers = (
+        "bad gateway",
+        "gateway timeout",
+        "temporarily unavailable",
+        "connection reset",
+        "timed out",
+        "server disconnected",
+        "502",
+        "503",
+        "504",
+    )
+    return any(marker in message for marker in retry_markers)
+
+
+def _describe_exception(exc: Exception) -> str:
+    status_code = getattr(exc, "status_code", None)
+    message = str(exc).strip()
+    if status_code:
+        return f"HTTP {status_code}: {message[:300]}"
+    return f"{type(exc).__name__}: {message[:300]}"
+
+
+def _create_chat_completion(client: OpenAI, request_name: str, messages: list[dict], **extra):
+    """统一执行 chat/completions 请求，并对瞬时 5xx 做重试。"""
+    last_error = None
+    for attempt in range(1, MAX_REQUEST_ATTEMPTS + 1):
+        try:
+            return client.chat.completions.create(
+                **_build_chat_completion_kwargs(messages, **extra)
+            )
+        except Exception as exc:
+            last_error = exc
+            if not _is_retryable_exception(exc) or attempt >= MAX_REQUEST_ATTEMPTS:
+                raise
+
+            delay = RETRY_BACKOFF_SECONDS * attempt
+            print(
+                f"   ⚠️ {request_name} 请求失败，准备重试 "
+                f"({attempt}/{MAX_REQUEST_ATTEMPTS})：{_describe_exception(exc)}"
+            )
+            if delay > 0:
+                time.sleep(delay)
+
+    raise last_error
 
 
 def _extract_response_content(response) -> str:
@@ -246,11 +301,11 @@ def _test_api_connection(client: OpenAI) -> bool:
     print(f"   API Key:  {LLM_API_KEY[:8]}..." if len(LLM_API_KEY) > 8 else f"   API Key:  (长度={len(LLM_API_KEY)})")
     print(f"\n🧪 测试 API 连通性...")
     try:
-        response = client.chat.completions.create(
-            **_build_chat_completion_kwargs(
-                [{"role": "user", "content": "回复 OK"}],
-                max_tokens=10,
-            )
+        response = _create_chat_completion(
+            client,
+            "API 预检",
+            [{"role": "user", "content": "回复 OK"}],
+            max_tokens=10,
         )
         content = _extract_response_content(response)
         payload = _parse_json_payload(content)
@@ -275,21 +330,21 @@ def _test_api_connection(client: OpenAI) -> bool:
             print(f"   ✅ API 正常，返回: {_clean_response_text(content)[:50]}")
             return True
     except Exception as e:
-        print(f"   ❌ API 连接失败: {type(e).__name__}: {e}")
+        print(f"   ❌ API 连接失败: {_describe_exception(e)}")
         return False
 
 
 def evaluate_project(client: OpenAI, project: dict) -> dict | None:
     """调用 LLM 评估单个项目"""
     try:
-        response = client.chat.completions.create(
-            **_build_chat_completion_kwargs(
-                [
-                    {"role": "system", "content": SYSTEM_PROMPT},
-                    {"role": "user", "content": _build_user_prompt(project)},
-                ],
-                temperature=0.3,
-            )
+        response = _create_chat_completion(
+            client,
+            f"项目评估 {project['full_name']}",
+            [
+                {"role": "system", "content": SYSTEM_PROMPT},
+                {"role": "user", "content": _build_user_prompt(project)},
+            ],
+            temperature=0.3,
         )
         content = _extract_response_content(response)
 
@@ -335,10 +390,10 @@ def main():
 
     # 预检测 API 连通性
     if not _test_api_connection(client):
-        print("\n❌ API 连通性测试未通过，请检查环境变量配置：")
-        print("   LLM_BASE_URL — 例如 https://newapi.ixacg.com/v1")
-        print("   LLM_API_KEY  — 你的 API 密钥")
-        print("   LLM_MODEL    — 例如 gpt-4o")
+        print("\n❌ API 连通性测试未通过。")
+        print("   如果日志里是 502/503/504，这通常是上游服务暂时不可用，而不是代码字段解析问题。")
+        print("   如果你要使用 grok2api，请确认 GitHub Actions Secret `LLM_BASE_URL` 已切到 grok2api 的 /v1 地址。")
+        print("   也可以调整 `LLM_MAX_RETRIES` 和 `LLM_RETRY_BACKOFF_SECONDS` 增加重试次数与退避时间。")
         raise SystemExit(1)
 
     results = []
